@@ -1,9 +1,10 @@
 # OSX
 #
 .DS_Store
-
+yarn.lock
 # Xcode
 #
+.vscode
 build/
 *.pbxuser
 !default.pbxuser
