@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "109877646891",
+    "firebase_url": "https://do-cook-5e908.firebaseio.com",
+    "project_id": "do-cook-5e908",
+    "storage_bucket": "do-cook-5e908.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109877646891:android:39856e176d1cdcc6b0fc6e",
+        "android_client_info": {
+          "package_name": "software.do_cook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109877646891-t8688nqbbo6r9ebksfc4tdgdb3vd2vs3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "software.do_cook",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "109877646891-jtgsjr70h56lnhcgki3ampro788pf6nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo5vVRMQIymHfK_iERdx3K80fOAtwIBoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109877646891-jtgsjr70h56lnhcgki3ampro788pf6nh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
