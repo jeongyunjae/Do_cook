@@ -10,14 +10,14 @@ const TitleContainer = Styled.View`
 flex: 1;
 justify-content: center;
 align-items: center;
-background-color: rgba(0,0,0,0.6); /* 투명도 포함 색정하기 */
+/*background-color: rgba(0,0,0,0.6); 투명도 포함 색정하기 */
 
 `;
 
 const TitleText = Styled.Text`
 font-size: 32px;
 font-weight: bold;
-color: white;
+color: black;
 `;
 
 const Result = Styled.View`
