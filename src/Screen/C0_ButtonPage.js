@@ -10,14 +10,14 @@ const TitleContainer = Styled.View`
 flex: 1;
 justify-content: center;
 align-items: center;
-/*background-color: rgba(0,0,0,0.6); 투명도 포함 색정하기 */
+background-color: rgba(0,0,0,0.6); /* 투명도 포함 색정하기 */
 
 `;
 
 const TitleText = Styled.Text`
 font-size: 32px;
 font-weight: bold;
-color: black;
+color: white;
 `;
 
 const Result = Styled.View`
@@ -38,7 +38,7 @@ justify-content: space-around; /* 얘랑 밑에 애랑 항상 쌍으로 해야 �
 align-items: center;
 `;
 
-const ButtonPage = () => {
+const C0_ButtonPage = () => {
     const [count, setCount] = useState(0);
     const increase = () => setCount(count + 1);
     const decrease = () => setCount(count -1);
@@ -58,4 +58,4 @@ const ButtonPage = () => {
     );
 };
 
-export default ButtonPage;      
+export default C0_ButtonPage;      
