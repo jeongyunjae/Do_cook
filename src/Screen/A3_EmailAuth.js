@@ -1,26 +1,27 @@
 import React from 'react';
-import { StyleSheet, View, Button, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import Button from '~/Components/MyButton';
+import Styled from 'styled-components/native';
 
-/**
- * Home screen
- */
-export default class A3_EmailAuth extends React.Component {
+const Container = Styled.View`
+flex: 1;
+align-items: center;
+justifyContent: center;
+`;
 
-    static navigationOptions = {
+const A3_EmailAuth = (props) => {
+
+    const navigationOptions = {
         title: 'A3_EmailAuth',
     };
-
-    render() {
-
-        const { navigate } = this.props.navigation;
-
+        const { navigate } = props.navigation;
         return (
-            <View style={styles.container}>
+            <Container>
                 <Text>Email Authentication</Text>
                 <Button
                     title="Next"
                     onPress={() => navigate(
-                        'Main'
+                        'MainPage'
                     )}
                 />
                 <Button
@@ -28,19 +29,10 @@ export default class A3_EmailAuth extends React.Component {
                     onPress={() => navigate(
                         'Start'
                     )}
-                />
-                
-            </View>
+                /> 
+            </Container>
         );
 
     }
 
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+export default A3_EmailAuth;

@@ -1,21 +1,23 @@
 import React from 'react';
-import { StyleSheet, View, Button, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import Button from '~/Components/MyButton';
+import Styled from 'styled-components/native';
 
-/**
- * Home screen
- */
-export default class A1_Signin extends React.Component {
+const Container = Styled.View`
+flex: 1;
+align-items: center;
+justifyContent: center;
+`;
 
-    static navigationOptions = {
+    const A1_Signin = (props) => {
+
+    const navigationOptions = {
         title: 'A1_Signin',
     };
-
-    render() {
-
-        const { navigate } = this.props.navigation;
+        const { navigate } = props.navigation;
 
         return (
-            <View style={styles.container}>
+            <Container>
                 <Text>Sign in Page. If you press Next, EmailAuth</Text>
                 <Button
                     title="Next"
@@ -29,18 +31,8 @@ export default class A1_Signin extends React.Component {
                         'Start'
                     )}
                 />
-                
-            </View>
+            </Container>
         );
-
     }
 
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+export default A1_Signin;

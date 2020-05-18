@@ -33,12 +33,12 @@ font-size: 32px;
 
 const ButtonContainer = Styled.View`
 flex: 2;
-flex-direction: row; /* 아이템 정렬을 수평으로 */
-justify-content: space-around; /* 얘랑 밑에 애랑 항상 쌍으로 해야 원하는 위치 중앙 */
+flex-direction: column; /* 아이템 정렬을 수평으로 */
 align-items: center;
 `;
 
-const C0_ButtonPage = () => {
+const MainPage = (props) => {
+    const {navigate} = props.navigation;
     const [count, setCount] = useState(0);
     const increase = () => setCount(count + 1);
     const decrease = () => setCount(count -1);
@@ -53,9 +53,10 @@ const C0_ButtonPage = () => {
         <ButtonContainer>
         <MyButton title = "-" onPress = {decrease} />
         <MyButton title = "+" onPress = {increase} />
+        <MyButton title = "로그아웃" onPress = {()=>navigate('Login')} />
         </ButtonContainer>
     </Container>
     );
 };
 
-export default C0_ButtonPage;      
+export default MainPage;   

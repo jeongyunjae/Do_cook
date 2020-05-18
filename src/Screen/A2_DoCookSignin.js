@@ -1,46 +1,34 @@
 import React from 'react';
-import { StyleSheet, View, Button, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+import Button from '~/Components/MyButton';
+import Styled from 'styled-components/native';
 
-/**
- * Home screen
- */
-export default class A2_DoCookSignin extends React.Component {
+const Container = Styled.View`
+flex: 1;
+align-items: center;
+justifyContent: center;
+`;
 
-    static navigationOptions = {
+const A2_DoCookSignin = (props) => {
+
+    const navigationOptions = {
         title: 'A2_DoCookSignin',
-    };
-
-    render() {
-
-        const { navigate } = this.props.navigation;
+        };
+        const { navigate } = props.navigation;
 
         return (
-            <View style={styles.container}>
-                <Text>Do Cook Sign in Page. If you press Next, EmailAuth</Text>
-                <Button
-                    title="Next"
-                    onPress={() => navigate(
-                        'EmailAuth'
-                    )}
-                />
-                <Button
-                    title="Back to Start"
-                    onPress={() => navigate(
-                        'Start'
-                    )}
-                />
-                
-            </View>
+        <Container>
+            <Text>Do Cook Sign in Page. If you press Next, EmailAuth</Text>
+            <Button
+            title="Next"
+            onPress={() => navigate('EmailAuth')}
+            />
+            <Button
+            title="Back to Start"
+            onPress={() => navigate('Start')}
+            />
+        </Container>
         );
-
     }
 
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+export default A2_DoCookSignin;

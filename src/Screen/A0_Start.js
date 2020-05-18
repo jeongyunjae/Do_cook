@@ -1,18 +1,16 @@
 import React from 'react';
-import { StyleSheet, View, Button, Text, ImageBackground, Image } from 'react-native';
-import { Fonts } from '../Font'
-/**
- * Home screen
- */
-export default class A0_Start extends React.Component {
+import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
+import { Fonts } from '../Font';
+import Button from '~/Components/MyButton';
+import Styled from 'styled-components/native';
 
-    static navigationOptions = {
-        title: 'A0',
-    };
+const ButtonControl = Styled.View`
+padding-top: 260px;
+`;
 
-    render() {
-
-        const { navigate } = this.props.navigation;
+const A0_Start = (props) => {
+  
+        const { navigate } = props.navigation;
 
         return (
             <View style = {styles.container}>
@@ -30,19 +28,18 @@ export default class A0_Start extends React.Component {
                  padding: 10,
                  width: 300,
                  marginTop: 10,}}>
+                   <ButtonControl>
               <Button title="회원가입"
                           onPress={() => navigate(
                             'Signin'
-                        )}></Button>      
+                        )}></Button>    
+                        </ButtonControl>  
               </View>
             </View>
           </View>
         </ImageBackground>
     </View>
         );
-
-    }
-
 }
 
 const styles = StyleSheet.create({
@@ -76,3 +73,5 @@ const styles = StyleSheet.create({
         marginTop: 90,
       },
   });
+
+  export default A0_Start;
