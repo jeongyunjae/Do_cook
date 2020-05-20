@@ -1,35 +1,45 @@
-import React from 'react';
-import ButtonPage from './src/Screen/MainPage';
-import Styled from 'styled-components/native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 //Screens
-import Start from '~/Screen/A0_Start';
-import Signin from '~/Screen/A1_Signin';
-import EmailAuth from '~/Screen/A3_EmailAuth';
-import DoCookSignin from '~/Screen/A2_DoCookSignin';
-import MainPage from '~/Screen/MainPage';
 import CheckLogin from '~/Screen/CheckLogin';
-import Login from '~/Screen/Login'
+import A0_StartPage from '~/Screen/A0_StartPage';
+import A1_SignUp from '~/Screen/A1_SignUp';
+import A2_DkSignUp from '~/Screen/A2_DkSignUp';
+import A3_GoogleSignUp from '~/Screen/A3_GoogleSignUp';
+import A4_InputNickname from '~/Screen/A4_InputNickname';
+import A5_DkLogin from '~/Screen/A5_DkLogin';
+import A6_GoogleLogin from '~/Screen/A6_GoogleLogin';
+import C0_MainPage from '~/Screen/C0_MainPage';
 
 //CreateStackNavigator
-const Navigator = createStackNavigator(
+const A_Navigator = createStackNavigator(
   {
-    Start,
-    Signin,
-    EmailAuth,
-    DoCookSignin,
-    MainPage,
-    Login,
+    A0_StartPage,
+    A1_SignUp,
+    A2_DkSignUp,
+    A3_GoogleSignUp,
+    A4_InputNickname,
+    A5_DkLogin,
+    A6_GoogleLogin,
   },
   { headerMode: 'none',
 });
 
+const C_Navigator = createStackNavigator(
+  {
+    C0_MainPage,
+  },
+  {
+    headerMode: 'none',
+  }
+)
+
 const AppNavigator = createSwitchNavigator(
   {
     CheckLogin,
-    Navigator,
+    A_Navigator,
+    C_Navigator,
   },
   {
     initialRouteName: 'CheckLogin',
