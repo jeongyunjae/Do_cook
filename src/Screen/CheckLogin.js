@@ -14,7 +14,7 @@ align-items: center;
 
 const Checklogin = (props) => {
     const {navigate} = props.navigation;
-
+//firebase 코드
     AsyncStorage.getItem('key')
     .then(value => {
         if(value)

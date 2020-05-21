@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TextInput } from 'react-native';
 import Button from '~/Components/MyButton';
 import Styled from 'styled-components/native';
 
@@ -15,7 +15,11 @@ justifyContent: center;
         title: 'A1_Signin',
     };
         const { navigate } = props.navigation;
-
+    /*state = { email: '', password: '', errorMessage: null }
+    handleSignUp = ()=>{
+        //Todo : firebase stuff
+        console.log('handleSignUp')
+    }*/
         return (
             <Container>
                 <Text>Sign in Page. If you press Next, EmailAuth</Text>
