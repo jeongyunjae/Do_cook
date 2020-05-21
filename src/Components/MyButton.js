@@ -1,18 +1,23 @@
 import React from 'react';
 import Styled from 'styled-components/native';
+import {View, StyleSheet, Text } from 'react-native';
+
 
 const Button = Styled.TouchableOpacity`
-border-radius: 8px; /* 버튼의 모서리 둥글기 */
-padding: 7px;
-width: 150px;
-margin: 5px;
-background-color: #de6139;
+width: 40%;
+height: 40px;
+padding: 8px;
+margin: 7px;
+background: rgba(238, 238, 238, 0.9);
+border-radius: 8px;
+border-width: 0.5px;
+border-color: #000000;
 `;
 
 const ButtonText = Styled.Text`
-color: white;
-font-weight: bold;
+color: black;
 font-size: 16px;
+font-weight: bold;
 text-align: center;
 `;
 

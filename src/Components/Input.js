@@ -7,16 +7,14 @@ const Container = Styled.View`
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 8px;
-  background-color: #ffffff;
+  background: rgba(238, 238, 238, 0.9);
 `;
 const InputField = Styled.TextInput`
   flex: 1;
-  color: #000000;
   font-size: 13px;
 `;
 
 const Input = ({
-  placeholder,
   keyboardType,
   secureTextEntry,
   style,
@@ -26,14 +24,11 @@ const Input = ({
   return (
     <Container style={style}>
       <InputField
-        selectionColor="#FFFFFF"
         secureTextEntry={secureTextEntry}
         keyboardType={keyboardType ? keyboardType : 'default'}
         autoCapitalize="none"
         autoCorrect={false}
         allowFontScaling={false}
-        placeholderTextColor="#212121"
-        placeholder={placeholder}
         clearButtonMode={clearMode ? 'while-editing' : 'never'}
         onChangeText={onChangeText}
       />
