@@ -1,4 +1,4 @@
-package com.do_cook;
+package software.do_cook;
 
 import android.app.Application;
 import android.content.Context;
