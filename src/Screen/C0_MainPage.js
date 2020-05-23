@@ -4,13 +4,14 @@ import MyButton from '../Components/MyButton';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
+  background-color: #ffffff;
 `;
 
 const TitleContainer = Styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0,0.6); /* 투명도 포함 색정하기 */
+  background-color: #EC6337;
 
 `;
 
