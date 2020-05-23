@@ -5,7 +5,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 import {
   StyleSheet,
-  Image
+  Image,
 } from 'react-native';
 
 //Screens
