@@ -1,4 +1,4 @@
-package com.do_cook;
+package software.do_cook;
 
 import com.facebook.react.ReactActivity;
 //import com.facebook.react.ReactActivityDelegate;
