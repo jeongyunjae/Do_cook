@@ -15,7 +15,7 @@ const Checklogin = (props) => {
   
   AsyncStorage.getItem('key').then(value => {
     if(value)
-    navigate('C0_MainPage');
+    navigate('MainTabs');
     else
     navigate('A0_StartPage');
   })
