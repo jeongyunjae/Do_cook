@@ -4,7 +4,6 @@ import {StyleSheet, Text, View} from 'react-native';
 const G0_MyInform = () => {
     return (
         <View style={styles.container}>
-          <Text>내 정보</Text>
         </View>
       );
 }

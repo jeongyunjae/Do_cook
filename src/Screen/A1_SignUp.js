@@ -33,11 +33,9 @@ const styles = StyleSheet.create({
 
 
 
-const A1_SignUp = (props) => {
+const A1_SignUp = ({navigation: {navigate}} ) => {
 
-  const { navigate } = props.navigation;
-
-  var {userInfo, setuserInfo} = useState(null);
+  let {userInfo, setuserInfo} = useState(null);
 
 const {gettingLoginStatus, setgettingLoginStatus} = useState(false);
 
@@ -91,7 +89,6 @@ const _signIn=async()=>{
         userInfo.accessToken,
       );
       await firebase.auth().signInWithCredential(credential);
-
       
     } catch (error) {
         console.log('Message', error.message);
@@ -139,6 +136,7 @@ const _signOut = async() => {
             title="구글 회원가입"
             onPress={() => {
             _signIn();
+            
           }}
           />
         </ButtonLocate>
@@ -146,8 +144,6 @@ const _signOut = async() => {
     </ImageBackground>
   </Container>
   );
-    //    }
-
 };
 
 export default A1_SignUp;

@@ -2,15 +2,28 @@ import React from 'react';
 import {StyleSheet, View } from 'react-native';
 import Styled from 'styled-components/native';
 
-import Button from '~/Components/MyButton';
+import Button from '~/Components/MyButton2';
 import Input from '~/Components/Input';
 
 const Container = Styled.SafeAreaView`
+  flex: 2;
+  padding: 20px;
+`;
+
+const TitleContainer = Styled.View`
   flex: 1;
+  justify-content: center;
+`;
+
+const TitleText = Styled.Text`
+  font-size: 34px;
+  font-weight: bold;
+  color: #DE6139;
+  letter-spacing: 0.5px;
 `;
 
 const FormAndButton = Styled.View`
-  flex: 1;
+  flex: 3;
   padding-bottom: 100px;
   justify-content: center;
   align-items: center;
@@ -23,10 +36,10 @@ const FormContainer = Styled.View`
 `;
 
 const InputTextName = Styled.Text`
-  margin: 2.5px;
-  color: white;
+  margin-bottom: 2.5px;
+  color: #DE6139;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 14px;
 `;
 
 const Temp = Styled.View`
@@ -38,24 +51,16 @@ const Temp = Styled.View`
 
 const TempButton = Styled.View`
   width: 37%;
-  padding-top: 48.3px;
+  padding-top: 44.5px;
 `;
 
-const A4_InputNickname = (props) => {
-  const { navigate } = props.navigation;
-
-  A4_InputNickname.navigationOptions = {
-    title: 'Do cook',
-    headerTransparent: true,
-    headerTintColor: '#E70915',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-  };
+const A4_InputNickname = ({navigation: {navigate}} ) => {
 
   return (
-  <Container>
-    <View style = {{flex:1, alignSelf: 'stretch', backgroundColor: 'rgba(0,0,0,0.6)'}}>
+      <Container>
+      <TitleContainer>
+        <TitleText>회원가입</TitleText>
+      </TitleContainer>
       <FormAndButton>
         <Temp>
           <FormContainer>
@@ -74,12 +79,11 @@ const A4_InputNickname = (props) => {
             <Button
               title="시작하기"
               onPress={() => {
-              navigate('C0_MainPage');
+              navigate('요리하기');
             }}
             />
         </FormAndButton>
-    </View>
-  </Container>
+        </Container>
   );
 
 };

@@ -1,24 +1,24 @@
 import React from 'react';
 import Styled from 'styled-components/native';
-import MyButton from '../Components/MyButton';
+import MyButton from '../Components/MyButton2';
 
+import { StatusBar } from 'react-native'; 
 const Container = Styled.SafeAreaView`
   flex: 1;
   background-color: #ffffff;
 `;
 
 const TitleContainer = Styled.View`
-  flex: 1;
+  flex: 4;
   justify-content: center;
   align-items: center;
-  background-color: #EC6337;
 
 `;
 
 const TitleText = Styled.Text`
   font-size: 32px;
   font-weight: bold;
-  color: white;
+  color: black;
 `;
 
 const ButtonContainer = Styled.View`
@@ -27,13 +27,11 @@ const ButtonContainer = Styled.View`
   justify-content: center;
 `;
 
-const C0_MainPage = (props) => {
-  const { navigate } = props.navigation;
-
+const C0_MainPage = ({navigation: {navigate}} ) => {
   return (
   <Container>
+      <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor={'transparent'} translucent={true}/>
     <TitleContainer>
-      <TitleText>C0_MainPage</TitleText>
     </TitleContainer>
       <ButtonContainer>
         <MyButton title = "로그아웃" onPress = {()=>navigate('A0_StartPage')} />

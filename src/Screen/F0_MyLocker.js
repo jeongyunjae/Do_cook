@@ -4,7 +4,6 @@ import {StyleSheet, Text, View} from 'react-native';
 const F0_MyLocker = () => {
     return (
         <View style={styles.container}>
-          <Text>보관함</Text>
         </View>
       );
 }

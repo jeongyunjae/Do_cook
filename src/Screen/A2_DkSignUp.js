@@ -1,27 +1,50 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import Button from '~/Components/MyButton';
+import Button from '~/Components/MyButton2';
 import Styled from 'styled-components/native';
 
 const Container = Styled.View`
   flex: 1;
-  align-items: center;
-  justifyContent: center;
+  padding: 20px;
 `;
 
-const A2_DkSignUp = (props) => {
-  const { navigate } = props.navigation;
-  
+const TitleContainer = Styled.View`
+  flex: 1;
+  justify-content: center;
+`;
+
+const TitleText = Styled.Text`
+font-size: 34px;
+font-weight: bold;
+color: #DE6139;
+letter-spacing: 0.5px;
+`;
+
+const Blank = Styled.View`
+  flex: 2;  
+`;
+
+const ButtonContainer = Styled.View`
+  flex: 1;  
+  justify-content: center;
+  align-items: center;
+`;
+const A2_DkSignUp = ({navigation: {navigate}} ) => {
   return (
   <Container>
-    <Text>자체 회원가입 페이지</Text>
-      <Button
+    <TitleContainer>
+      <TitleText>회원가입</TitleText>
+    </TitleContainer>
+    <Blank></Blank>
+    <ButtonContainer>
+    <Button
         style={{ marginBottom: 24 }}
-        title="다음 단계로"
+        title="다음"
         onPress={() => {
         navigate('A4_InputNickname');
       }}
       />
+    </ButtonContainer>
   </Container>
   );
 

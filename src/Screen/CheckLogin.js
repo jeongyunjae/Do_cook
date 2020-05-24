@@ -10,8 +10,7 @@ const Container = Styled.View`
   align-items: center;
 `;
 
-const Checklogin = (props) => {
-  const {navigate} = props.navigation;
+const Checklogin = ({navigation: {navigate}} ) => {
   
   AsyncStorage.getItem('key').then(value => {
     if(value)

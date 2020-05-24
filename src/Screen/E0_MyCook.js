@@ -4,7 +4,6 @@ import {StyleSheet, Text, View} from 'react-native';
 const E0_MyCook = () => {
     return (
         <View style={styles.container}>
-          <Text>나만의 요리</Text>
         </View>
       );
 }

@@ -5,12 +5,9 @@ import Styled from 'styled-components/native';
 
 const Container = Styled.View`
   flex: 1;
-  align-items: center;
-  justifyContent: center;
 `;
 
-const A3_GoogleSignUp = (props) => {
-  const { navigate } = props.navigation;
+const A3_GoogleSignUp = ({navigation: {navigate}} ) => {
   
   return (
   <Container>

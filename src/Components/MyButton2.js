@@ -5,23 +5,22 @@ import {View, StyleSheet, Text } from 'react-native';
 
 const Button = Styled.TouchableOpacity`
 width: 40%;
-height: 40px;
+height: 38px;
 padding: 8px;
 margin: 7px;
-background: rgba(238, 238, 238, 0.9);
+background: #EC6139;
 border-radius: 15px;
-border-width: 0.5px;
 border-color: #000000;
 `;
 
 const ButtonText = Styled.Text`
-color: black;
-font-size: 15px;
+color: white;
+font-size: 13px;
 font-weight: bold;
 text-align: center;
 `;
 
-const MyButton = ({title, onPress}) => {
+const MyButton2 = ({title, onPress}) => {
     return (
         <Button onPress={onPress}>
             <ButtonText>{title}</ButtonText>
@@ -29,4 +28,4 @@ const MyButton = ({title, onPress}) => {
     );
 }
 
-export default MyButton;
+export default MyButton2;

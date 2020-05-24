@@ -8,8 +8,7 @@ const Container = Styled.View`
   justifyContent: center;
 `;
 
-const A6_GoogleLogin = (props) => {
-  const { navigate } = props.navigation;
+const A6_GoogleLogin = ({navigation: {navigate}} ) => {
   return (
   <Container>
     <Text>구글 로그인 페이지</Text>
