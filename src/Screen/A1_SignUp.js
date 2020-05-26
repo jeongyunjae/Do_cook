@@ -39,8 +39,7 @@ const A1_SignUp = (props) => {
 
   var {userInfo, setuserInfo} = useState(null);
 
-const {gettingLoginStatus, setgettingLoginStatus} = useState(false);
-
+  const {gettingLoginStatus, setgettingLoginStatus} = useState(false);
 
   useEffect(() => {
     GoogleSignin.configure({
@@ -92,7 +91,7 @@ const _signIn=async()=>{
       );
       await firebase.auth().signInWithCredential(credential);
 
-      
+        return true;
     } catch (error) {
         console.log('Message', error.message);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -104,6 +103,7 @@ const _signIn=async()=>{
       } else {
           console.log('Some Other Error Happened');// some other error happened
       }
+      return false;
   }
 };
 
@@ -138,7 +138,13 @@ const _signOut = async() => {
             style={{ marginBottom: 24 }}
             title="구글 회원가입"
             onPress={() => {
-            _signIn();
+                if(_signIn()){
+                  navigate('A6_GoogleLogin');
+                }
+                else{
+                  alert('Sign In Error');
+                }
+
           }}
           />
         </ButtonLocate>
