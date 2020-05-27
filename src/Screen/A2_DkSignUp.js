@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, Alert} from 'react-native';
 import Button from '~/Components/MyButton';
 import Styled from 'styled-components/native';
@@ -65,7 +65,7 @@ const A2_DkSignUp = ({navigation: {navigate}} ) => {
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         navigate('A4_InputNickname');
-        console.log(email + 'created & signed in!');
+        console.log(email + ' created & signed in!');
       })
       .catch(e => {
         if (e.code === 'auth/email-already-in-use') {
