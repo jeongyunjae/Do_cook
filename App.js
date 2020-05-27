@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -23,14 +23,6 @@ import E0_MyCook from '~/Screen/E0_MyCook';
 import F0_MyLocker from '~/Screen/F0_MyLocker';
 import G0_MyInform from '~/Screen/G0_MyInform';
 
-const icons = {
-  first: require('~/Assets/Images/1.png'),
-  second: require('~/Assets/Images/2.png'),
-  third: require('~/Assets/Images/3.png'),
-  four: require('~/Assets/Images/4.png'),
-  five: require('~/Assets/Images/5.png'),
-}
-
 //CreateStackNavigator
 const A_Navigator = createStackNavigator(
   {
@@ -44,102 +36,155 @@ const A_Navigator = createStackNavigator(
   },
   { 
     headerMode: 'none',
-  }
+  },
 );
 
 const C_Navigator = createStackNavigator(
   {
-    C0_MainPage,
+    요리하기: {screen: C0_MainPage},
   },
   {
-    headerMode: 'screen',
+    defaultNavigationOptions: {
+      title: '요리하기',
+      headerStyle: {
+        backgroundColor: '#EC6337',
+      },
+      headerTintColor: '#ffffff',
+      headerTitleStyle: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        fontSize: 21,
+      },
+    },
   }
 );
 
 const D_Navigator = createStackNavigator(
   {
-    D0_CookBoast,
+    요리자랑: {screen: D0_CookBoast},
   },
   {
-    headerMode: 'screen',
+    defaultNavigationOptions: {
+      title: '요리 자랑',
+      headerStyle: {
+        backgroundColor: '#EC6337',
+      },
+      headerTintColor: '#ffffff',
+      headerTitleStyle: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        fontSize: 21,
+      },
+    },
   }
 );
 
 const E_Navigator = createStackNavigator(
   {
-    E0_MyCook,
+    나만의요리: {screen: E0_MyCook},
   },
   {
-    headerMode: 'screen',
+    defaultNavigationOptions: {
+      title: '나만의 요리',
+      headerStyle: {
+        backgroundColor: '#EC6337',
+      },
+      headerTintColor: '#ffffff',
+      headerTitleStyle: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        fontSize: 21,
+      },
+    },
   }
 );
 
 const F_Navigator = createStackNavigator(
   {
-    F0_MyLocker,
+    보관함: {screen: F0_MyLocker},
   },
   {
-    headerMode: 'screen',
+    defaultNavigationOptions: {
+      title: '보관함',
+      headerStyle: {
+        backgroundColor: '#EC6337',
+      },
+      headerTintColor: '#ffffff',
+      headerTitleStyle: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        fontSize: 21,
+      },
+    },
   }
 );
 
 const G_Navigator = createStackNavigator(
   {
-    G0_MyInform,
+    내정보: {screen: G0_MyInform},
   },
   {
-    headerMode: 'screen',
-  } 
+    defaultNavigationOptions: {
+      title: '내 정보',
+      headerStyle: {
+        backgroundColor: '#EC6337',
+      },
+      headerTintColor: '#ffffff',
+      headerTitleStyle: {
+        textAlign: 'center',
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        fontSize: 21,
+      },
+    },
+  }
 );
 
 const MainTabs = createBottomTabNavigator(
   {
-
-    요리하기: {
-      screen: C_Navigator,
-    },
-
-    요리자랑: {
-      screen: D_Navigator,
-    },
-
-    나만의요리: {
-      screen: E_Navigator,
-    },
-
-    보관함: {
-      screen: F_Navigator,
-    },
-
-    내정보: {
-      screen: G_Navigator,
-    },
+    요리하기: C_Navigator,
+    요리자랑: D_Navigator,
+    나만의요리: E_Navigator,
+    보관함: F_Navigator,
+    내정보: G_Navigator,
   },
-  
-  {
-    navigationOptions: ({navigation}) => ({
-      tabBarIcon: ({focused}) => {
-        const {routeName} = navigation.state;
-        let icon;
-        if (routeName === 'C_Navigator')
-        icon = focused ? icons.first : icons.five;
-        else if (routeName === 'D_Navigator')
-        icon = focused ? icons.second : icons.five; 
-        else if (routeName === 'E_Navigator') 
-        icon = focused ? icons.third : icons.five;
-        else if (routeName === 'F_Navigator') 
-        icon = focused ? icons.four : icons.five;
-        else if (routeName === 'G_Navigator') 
-        icon = focused ? icons.five : icons.five;
 
-        return <Image source={icon} style={{width: 20, height: 20}} />
-      }
-    }),
-      tabBarOptions: {
-        activeTintColor: 'white',
-        inactiveTintColor: 'gray',
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ( focused ) => {
+        const { routeName } = navigation.state;
+        let iconName = '';
+        if (routeName === '요리하기') {
+          iconName = focused ? require('~/Assets/Images/1.png') : require('~/Assets/Images/3.png');
+        } 
+        else if (routeName === '요리자랑') {
+          iconName = focused ? require('~/Assets/Images/2.png') : require('~/Assets/Images/2.png');
+        }
+        else if (routeName === '나만의요리') {
+          iconName = focused ? require('~/Assets/Images/3.png') : require('~/Assets/Images/2.png');
+        }
+        else if (routeName === '보관함') {
+          iconName = focused ? require('~/Assets/Images/4.png') : require('~/Assets/Images/2.png');
+        }
+        else if (routeName === '내정보') {
+          iconName = focused ? require('~/Assets/Images/5.png') : require('~/Assets/Images/2.png');
+        }
+        return (<Image source={ iconName } style={{ width: 20, height: 20 }} />);
       },
-    });
+    }),
+    tabBarOptions: {
+      activeTintColor: 'black',
+      inactiveTintColor: 'gray',
+      style: {
+          backgroundColor: '#ffffff',
+      },
+    },
+  }
+  );
 
   const AppNavigator = createSwitchNavigator(
     {
@@ -153,5 +198,6 @@ const MainTabs = createBottomTabNavigator(
 
     const styles = StyleSheet.create({
     });
+
 
 export default createAppContainer(AppNavigator);

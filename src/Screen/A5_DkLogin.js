@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {StyleSheet,View,ImageBackground, Image } from 'react-native';
 import Styled from 'styled-components/native';
 
-import Button from '~/Components/MyButton';
+import Button from '~/Components/MyButton2';
 import Input from '~/Components/Input';
 
 const Container = Styled.SafeAreaView`
@@ -40,17 +40,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const A5_DkLogin = (props) => {
-  const { navigate } = props.navigation;
-
-  A5_DkLogin.navigationOptions = {
-    title: 'Do cook',
-    headerTransparent: true,
-    headerTintColor: '#E70915',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-  };
+const A5_DkLogin = ({navigation: {navigate}} ) => {
   
   return (
   <Container>
@@ -73,12 +63,9 @@ const A5_DkLogin = (props) => {
               title="로그인"
               onPress={() => {
               AsyncStorage.setItem('key', 'JYJ');
-              navigate('C0_MainPage');
+              navigate('요리하기');
             }}
             />
-
-            {/*구글로 로그인버튼을 만드는 위치*/}
-
           </FormAndButton>
       </View>
     </ImageBackground>

@@ -5,7 +5,6 @@ import {StyleSheet, Text, View} from 'react-native';
 const D0_CookBoast = () => {
     return (
         <View style={styles.container}>
-          <Text>요리자랑</Text>
         </View>
       );
 }

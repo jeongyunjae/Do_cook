@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Image, ImageBackground } from 'react-native';
+import {StyleSheet, View, Image, ImageBackground, StatusBar} from 'react-native';
 import Styled from 'styled-components/native';
 
 import Button from '~/Components/MyButton';
@@ -26,20 +26,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const A0_StartPage = (props) => {
-  const { navigate } = props.navigation;
-  
-  A0_StartPage.navigationOptions = {
-    title: 'Do cook',
-    headerTransparent: true,
-    headerTintColor: '#E70915',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-  };
-
+const A0_StartPage = ({navigation: {navigate}} ) => {
   return (
   <Container>
+    <StatusBar barStyle = "dark-content" hidden = {true} backgroundColor = "#00BCD4" translucent = {true}/>
     <ImageBackground source={require('~/Assets/Images/Main-picture.jpg')} style = {styles.picture}>
       <View style = {{flex:1, alignSelf: 'stretch', backgroundColor: 'rgba(0,0,0,0.6)'}}>
         <Logo>
@@ -48,7 +38,7 @@ const A0_StartPage = (props) => {
           <ButtonLocate>
             <Button
               style={{ marginBottom: 24 }}
-              title="두쿡 로그인"
+              title="Login for E-mail"
               onPress={() => {
               navigate('A5_DkLogin');
             }}
@@ -56,7 +46,7 @@ const A0_StartPage = (props) => {
 
             <Button
               style={{ marginBottom: 24 }}
-              title="구글 로그인"
+              title="Login for Google"
               onPress={() => {
               navigate('A6_GoogleLogin');
             }}

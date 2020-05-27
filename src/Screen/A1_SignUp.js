@@ -33,11 +33,9 @@ const styles = StyleSheet.create({
 
 
 
-const A1_SignUp = (props) => {
+const A1_SignUp = ({navigation: {navigate}} ) => {
 
-  const { navigate } = props.navigation;
-
-  var {userInfo, setuserInfo} = useState(null);
+  let {userInfo, setuserInfo} = useState(null);
 
   const {gettingLoginStatus, setgettingLoginStatus} = useState(false);
 
@@ -90,8 +88,7 @@ const _signIn=async()=>{
         userInfo.accessToken,
       );
       await firebase.auth().signInWithCredential(credential);
-
-        return true;
+      
     } catch (error) {
         console.log('Message', error.message);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -138,13 +135,8 @@ const _signOut = async() => {
             style={{ marginBottom: 24 }}
             title="구글 회원가입"
             onPress={() => {
-                if(_signIn()){
-                  navigate('A6_GoogleLogin');
-                }
-                else{
-                  alert('Sign In Error');
-                }
-
+            _signIn().then(() => navigate('A4_InputNickname'));
+            
           }}
           />
         </ButtonLocate>
@@ -152,8 +144,6 @@ const _signOut = async() => {
     </ImageBackground>
   </Container>
   );
-    //    }
-
 };
 
 export default A1_SignUp;
