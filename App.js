@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -198,5 +198,6 @@ const MainTabs = createBottomTabNavigator(
 
     const styles = StyleSheet.create({
     });
+
 
 export default createAppContainer(AppNavigator);

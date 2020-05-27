@@ -37,8 +37,7 @@ const A1_SignUp = ({navigation: {navigate}} ) => {
 
   let {userInfo, setuserInfo} = useState(null);
 
-const {gettingLoginStatus, setgettingLoginStatus} = useState(false);
-
+  const {gettingLoginStatus, setgettingLoginStatus} = useState(false);
 
   useEffect(() => {
     GoogleSignin.configure({
@@ -101,6 +100,7 @@ const _signIn=async()=>{
       } else {
           console.log('Some Other Error Happened');// some other error happened
       }
+      return false;
   }
 };
 
@@ -135,7 +135,7 @@ const _signOut = async() => {
             style={{ marginBottom: 24 }}
             title="구글 회원가입"
             onPress={() => {
-            _signIn();
+            _signIn().then(() => navigate('A4_InputNickname'));
             
           }}
           />
