@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {StyleSheet, View } from 'react-native';
 import Styled from 'styled-components/native';
-
+import {firebase} from '@react-native-firebase/auth';
 import Button from '~/Components/MyButton2';
 import Input from '~/Components/Input';
 
@@ -55,6 +55,24 @@ const TempButton = Styled.View`
 `;
 
 const A4_InputNickname = ({navigation: {navigate}} ) => {
+  // Set an initializing state whilst Firebase connects
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+  const [nickname,setnickname] = useState('');
+
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    setUser(user);
+    if (initializing) setInitializing(false);
+    console.log(user.displayName);
+  }
+
+  useEffect(() => {
+    const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
+  if (initializing) return null;
 
   return (
       <Container>
@@ -65,7 +83,10 @@ const A4_InputNickname = ({navigation: {navigate}} ) => {
         <Temp>
           <FormContainer>
             <InputTextName>사용할 닉네임</InputTextName>
-            <Input style={{ marginBottom: 7 }} />
+            <Input 
+            style={{ marginBottom: 7 }}
+            onChangeText={nickname=>{setnickname(nickname)}}
+            value={nickname} />
           </FormContainer>
           <TempButton>
             <Button
@@ -79,6 +100,9 @@ const A4_InputNickname = ({navigation: {navigate}} ) => {
             <Button
               title="시작하기"
               onPress={() => {
+              user.updateProfile({
+                displayName: nickname,
+              })
               navigate('요리하기');
             }}
             />
