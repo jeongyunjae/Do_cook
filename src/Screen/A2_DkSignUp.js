@@ -63,10 +63,28 @@ const A2_DkSignUp = ({navigation: {navigate}} ) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(() => navigate('A4_InputNickname'))
-      .catch(e => seterrorMessage(e.message)); //TODO : firebase
+      .then(() => {
+        navigate('A4_InputNickname');
+        console.log(email + 'created & signed in!');
+      })
+      .catch(e => {
+        if (e.code === 'auth/email-already-in-use') {
+          console.log('That email address is already in use!');
+          alert('이미 사용 중인 이메일입니다.');
+        }
+    
+        if (e.code === 'auth/invalid-email') {
+          console.log('That email address is invalid!');
+          alert('형식에 맞지 않는 이메일입니다.');
+        }
+        if(e.code == 'auth/weak-password'){
+          console.log('The given password is invalid. [ Password should be at least 6 characters ');
+          alert('형식에 맞지 않는 비밀번호입니다.\n비밀번호는 6자 이상이어야합니다.')
+        }
+        seterrorMessage(e.message);
+        console.log(errorMessage);
+      }); //TODO : firebase
     console.log('handleSignUp');
-    console.log(errorMessage);
   };
 //비밀번호 6자 이상
   return (
