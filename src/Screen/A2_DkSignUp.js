@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, Alert} from 'react-native';
-import Button from '~/Components/MyButton';
+import Button from '~/Components/button/whiteButton';
 import Styled from 'styled-components/native';
 import Input from '~/Components/Input';
 import {firebase} from '@react-native-firebase/auth';

@@ -1,17 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {firebase} from '@react-native-firebase/auth';
-import MyButton from '../Components/MyButton2';
+import WeColorButton from '~/Components/button/weColorButton';
 import Styled from 'styled-components/native';
 
 const ButtonContainer = Styled.View`
   flex: 1;
-  align-items: center;
-  justify-content: center;
 `;
 
 const InformView = Styled.View`
-  flex:3;
+  flex: 3;
   align-items: center;
   justify-content: center;
 `;
@@ -45,11 +43,14 @@ const G0_MyInform = ({navigation: {navigate}}) => {
   return (
     <View style={styles.container}>
       <InformView>
-        <Text>Your email is {user.email}</Text>
         <Text>반갑습니다 {user.displayName}님!</Text>
+        <Text>Your email is {user.email}</Text>
       </InformView>
       <ButtonContainer>
-        <MyButton title="로그아웃" onPress={() => navigate('A0_StartPage')} />
+        <WeColorButton
+          title="로그아웃"
+          onPress={() => navigate('A0_StartPage')}
+        />
       </ButtonContainer>
     </View>
   );

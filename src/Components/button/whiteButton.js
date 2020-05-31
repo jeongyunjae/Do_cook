@@ -4,27 +4,28 @@ import {View, StyleSheet, Text} from 'react-native';
 
 const Button = Styled.TouchableOpacity`
 width: 40%;
-height: 38px;
+height: 40px;
 padding: 8px;
-margin: 7px;
-background: #EC6139;
+margin: 5px;
+background: rgba(238, 238, 238, 0.9);
 border-radius: 15px;
+border-width: 0.5px;
 border-color: #000000;
 `;
 
 const ButtonText = Styled.Text`
-color: white;
-font-size: 13px;
+color: black;
+font-size: 15px;
 font-weight: bold;
 text-align: center;
 `;
 
-const MyButton2 = ({title, onPress}) => {
+const MyButton = ({title, onPress, key}) => {
   return (
-    <Button onPress={onPress}>
+    <Button activeOpacity={0.8} key={key} onPress={onPress}>
       <ButtonText>{title}</ButtonText>
     </Button>
   );
 };
 
-export default MyButton2;
+export default MyButton;

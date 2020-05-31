@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import Styled from 'styled-components/native';
 
-import Button from '~/Components/MyButton';
+import Button from '~/Components/button/whiteButton';
 
 const Container = Styled.SafeAreaView`
   flex: 1;

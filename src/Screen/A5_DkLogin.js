@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {StyleSheet, View, ImageBackground, Image} from 'react-native';
 import Styled from 'styled-components/native';
 
-import Button from '~/Components/MyButton2';
+import Button from '~/Components/button/weColorButton';
 import Input from '~/Components/Input';
 
 import {firebase} from '@react-native-firebase/auth';
@@ -33,7 +33,7 @@ const InputTextName = Styled.Text`
   margin: 2.5px;
   color: white;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 14.5px;
 `;
 
 const styles = StyleSheet.create({

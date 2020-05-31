@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Styled from 'styled-components/native';
 import {firebase} from '@react-native-firebase/auth';
-import Button from '~/Components/MyButton2';
+import Button from '~/Components/button/weColorButton';
 import Input from '~/Components/Input';
 
 const Container = Styled.SafeAreaView`
@@ -92,12 +92,7 @@ const A4_InputNickname = ({navigation: {navigate}}) => {
             />
           </FormContainer>
           <TempButton>
-            <Button
-              title="확인"
-              onPress={() => {
-                alert('사용가능한 닉네임입니다.');
-              }}
-            />
+            <Button title="확인" />
           </TempButton>
         </Temp>
         <Button

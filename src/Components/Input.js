@@ -6,7 +6,7 @@ const Container = Styled.View`
   height: 41px;
   padding-left: 8px;
   padding-right: 8px;
-  border-radius: 8px;
+  border-radius: 11px;
   background: rgba(196, 196, 196, 0.7);
 `;
 const InputField = Styled.TextInput`
