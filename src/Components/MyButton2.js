@@ -1,7 +1,6 @@
 import React from 'react';
 import Styled from 'styled-components/native';
-import {View, StyleSheet, Text } from 'react-native';
-
+import {View, StyleSheet, Text} from 'react-native';
 
 const Button = Styled.TouchableOpacity`
 width: 40%;
@@ -21,11 +20,11 @@ text-align: center;
 `;
 
 const MyButton2 = ({title, onPress}) => {
-    return (
-        <Button onPress={onPress}>
-            <ButtonText>{title}</ButtonText>
-        </Button>
-    );
-}
+  return (
+    <Button onPress={onPress}>
+      <ButtonText>{title}</ButtonText>
+    </Button>
+  );
+};
 
 export default MyButton2;

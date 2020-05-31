@@ -2,11 +2,8 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 const E0_MyCook = () => {
-    return (
-        <View style={styles.container}>
-        </View>
-      );
-}
+  return <View style={styles.container} />;
+};
 
 const styles = StyleSheet.create({
   container: {

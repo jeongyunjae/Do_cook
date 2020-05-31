@@ -1,8 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {firebase} from '@react-native-firebase/auth';
+import MyButton from '../Components/MyButton2';
+import Styled from 'styled-components/native';
 
-const G0_MyInform = () => {
+const ButtonContainer = Styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+const InformView = Styled.View`
+  flex:3;
+  align-items: center;
+  justify-content: center;
+`;
+
+const G0_MyInform = ({navigation: {navigate}}) => {
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
@@ -20,27 +34,26 @@ const G0_MyInform = () => {
   }, []);
 
   if (initializing) return null;
-  
-  if(!user){
-    return(
+
+  if (!user) {
+    return (
       <View style={styles.container}>
-      <Text>
-        Please Login
-      </Text>
-    </View>
-    )
+        <Text>Please Login</Text>
+      </View>
+    );
   }
   return (
-        <View style={styles.container}>
-          <Text>
-          Hi {user.email}!
-          </Text>
-          <Text>
-            Your nickname is '{user.displayName}'
-          </Text>
-        </View>
-      );
-}
+    <View style={styles.container}>
+      <InformView>
+        <Text>Your email is {user.email}</Text>
+        <Text>반갑습니다 {user.displayName}님!</Text>
+      </InformView>
+      <ButtonContainer>
+        <MyButton title="로그아웃" onPress={() => navigate('A0_StartPage')} />
+      </ButtonContainer>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

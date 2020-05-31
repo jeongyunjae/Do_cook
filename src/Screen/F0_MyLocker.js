@@ -2,11 +2,8 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 const F0_MyLocker = () => {
-    return (
-        <View style={styles.container}>
-        </View>
-      );
-}
+  return <View style={styles.container} />;
+};
 
 const styles = StyleSheet.create({
   container: {

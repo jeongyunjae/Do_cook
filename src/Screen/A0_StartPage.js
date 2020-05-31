@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, Image, ImageBackground, StatusBar} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Image,
+  ImageBackground,
+  StatusBar,
+} from 'react-native';
 import Styled from 'styled-components/native';
 
 import Button from '~/Components/MyButton';
@@ -26,47 +32,56 @@ const styles = StyleSheet.create({
   },
 });
 
-const A0_StartPage = ({navigation: {navigate}} ) => {
+const A0_StartPage = ({navigation: {navigate}}) => {
   return (
-  <Container>
-    <StatusBar barStyle = "dark-content" hidden = {true} backgroundColor = "#00BCD4" translucent = {true}/>
-    <ImageBackground source={require('~/Assets/Images/Main-picture.jpg')} style = {styles.picture}>
-      <View style = {{flex:1, alignSelf: 'stretch', backgroundColor: 'rgba(0,0,0,0.6)'}}>
-        <Logo>
-          <Image source={require('~/Assets/Images/Logo.png')} />
-        </Logo>
+    <Container>
+      <StatusBar
+        barStyle="dark-content"
+        hidden={true}
+        backgroundColor="#00BCD4"
+        translucent={true}
+      />
+      <ImageBackground
+        source={require('~/Assets/Images/Main-picture.jpg')}
+        style={styles.picture}>
+        <View
+          style={{
+            flex: 1,
+            alignSelf: 'stretch',
+            backgroundColor: 'rgba(0,0,0,0.6)',
+          }}>
+          <Logo>
+            <Image source={require('~/Assets/Images/Logo.png')} />
+          </Logo>
           <ButtonLocate>
             <Button
-              style={{ marginBottom: 24 }}
+              style={{marginBottom: 20}}
               title="Login for E-mail"
               onPress={() => {
-              navigate('A5_DkLogin');
-            }}
+                navigate('A5_DkLogin');
+              }}
             />
 
             <Button
-              style={{ marginBottom: 24 }}
+              style={{marginBottom: 20}}
               title="Login for Google"
               onPress={() => {
-              navigate('A6_GoogleLogin');
-            }}
+                navigate('A6_GoogleLogin');
+              }}
             />
 
             <Button
-              style={{ marginBottom: 24 }}
+              style={{marginBottom: 20}}
               title="회원가입"
               onPress={() => {
-              navigate('A1_SignUp');
+                navigate('A1_SignUp');
               }}
             />
           </ButtonLocate>
-      </View>
-    </ImageBackground>
-  </Container>
+        </View>
+      </ImageBackground>
+    </Container>
   );
-
 };
-
-
 
 export default A0_StartPage;

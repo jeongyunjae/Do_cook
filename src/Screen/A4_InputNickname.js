@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View } from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import Styled from 'styled-components/native';
 import {firebase} from '@react-native-firebase/auth';
 import Button from '~/Components/MyButton2';
@@ -54,11 +54,11 @@ const TempButton = Styled.View`
   padding-top: 44.5px;
 `;
 
-const A4_InputNickname = ({navigation: {navigate}} ) => {
+const A4_InputNickname = ({navigation: {navigate}}) => {
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
-  const [nickname,setnickname] = useState('');
+  const [nickname, setnickname] = useState('');
 
   // Handle user state changes
   function onAuthStateChanged(user) {
@@ -75,7 +75,7 @@ const A4_InputNickname = ({navigation: {navigate}} ) => {
   if (initializing) return null;
 
   return (
-      <Container>
+    <Container>
       <TitleContainer>
         <TitleText>회원가입</TitleText>
       </TitleContainer>
@@ -83,33 +83,35 @@ const A4_InputNickname = ({navigation: {navigate}} ) => {
         <Temp>
           <FormContainer>
             <InputTextName>사용할 닉네임</InputTextName>
-            <Input 
-            style={{ marginBottom: 7 }}
-            onChangeText={nickname=>{setnickname(nickname)}}
-            value={nickname} />
+            <Input
+              style={{marginBottom: 7}}
+              onChangeText={nickname => {
+                setnickname(nickname);
+              }}
+              value={nickname}
+            />
           </FormContainer>
           <TempButton>
             <Button
               title="확인"
               onPress={() => {
-              alert("사용가능한 닉네임입니다.");
-            }}
+                alert('사용가능한 닉네임입니다.');
+              }}
             />
-            </TempButton>
-            </Temp>
-            <Button
-              title="시작하기"
-              onPress={() => {
-              user.updateProfile({
-                displayName: nickname,
-              })
-              navigate('요리하기');
-            }}
-            />
-        </FormAndButton>
-        </Container>
+          </TempButton>
+        </Temp>
+        <Button
+          title="시작하기"
+          onPress={() => {
+            user.updateProfile({
+              displayName: nickname,
+            });
+            navigate('요리하기');
+          }}
+        />
+      </FormAndButton>
+    </Container>
   );
-
 };
 
 export default A4_InputNickname;

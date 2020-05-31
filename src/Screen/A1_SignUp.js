@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, View, Text, ImageBackground, Image } from 'react-native';
+import {StyleSheet, View, Text, ImageBackground, Image} from 'react-native';
 import Button from '~/Components/MyButton';
 import Styled from 'styled-components/native';
 import {
   GoogleSignin,
   GoogleSigninButton,
-  statusCodes, 
+  statusCodes,
 } from '@react-native-community/google-signin';
 import {firebase} from '@react-native-firebase/auth';
 
@@ -31,10 +31,7 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
-const A1_SignUp = ({navigation: {navigate}} ) => {
-
+const A1_SignUp = ({navigation: {navigate}}) => {
   let {userInfo, setuserInfo} = useState(null);
 
   const {gettingLoginStatus, setgettingLoginStatus} = useState(false);
@@ -44,12 +41,11 @@ const A1_SignUp = ({navigation: {navigate}} ) => {
       scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
       webClientId:
         '109877646891-jtgsjr70h56lnhcgki3ampro788pf6nh.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
-      });
-//    _isSignedIn();
+    });
+    //    _isSignedIn();
   }, []);
 
-  
-/*const _isSignedIn = async()=>{
+  /*const _isSignedIn = async()=>{
   const isSignedIn = await GoogleSignin.isSignedIn();
   if(isSignedIn){
     alert('User is already signed in');
@@ -76,8 +72,8 @@ const _getCurrentUserInfo = async () => {
   }
 };*/
 
-const _signIn=async()=>{
-  try {
+  const _signIn = async () => {
+    try {
       await GoogleSignin.hasPlayServices();
       //await GoogleSignin.configure();
       userInfo = await GoogleSignin.signIn();
@@ -88,61 +84,66 @@ const _signIn=async()=>{
         userInfo.accessToken,
       );
       await firebase.auth().signInWithCredential(credential);
-      
     } catch (error) {
-        console.log('Message', error.message);
+      console.log('Message', error.message);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-          console.log('User Cancelled the Login Flow');// user cancelled the login flow
+        console.log('User Cancelled the Login Flow'); // user cancelled the login flow
       } else if (error.code === statusCodes.IN_PROGRESS) {
-          console.log('Signing In');// operation (e.g. sign in) is in progress already
+        console.log('Signing In'); // operation (e.g. sign in) is in progress already
       } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-          console.log('Play Services Not Available or Outdated');// play services not available or outdated
+        console.log('Play Services Not Available or Outdated'); // play services not available or outdated
       } else {
-          console.log('Some Other Error Happened');// some other error happened
+        console.log('Some Other Error Happened'); // some other error happened
       }
       return false;
-  }
-};
+    }
+  };
 
-const _signOut = async() => {
-  try{
+  const _signOut = async () => {
+    try {
       await GoogleSignin.revokeAccess();
       await GoogleSignin.signOut();
       setuserInfo(null);
-  } catch(error){
+    } catch (error) {
       console.error(error);
-  }
-};
+    }
+  };
 
-//if(userInfo !=null){}
-//else{
+  //if(userInfo !=null){}
+  //else{
   return (
-   <Container>
-    <ImageBackground source={require('~/Assets/Images/Main-picture.jpg')} style = {styles.picture}>
-      <View style = {{flex:1, alignSelf: 'stretch', backgroundColor: 'rgba(0,0,0,0.6)'}}>
-        <Logo>
-          <Image source={require('~/Assets/Images/Logo.png')} />
-        </Logo>
-        <ButtonLocate>
-          <Button
-            style={{ marginBottom: 24 }}
-            title="자체 회원가입"
-            onPress={() => {
-            navigate('A2_DkSignUp');
-          }}
-          />
-          <Button
-            style={{ marginBottom: 24 }}
-            title="구글 회원가입"
-            onPress={() => {
-            _signIn().then(() => navigate('A4_InputNickname'));
-            
-          }}
-          />
-        </ButtonLocate>
-      </View>
-    </ImageBackground>
-  </Container>
+    <Container>
+      <ImageBackground
+        source={require('~/Assets/Images/Main-picture.jpg')}
+        style={styles.picture}>
+        <View
+          style={{
+            flex: 1,
+            alignSelf: 'stretch',
+            backgroundColor: 'rgba(0,0,0,0.6)',
+          }}>
+          <Logo>
+            <Image source={require('~/Assets/Images/Logo.png')} />
+          </Logo>
+          <ButtonLocate>
+            <Button
+              style={{marginBottom: 24}}
+              title="자체 회원가입"
+              onPress={() => {
+                navigate('A2_DkSignUp');
+              }}
+            />
+            <Button
+              style={{marginBottom: 24}}
+              title="구글 회원가입"
+              onPress={() => {
+                _signIn().then(() => navigate('A4_InputNickname'));
+              }}
+            />
+          </ButtonLocate>
+        </View>
+      </ImageBackground>
+    </Container>
   );
 };
 

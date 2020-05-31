@@ -1,44 +1,45 @@
 import React from 'react';
 import Styled from 'styled-components/native';
 import MyButton from '../Components/MyButton2';
+import MeterialButton from '~/Components/MyButton3';
 
-import { StatusBar } from 'react-native'; 
+import {StatusBar} from 'react-native';
+import CookData from '~/Components/CookData';
+
 const Container = Styled.SafeAreaView`
   flex: 1;
   background-color: #ffffff;
 `;
 
-const TitleContainer = Styled.View`
-  flex: 4;
-  justify-content: center;
-  align-items: center;
+const SelectMeterial = Styled.View`
+  flex: 1;
+  `;
 
-`;
+const C0_MainPage = ({navigation: {navigate}}) => {
+  const data = CookData;
 
-const TitleText = Styled.Text`
-  font-size: 32px;
-  font-weight: bold;
-  color: black;
-`;
-
-const ButtonContainer = Styled.View`
-  flex: 2;
-  align-items: center;
-  justify-content: center;
-`;
-
-const C0_MainPage = ({navigation: {navigate}} ) => {
   return (
-  <Container>
-      <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor={'transparent'} translucent={true}/>
-    <TitleContainer>
-    </TitleContainer>
-      <ButtonContainer>
-        <MyButton title = "로그아웃" onPress = {()=>navigate('A0_StartPage')} />
-      </ButtonContainer>
-  </Container>
+    <Container>
+      <StatusBar
+        barStyle="dark-content"
+        hidden={false}
+        backgroundColor={'transparent'}
+        translucent={true}
+      />
+      <SelectMeterial>
+        {data.map(i => {
+          return (
+            <MeterialButton
+              title={i.title}
+              onPress={() => {
+                navigate('A5_DkLogin');
+              }}
+            />
+          );
+        })}
+      </SelectMeterial>
+    </Container>
   );
-  
 };
 
-export default C0_MainPage;   
+export default C0_MainPage;
