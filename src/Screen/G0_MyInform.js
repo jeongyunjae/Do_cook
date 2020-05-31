@@ -11,6 +11,7 @@ const G0_MyInform = () => {
   function onAuthStateChanged(user) {
     setUser(user);
     if (initializing) setInitializing(false);
+    console.log(user.displayName);
   }
 
   useEffect(() => {
@@ -32,7 +33,10 @@ const G0_MyInform = () => {
   return (
         <View style={styles.container}>
           <Text>
-            Hi {user.email}!
+          Hi {user.email}!
+          </Text>
+          <Text>
+            Your nickname is '{user.displayName}'
           </Text>
         </View>
       );

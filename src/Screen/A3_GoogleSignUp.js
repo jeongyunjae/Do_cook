@@ -16,7 +16,7 @@ const A3_GoogleSignUp = ({navigation: {navigate}} ) => {
         style={{ marginBottom: 24 }}
         title="다음 단계로"
         onPress={() => {
-        navigate('A4_InputNickname');
+        navigate('요리하기');
       }}
       />
   </Container>
