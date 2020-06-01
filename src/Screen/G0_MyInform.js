@@ -6,6 +6,7 @@ const G0_MyInform = () => {
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
+  const [ver, setver] = useState('no');
 
   // Handle user state changes
   function onAuthStateChanged(user) {
@@ -20,7 +21,7 @@ const G0_MyInform = () => {
   }, []);
 
   if (initializing) return null;
-  
+
   if(!user){
     return(
       <View style={styles.container}>
@@ -38,7 +39,7 @@ const G0_MyInform = () => {
           <Text>
             Your nickname is '{user.displayName}'
           </Text>
-        </View>
+          </View>
       );
 }
 
