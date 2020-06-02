@@ -3,10 +3,7 @@ import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 
-import {
-  StyleSheet,
-  Image,
-} from 'react-native';
+import {StyleSheet, Image} from 'react-native';
 
 //Screens
 import CheckLogin from '~/Screen/CheckLogin';
@@ -17,7 +14,9 @@ import A3_GoogleSignUp from '~/Screen/A3_GoogleSignUp';
 import A4_InputNickname from '~/Screen/A4_InputNickname';
 import A5_DkLogin from '~/Screen/A5_DkLogin';
 import A6_GoogleLogin from '~/Screen/A6_GoogleLogin';
+import A7_SendEmail from '~/Screen/A7_SendEmail';
 import C0_MainPage from '~/Screen/C0_MainPage';
+import C1_SearchResult from '~/Screen/C1_SearchResult';
 import D0_CookBoast from '~/Screen/D0_CookBoast';
 import E0_MyCook from '~/Screen/E0_MyCook';
 import F0_MyLocker from '~/Screen/F0_MyLocker';
@@ -33,8 +32,9 @@ const A_Navigator = createStackNavigator(
     A4_InputNickname,
     A5_DkLogin,
     A6_GoogleLogin,
+    A7_SendEmail,
   },
-  { 
+  {
     headerMode: 'none',
   },
 );
@@ -42,6 +42,7 @@ const A_Navigator = createStackNavigator(
 const C_Navigator = createStackNavigator(
   {
     요리하기: {screen: C0_MainPage},
+    C1_SearchResult,
   },
   {
     defaultNavigationOptions: {
@@ -57,7 +58,7 @@ const C_Navigator = createStackNavigator(
         fontSize: 21,
       },
     },
-  }
+  },
 );
 
 const D_Navigator = createStackNavigator(
@@ -78,7 +79,7 @@ const D_Navigator = createStackNavigator(
         fontSize: 21,
       },
     },
-  }
+  },
 );
 
 const E_Navigator = createStackNavigator(
@@ -99,7 +100,7 @@ const E_Navigator = createStackNavigator(
         fontSize: 21,
       },
     },
-  }
+  },
 );
 
 const F_Navigator = createStackNavigator(
@@ -120,7 +121,7 @@ const F_Navigator = createStackNavigator(
         fontSize: 21,
       },
     },
-  }
+  },
 );
 
 const G_Navigator = createStackNavigator(
@@ -141,7 +142,7 @@ const G_Navigator = createStackNavigator(
         fontSize: 21,
       },
     },
-  }
+  },
 );
 
 const MainTabs = createBottomTabNavigator(
@@ -154,50 +155,55 @@ const MainTabs = createBottomTabNavigator(
   },
 
   {
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ( focused ) => {
-        const { routeName } = navigation.state;
+    defaultNavigationOptions: ({navigation}) => ({
+      tabBarIcon: focused => {
+        const {routeName} = navigation.state;
         let iconName = '';
         if (routeName === '요리하기') {
-          iconName = focused ? require('~/Assets/Images/1.png') : require('~/Assets/Images/3.png');
-        } 
-        else if (routeName === '요리자랑') {
-          iconName = focused ? require('~/Assets/Images/2.png') : require('~/Assets/Images/2.png');
+          iconName = focused
+            ? require('~/Assets/Images/1.png')
+            : require('~/Assets/Images/3.png');
+        } else if (routeName === '요리자랑') {
+          iconName = focused
+            ? require('~/Assets/Images/2.png')
+            : require('~/Assets/Images/2.png');
+        } else if (routeName === '나만의요리') {
+          iconName = focused
+            ? require('~/Assets/Images/3.png')
+            : require('~/Assets/Images/2.png');
+        } else if (routeName === '보관함') {
+          iconName = focused
+            ? require('~/Assets/Images/4.png')
+            : require('~/Assets/Images/2.png');
+        } else if (routeName === '내정보') {
+          iconName = focused
+            ? require('~/Assets/Images/5.png')
+            : require('~/Assets/Images/2.png');
         }
-        else if (routeName === '나만의요리') {
-          iconName = focused ? require('~/Assets/Images/3.png') : require('~/Assets/Images/2.png');
-        }
-        else if (routeName === '보관함') {
-          iconName = focused ? require('~/Assets/Images/4.png') : require('~/Assets/Images/2.png');
-        }
-        else if (routeName === '내정보') {
-          iconName = focused ? require('~/Assets/Images/5.png') : require('~/Assets/Images/2.png');
-        }
-        return (<Image source={ iconName } style={{ width: 20, height: 20 }} />);
+        return <Image source={iconName} style={{width: 20, height: 20}} />;
       },
     }),
     tabBarOptions: {
       activeTintColor: 'black',
       inactiveTintColor: 'gray',
       style: {
-          backgroundColor: '#ffffff',
+        backgroundColor: '#ffffff',
       },
     },
-  }
-  );
+  },
+);
 
-  const AppNavigator = createSwitchNavigator(
-    {
-      CheckLogin,
-      A_Navigator,
-      MainTabs,
-    },
-    {
-      initialRouteName: 'CheckLogin',
-    })
+const AppNavigator = createSwitchNavigator(
+  {
+    CheckLogin,
+    A_Navigator,
+    MainTabs,
+  },
+  {
+    initialRouteName: 'CheckLogin',
+  },
+);
 
-    const styles = StyleSheet.create({
-    });
-
+const styles = StyleSheet.create({});
 
 export default createAppContainer(AppNavigator);

@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
-import {StyleSheet,View,ImageBackground, Image } from 'react-native';
+import {StyleSheet, View, ImageBackground, Image} from 'react-native';
 import Styled from 'styled-components/native';
 
-import Button from '~/Components/MyButton2';
+import Button from '~/Components/button/weColorButton';
 import Input from '~/Components/Input';
 
-import { firebase } from '@react-native-firebase/auth';
+import {firebase} from '@react-native-firebase/auth';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
@@ -33,7 +33,7 @@ const InputTextName = Styled.Text`
   margin: 2.5px;
   color: white;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 14.5px;
 `;
 
 const styles = StyleSheet.create({
@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const A5_DkLogin = ({navigation: {navigate}} ) => {
-  const [email, setemail]=useState('');
-  const [password, setpassword]=useState('');
-  const [errorMessage, seterrorMessage]=useState(null);
+const A5_DkLogin = ({navigation: {navigate}}) => {
+  const [email, setemail] = useState('');
+  const [password, setpassword] = useState('');
+  const [errorMessage, seterrorMessage] = useState(null);
 
   const handleLogin = () => {
     firebase
@@ -64,24 +64,30 @@ const A5_DkLogin = ({navigation: {navigate}} ) => {
   };
 
   return (
-  <Container>
-    <ImageBackground source={require('~/Assets/Images/Main-picture.jpg')} style = {styles.picture}>
-      <View style = {{flex:1, alignSelf: 'stretch', backgroundColor: 'rgba(0,0,0,0.6)'}}>
-        <Logo>
-          <Image source={require('~/Assets/Images/Logo.png')} />
-        </Logo>
+    <Container>
+      <ImageBackground
+        source={require('~/Assets/Images/Main-picture.jpg')}
+        style={styles.picture}>
+        <View
+          style={{
+            flex: 1,
+            alignSelf: 'stretch',
+            backgroundColor: 'rgba(0,0,0,0.6)',
+          }}>
+          <Logo>
+            <Image source={require('~/Assets/Images/Logo.png')} />
+          </Logo>
           <FormAndButton>
             <FormContainer>
               <InputTextName>이메일 주소</InputTextName>
               <Input
                 style={{marginBottom: 7}}
-                onChangeText={email => 
-                  setemail(email)}
+                onChangeText={email => setemail(email)}
                 value={email}
               />
               <InputTextName>비밀번호</InputTextName>
               <Input
-                style={{ marginBottom: 15 }}
+                style={{marginBottom: 15}}
                 secureTextEntry={true}
                 onChangeText={password => setpassword(password)}
                 value={password}
@@ -91,16 +97,15 @@ const A5_DkLogin = ({navigation: {navigate}} ) => {
               title="로그인"
               onPress={() => {
                 handleLogin();
-              /*AsyncStorage.setItem('key', 'JYJ');
+                /*AsyncStorage.setItem('key', 'JYJ');
               navigate('요리하기');*/
               }}
             />
           </FormAndButton>
-      </View>
-    </ImageBackground>
-  </Container>
+        </View>
+      </ImageBackground>
+    </Container>
   );
-
 };
 
 export default A5_DkLogin;

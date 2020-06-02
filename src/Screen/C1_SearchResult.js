@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const F0_MyLocker = () => {
+const C1_SearchResult = () => {
   return <View style={styles.container} />;
 };
 
@@ -13,4 +13,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default F0_MyLocker;
+export default C1_SearchResult;
