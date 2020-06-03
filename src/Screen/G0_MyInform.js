@@ -4,14 +4,28 @@ import {firebase} from '@react-native-firebase/auth';
 import WeColorButton from '~/Components/button/weColorButton';
 import Styled from 'styled-components/native';
 
+const Container = Styled.SafeAreaView`
+  flex: 1;
+  background-color: #ffffff;`;
+
 const ButtonContainer = Styled.View`
   flex: 1;
 `;
 
 const InformView = Styled.View`
-  flex: 3;
+  flex: 5;
   align-items: center;
   justify-content: center;
+`;
+
+const EmailAndButton = Styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Inner = Styled.View`
+  flex: 1;
 `;
 
 const G0_MyInform = ({navigation: {navigate}}) => {
@@ -41,31 +55,56 @@ const G0_MyInform = ({navigation: {navigate}}) => {
     return (
       <View style={styles.container}>
         <InformView>
-        <Text>이메일 인증하세요.</Text>
+          <Text>이메일 인증하세요.</Text>
         </InformView>
         <ButtonContainer>
           <WeColorButton
             title="로그아웃"
-            onPress={()=> navigate('A0_StartPage')}
+            onPress={() => navigate('A0_StartPage')}
           />
         </ButtonContainer>
       </View>
     );
   } else {
   return (
-    <View style={styles.container}>
-      <InformView>
-        <Text>반갑습니다 {user.displayName}님!</Text>
+    <Container>
+      <View style={{padding: 16}} />
+      <View style={{alignItems: 'center'}}>
+        <Text style={{fontWeight: 'bold', fontSize: 20, color: 'black'}}>
+          안녕하세요 {user.displayName}님
+        </Text>
+      </View>
+      <View
+        style={{
+          margin: 16,
+          borderBottomWidth: 1,
+          borderColor: 'gray',
+          width: 368,
+        }}
+      />
+      <Inner>
+        <View>
+          <Text style={{padding: 16, fontSize: 16, color: 'black'}}>
+            정보수정
+          </Text>
+        </View>
+        <View>
+          <Text style={{padding: 16, fontSize: 16, color: 'black'}}>
+            튜토리얼
+          </Text>
+        </View>
+      </Inner>
+      <EmailAndButton>
         <Text>Your email is {user.email}</Text>
         <Text>email 인증 : {ver}</Text>
-      </InformView>
-      <ButtonContainer>
-        <WeColorButton
-          title="로그아웃"
-          onPress={() => navigate('A0_StartPage')}
-        />
-      </ButtonContainer>
-    </View>
+        <ButtonContainer>
+          <WeColorButton
+            title="로그아웃"
+            onPress={() => navigate('A0_StartPage')}
+          />
+        </ButtonContainer>
+      </EmailAndButton>
+    </Container>
   );
   }
 };

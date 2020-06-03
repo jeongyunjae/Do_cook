@@ -94,7 +94,10 @@ const A4_InputNickname = ({navigation: {navigate}}) => {
           <TempButton>
             <Button 
             title="확인" 
-            onPress={() => {alert('닉네임은 ',nickname,'입니다.')}}/>
+              onPress={() => {
+                alert('닉네임은 ' + nickname + '입니다.');
+              }}
+            />
           </TempButton>
         </Temp>
         <Button
