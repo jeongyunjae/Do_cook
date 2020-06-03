@@ -121,7 +121,16 @@ const A2_DkSignUp = ({navigation: {navigate}}) => {
           style={{marginBottom: 24}}
           title="다음"
           onPress={() => {
-            if (password == passwordcheck) {
+            if(email == ''){
+              alert('이메일 주소가 비어있습니다.');
+            }
+            else if(password == ''){
+              alert('비밀번호가 비어있습니다.');
+            }
+            else if(passwordcheck == ''){
+              alert('비밀번호 확인이 비어있습니다.');
+            }
+            else if (password == passwordcheck) {
               handleSignUp();
             } else {
               alert('비밀번호와 비밀번호 확인이 다릅니다.');

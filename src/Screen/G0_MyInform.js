@@ -41,19 +41,6 @@ const G0_MyInform = ({navigation: {navigate}}) => {
     if (user.emailVerified) setver('yes');
     console.log(user.displayName);
   }
-  function handleSendEmail() {
-    firebase
-      .auth()
-      .currentUser.sendEmailVerification()
-      .then(function() {
-        alert('이메일을 확인하세요.');
-        console.log('인증이메일 발송');
-      })
-      .catch(function(error) {
-        alert('이메일 발송 에러', error);
-        console.log('인증이메일 발송 에러', error);
-      });
-  }
 
   useEffect(() => {
     const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
@@ -78,7 +65,7 @@ const G0_MyInform = ({navigation: {navigate}}) => {
         </ButtonContainer>
       </View>
     );
-  }
+  } else {
   return (
     <Container>
       <View style={{padding: 16}} />
@@ -119,6 +106,7 @@ const G0_MyInform = ({navigation: {navigate}}) => {
       </EmailAndButton>
     </Container>
   );
+  }
 };
 
 const styles = StyleSheet.create({
