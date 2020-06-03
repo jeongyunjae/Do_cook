@@ -1,9 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
-import {firebase} from '@react-native-firebase/auth';
-import WeColorButton from '~/Components/button/weColorButton';
+import AsyncStorage from '@react-native-community/async-storage';
 import Styled from 'styled-components/native';
+import {firebase} from '@react-native-firebase/auth';
+import React, {useState, useEffect} from 'react';
+import {ActivityIndicator, StyleSheet, Text, View, Button} from 'react-native';
+import WeColorButton from '~/Components/button/weColorButton';
 
+const Container = Styled.View`
+  flex: 1;
+  background-color: #141414;
+  justify-content: center;
+  align-items: center;
+`;
 const ButtonContainer = Styled.View`
   flex: 1;
 `;
@@ -14,7 +21,11 @@ const InformView = Styled.View`
   justify-content: center;
 `;
 
-const G0_MyInform = ({navigation: {navigate}}) => {
+const Checklogin = ({navigation: {navigate}}) => {
+ /* AsyncStorage.getItem('key').then(value => {
+    if (value) navigate('MainTabs');
+    else navigate('A0_StartPage');
+  });*/
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
@@ -27,6 +38,7 @@ const G0_MyInform = ({navigation: {navigate}}) => {
     if (user.emailVerified) setver('yes');
     console.log(user.displayName);
   }
+
   function handleSendEmail(){
     firebase.auth().currentUser.sendEmailVerification().then(function(){
       alert('이메일을 확인하세요.');
@@ -44,46 +56,33 @@ const G0_MyInform = ({navigation: {navigate}}) => {
 
   if (initializing) return null;
 
+
   console.log(user);
 
-  if (ver=='no') {
-    return (
-      <View style={styles.container}>
-        <InformView>
-        <Text>이메일 인증하세요.</Text>
-        </InformView>
-        <ButtonContainer>
-          <WeColorButton
-            title="로그아웃"
-            onPress={()=> navigate('A0_StartPage')}
-          />
-        </ButtonContainer>
-      </View>
-    );
-  }
+  //사용자 인증이 확인되면 C0요리하기 페이지로, 안되면 로그인 페이지로
   return (
     <View style={styles.container}>
       <InformView>
-        <Text>반갑습니다 {user.displayName}님!</Text>
-        <Text>Your email is {user.email}</Text>
-        <Text>email 인증 : {ver}</Text>
-      </InformView>
-      <ButtonContainer>
-        <WeColorButton
-          title="로그아웃"
-          onPress={() => navigate('A0_StartPage')}
-        />
-      </ButtonContainer>
+        <Text>이메일 인증하세요.</Text>
+        </InformView>
+        <ButtonContainer>
+            <WeColorButton
+            title="이메일 보내기"
+            onPress={()=>handleSendEmail()}/>
+          <WeColorButton
+            title="next"
+            onPress={()=> navigate('A4_InputNickname')}
+          />
+        </ButtonContainer>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
-
-export default G0_MyInform;
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  });
+export default Checklogin;

@@ -60,7 +60,7 @@ const A2_DkSignUp = ({navigation: {navigate}}) => {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        navigate('A4_InputNickname');
+        navigate('A7_SendEmail');
         console.log(email + ' created & signed in!');
       })
       .catch(e => {

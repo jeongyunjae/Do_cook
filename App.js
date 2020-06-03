@@ -14,6 +14,7 @@ import A3_GoogleSignUp from '~/Screen/A3_GoogleSignUp';
 import A4_InputNickname from '~/Screen/A4_InputNickname';
 import A5_DkLogin from '~/Screen/A5_DkLogin';
 import A6_GoogleLogin from '~/Screen/A6_GoogleLogin';
+import A7_SendEmail from '~/Screen/A7_SendEmail';
 import C0_MainPage from '~/Screen/C0_MainPage';
 import C1_SearchResult from '~/Screen/C1_SearchResult';
 import D0_CookBoast from '~/Screen/D0_CookBoast';
@@ -31,6 +32,7 @@ const A_Navigator = createStackNavigator(
     A4_InputNickname,
     A5_DkLogin,
     A6_GoogleLogin,
+    A7_SendEmail,
   },
   {
     headerMode: 'none',

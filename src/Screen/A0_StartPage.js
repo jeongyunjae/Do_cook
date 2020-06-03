@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   View,
@@ -9,6 +9,8 @@ import {
 import Styled from 'styled-components/native';
 
 import Button from '~/Components/button/whiteButton';
+import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
+import {firebase} from '@react-native-firebase/auth';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
@@ -33,6 +35,43 @@ const styles = StyleSheet.create({
 });
 
 const A0_StartPage = ({navigation: {navigate}}) => {
+  let {userInfo, setuserInfo} = useState(null);
+
+  useEffect(() => {
+    GoogleSignin.configure({
+      scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
+      webClientId:
+        '109877646891-jtgsjr70h56lnhcgki3ampro788pf6nh.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
+    });
+  }, []);
+
+  const _signIn = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+      //await GoogleSignin.configure();
+      userInfo = await GoogleSignin.signIn();
+      console.log(userInfo);
+
+      const credential = firebase.auth.GoogleAuthProvider.credential(
+        userInfo.idToken,
+        userInfo.accessToken,
+      );
+      await firebase.auth().signInWithCredential(credential);
+    } catch (error) {
+      console.log('Message', error.message);
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        console.log('User Cancelled the Login Flow'); // user cancelled the login flow
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        console.log('Signing In'); // operation (e.g. sign in) is in progress already
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log('Play Services Not Available or Outdated'); // play services not available or outdated
+      } else {
+        console.log('Some Other Error Happened'); // some other error happened
+      }
+      return false;
+    }
+  };
+
   return (
     <Container>
       <StatusBar
@@ -66,7 +105,7 @@ const A0_StartPage = ({navigation: {navigate}}) => {
               style={{marginBottom: 20}}
               title="Login for Google"
               onPress={() => {
-                navigate('A6_GoogleLogin');
+               _signIn().then(() => navigate('요리하기'));
               }}
             />
 
