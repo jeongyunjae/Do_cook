@@ -66,46 +66,46 @@ const G0_MyInform = ({navigation: {navigate}}) => {
       </View>
     );
   } else {
-  return (
-    <Container>
-      <View style={{padding: 16}} />
-      <View style={{alignItems: 'center'}}>
-        <Text style={{fontWeight: 'bold', fontSize: 20, color: 'black'}}>
-          안녕하세요 {user.displayName}님
-        </Text>
-      </View>
-      <View
-        style={{
-          margin: 16,
-          borderBottomWidth: 1,
-          borderColor: 'gray',
-          width: 368,
-        }}
-      />
-      <Inner>
-        <View>
-          <Text style={{padding: 16, fontSize: 16, color: 'black'}}>
-            정보수정
+    return (
+      <Container>
+        <View style={{padding: 16}} />
+        <View style={{alignItems: 'center'}}>
+          <Text style={{fontWeight: 'bold', fontSize: 20, color: 'black'}}>
+            안녕하세요 {user.displayName}님
           </Text>
         </View>
-        <View>
-          <Text style={{padding: 16, fontSize: 16, color: 'black'}}>
-            튜토리얼
-          </Text>
-        </View>
-      </Inner>
-      <EmailAndButton>
-        <Text>Your email is {user.email}</Text>
-        <Text>email 인증 : {ver}</Text>
-        <ButtonContainer>
-          <WeColorButton
-            title="로그아웃"
-            onPress={() => navigate('A0_StartPage')}
-          />
-        </ButtonContainer>
-      </EmailAndButton>
-    </Container>
-  );
+        <View
+          style={{
+            margin: 16,
+            borderBottomWidth: 1,
+            borderColor: 'gray',
+            width: 368,
+          }}
+        />
+        <Inner>
+          <View>
+            <Text style={{padding: 16, fontSize: 16, color: 'black'}}>
+              정보수정
+            </Text>
+          </View>
+          <View>
+            <Text style={{padding: 16, fontSize: 16, color: 'black'}}>
+              튜토리얼
+            </Text>
+          </View>
+        </Inner>
+        <EmailAndButton>
+          <Text>Your email is {user.email}</Text>
+          <Text>email 인증 : {ver}</Text>
+          <ButtonContainer>
+            <WeColorButton
+              title="로그아웃"
+              onPress={() => navigate('A0_StartPage')}
+            />
+          </ButtonContainer>
+        </EmailAndButton>
+      </Container>
+    );
   }
 };
 

@@ -105,7 +105,7 @@ const A0_StartPage = ({navigation: {navigate}}) => {
               style={{marginBottom: 20}}
               title="Login for Google"
               onPress={() => {
-               _signIn().then(() => navigate('요리하기'));
+                _signIn().then(() => navigate('요리하기'));
               }}
             />
 

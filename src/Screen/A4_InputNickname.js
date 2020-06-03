@@ -92,8 +92,8 @@ const A4_InputNickname = ({navigation: {navigate}}) => {
             />
           </FormContainer>
           <TempButton>
-            <Button 
-            title="확인" 
+            <Button
+              title="확인"
               onPress={() => {
                 alert('닉네임은 ' + nickname + '입니다.');
               }}

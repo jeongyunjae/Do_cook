@@ -22,7 +22,7 @@ const InformView = Styled.View`
 `;
 
 const Checklogin = ({navigation: {navigate}}) => {
- /* AsyncStorage.getItem('key').then(value => {
+  /* AsyncStorage.getItem('key').then(value => {
     if (value) navigate('MainTabs');
     else navigate('A0_StartPage');
   });*/
@@ -39,14 +39,18 @@ const Checklogin = ({navigation: {navigate}}) => {
     console.log(user.displayName);
   }
 
-  function handleSendEmail(){
-    firebase.auth().currentUser.sendEmailVerification().then(function(){
-      alert('이메일을 확인하세요.');
-      console.log('인증이메일 발송');
-    }).catch(function(error){
-      alert('이메일 발송 에러',error);
-      console.log('인증이메일 발송 에러',error);
-    })
+  function handleSendEmail() {
+    firebase
+      .auth()
+      .currentUser.sendEmailVerification()
+      .then(function() {
+        alert('이메일을 확인하세요.');
+        console.log('인증이메일 발송');
+      })
+      .catch(function(error) {
+        alert('이메일 발송 에러', error);
+        console.log('인증이메일 발송 에러', error);
+      });
   }
 
   useEffect(() => {
@@ -56,7 +60,6 @@ const Checklogin = ({navigation: {navigate}}) => {
 
   if (initializing) return null;
 
-
   console.log(user);
 
   //사용자 인증이 확인되면 C0요리하기 페이지로, 안되면 로그인 페이지로
@@ -64,25 +67,26 @@ const Checklogin = ({navigation: {navigate}}) => {
     <View style={styles.container}>
       <InformView>
         <Text>이메일 인증하세요.</Text>
-        </InformView>
-        <ButtonContainer>
-            <WeColorButton
-            title="이메일 보내기"
-            onPress={()=>handleSendEmail()}/>
-          <WeColorButton
-            title="next"
-            onPress={()=> navigate('A4_InputNickname')}
-          />
-        </ButtonContainer>
+      </InformView>
+      <ButtonContainer>
+        <WeColorButton
+          title="이메일 보내기"
+          onPress={() => handleSendEmail()}
+        />
+        <WeColorButton
+          title="next"
+          onPress={() => navigate('A4_InputNickname')}
+        />
+      </ButtonContainer>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-  });
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 export default Checklogin;

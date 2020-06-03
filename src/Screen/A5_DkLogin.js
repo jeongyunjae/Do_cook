@@ -96,14 +96,13 @@ const A5_DkLogin = ({navigation: {navigate}}) => {
             <Button
               title="로그인"
               onPress={() => {
-                if(email == ''){
+                if (email == '') {
                   alert('이메일 주소가 비어있습니다.');
-                }
-                else if(password == ''){
+                } else if (password == '') {
                   alert('비밀번호가 비어있습니다.');
+                } else {
+                  handleLogin();
                 }
-                else{
-                handleLogin();}
                 /*AsyncStorage.setItem('key', 'JYJ');
               navigate('요리하기');*/
               }}
