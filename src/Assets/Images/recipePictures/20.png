@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://www.horangi.kr/foodinfo/viewRecipe.asp?rid=349&own= -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="./20_files/osd.js.다운로드"></script><script src="./20_files/f.txt"></script><script src="./20_files/f(1).txt" id="google_shimpl"></script><script type="text/javascript" async="" src="./20_files/analytics.js.다운로드"></script><script async="" src="./20_files/js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-22847241-3');
+    </script>
+  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <script src="./20_files/jquery.min.js.다운로드"></script>
+  
+  <meta name="description" content="해물스파게티 조리법">
+  <meta name="keywords" content="요리,조리법,레시피">
+  <title>해물스파게티 조리법 _horangi.kr</title>
+  <script src="./20_files/viewRecipe.js.다운로드"></script>
+  <link rel="stylesheet" href="./20_files/viewRecipe.css">
+<link rel="preload" href="./20_files/f(2).txt" as="script"><script type="text/javascript" src="./20_files/f(2).txt"></script><link rel="preload" href="./20_files/f(3).txt" as="script"><script type="text/javascript" src="./20_files/f(3).txt"></script></head>
+<body>
+  <div id="bgDiv" style="background-image:url(http://file.okdab.com/UserFiles/searching/recipe/088800.jpg)"></div>
+
+  <div id="topBar">
+    <div id="topGoMainBtn" href="#" onclick="location.href=&#39;/foodinfo/recipe.asp&#39;" class="rtBtn">홈으로</div>
+    <h1 id="mainTitle">해물스파게티<br>조리법/레시피</h1>
+  </div>
+
+  <div id="mainDiv">
+    <div id="contDiv">
+      <div id="menuTitle">
+        <img id="titleimg" src="./20_files/088800.jpg">
+        <div id="sourceCapt">레시피출처 : 농림축산식품부</div>
+      </div>
+
+      <div id="materialDiv">
+        <div class="titleBar">
+          재료목록
+        </div>
+        <p id="infoCapt">ⓘ 재료를 클릭하면 재료소개 페이지가 열립니다.</p>
+        
+        <div id="mainMaterial" class="materialList">
+          <div class="mateLiTitle">주재료</div>
+          <div class="mateLiCardBook">
+        
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=스파게티&#39;)">
+              <h3>스파게티</h3>
+              <p>200g</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=홍합&#39;)">
+              <h3>홍합</h3>
+              <p>100g</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=오징어&#39;)">
+              <h3>오징어</h3>
+              <p>1/2마리</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=새우&#39;)">
+              <h3>새우</h3>
+              <p>3마리</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=홀토마토&#39;)">
+              <h3>홀토마토</h3>
+              <p>1/2컵</p>
+            </div>
+          
+          </div>
+        </div>
+        <div id="mainMaterial" class="materialList">
+          <div class="mateLiTitle">부재료</div>
+          <div class="mateLiCardBook">
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=버터&#39;)">
+              <h3>버터</h3>
+              <p>1큰술</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=밀가루&#39;)">
+              <h3>밀가루</h3>
+              <p>1큰술</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=올리브오일&#39;)">
+              <h3>올리브오일</h3>
+              <p>2큰술</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=토마토&#39;)">
+              <h3>토마토</h3>
+              <p>1개</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=양파&#39;)">
+              <h3>양파</h3>
+              <p>1/2개</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=샐러리&#39;)">
+              <h3>샐러리</h3>
+              <p>1대</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=양송이&#39;)">
+              <h3>양송이</h3>
+              <p>2개</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=다진마늘&#39;)">
+              <h3>다진마늘</h3>
+              <p>1작은술</p>
+            </div>
+          
+          </div>
+        </div>
+        <div id="mainMaterial" class="materialList">
+          <div class="mateLiTitle">양념</div>
+          <div class="mateLiCardBook">
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=후춧가루&#39;)">
+              <h3>후춧가루</h3>
+              <p>약간</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=소금&#39;)">
+              <h3>소금</h3>
+              <p>약간</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=파마산치즈&#39;)">
+              <h3>파마산치즈</h3>
+              <p>약간</p>
+            </div>
+          
+            <div class="mateLiCard" onclick="window.open(&#39;//www.horangi.kr/foodinfo/?t=오레가노&#39;)">
+              <h3>오레가노</h3>
+              <p>약간</p>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+      <div id="recipeDiv">
+        <div class="titleBar">
+          조리방법
+        </div>
+        
+        <div class="recipeCardBox">
+          <div>
+            <div class="stepNum">1</div>
+          </div>
+          <div class="stepDesc">
+            
+            <img src="./20_files/088800_p01.jpg" class="stepImg">
+            끓는 물에 소금, 식용유를 넣고 스파게티면을 넣어 8분 정도 삶아 체에 밭쳐 물기를 뺀 후 올리브오일에 버무려놓는다. 스파게티를 삶아낸 물 1컵은 따로 둔다.
+          </div>
+        </div>
+        
+        <div class="termCircle"></div>
+              
+        <div class="recipeCardBox">
+          <div>
+            <div class="stepNum">2</div>
+          </div>
+          <div class="stepDesc">
+            
+            <img src="./20_files/088800_p02.jpg" class="stepImg">
+            오징어는 껍질을 벗겨 링 모양으로 썰고, 새우는 등의 내장을 제거하며 홍합은 깨끗이 씻어 불순물을 떼어 준비해둔다.
+          </div>
+        </div>
+        
+        <div class="termCircle"></div>
+              
+        <div class="recipeCardBox">
+          <div>
+            <div class="stepNum">3</div>
+          </div>
+          <div class="stepDesc">
+            양파와 마늘, 양송이, 샐러리를 다진다.
+          </div>
+        </div>
+        
+        <div class="termCircle"></div>
+              
+        <div class="recipeCardBox">
+          <div>
+            <div class="stepNum">4</div>
+          </div>
+          <div class="stepDesc">
+            프라이팬에 올리브오일을 두르고 다진 양파와 마늘, 양송이, 샐러리를 볶다가 토마토를 잘게 썰어 같이 볶고, 다진 홀토마토를 넣은 후 끓인다.
+          </div>
+        </div>
+        
+        <div class="termCircle"></div>
+              
+        <div class="recipeCardBox">
+          <div>
+            <div class="stepNum">5</div>
+          </div>
+          <div class="stepDesc">
+            다른 프라이팬에 버터를 녹여 뜨거워지면 밀가루 1큰술을 넣고 타지 않게 볶다가 스파게티 삶은 물 1컵을 붓고 끓인다.
+          </div>
+        </div>
+        
+        <div class="termCircle"></div>
+              
+        <div class="recipeCardBox">
+          <div>
+            <div class="stepNum">6</div>
+          </div>
+          <div class="stepDesc">
+            ②에 ④를 붓고 끓이다가 소금, 후춧가루로 간하고 오레가노를 넣고 불에서 내려 삶은 면을 버무려 낸다.
+          </div>
+        </div>
+        
+
+        <div id="backBtnDiv" onclick="goBack()">돌아가기</div>
+      </div>
+    </div>
+  </div>
+  
+<div style="width: 100%; text-align: center; padding: 15px 0px; height: auto !important;">
+  <div id="gadsenseDiv">
+    <script async="" src="./20_files/f(4).txt"></script>
+    <!-- 반응형 -->
+    <ins class="adsbygoogle" style="display: block; height: 0px;" data-ad-client="ca-pub-3680087743211713" data-ad-slot="4207595886" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 885px; background-color: transparent;"><ins id="aswift_0_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 885px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:885px;height:280px;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="885" height="280" frameborder="0" src="./20_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-google-query-id="CNDJkZrY7-kCFZ4R-QAdoMsB_w" data-load-complete="true"></iframe></ins></ins></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
+
+<link rel="stylesheet" href="./20_files/badakdol.css">
+<div id="badakdol" style="color: black;background-color: rgba(60, 4, 0, 0.48)">
+  <div>
+    <div id="badakTitle">
+      <span id="badak_copyright">요리하는호랑이의 레시피정보</span><br>
+      ⓒ <a id="badak_domain" href="http://www.horangi.kr/" style="color: black">www.horangi.kr</a>&nbsp;<a href="mailto:nangman@horangi.kr"><img id="mailIcon" src="./20_files/mail-icon_50x36.gif" alt="mail to nangman@horangi.kr"></a>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="./20_files/loadingAnim_default.css">
+
+<script src="./20_files/loadingAnim_default.js.다운로드" charset="utf-8"></script>
+
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="./20_files/ads(1).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-load-complete="true"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_3829546328883" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./20_files/saved_resource.html"></iframe></body><iframe id="google_esf" name="google_esf" src="./20_files/zrt_lookup.html" data-ad-client="ca-pub-3680087743211713" style="display: none;"></iframe></html>
