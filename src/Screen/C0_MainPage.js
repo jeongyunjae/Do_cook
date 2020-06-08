@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Styled from 'styled-components/native';
 import WeColorButton from '~/Components/button/weColorButton';
 import MeterialButton from '~/Components/button/for_C_Button';
+import ChooseButton from '~/Components/button/chooseButton';
 
 import {StatusBar} from 'react-native';
 import CookData from '~/Components/data/CookData';
@@ -38,7 +39,7 @@ const SelectMeterial3 = Styled.View`
   `;
 
 const AdmitButton = Styled.View`
-  flex: 2.6;
+  flex: 1;
   align-items: center;
   justify-content: center;
   `;
@@ -53,11 +54,33 @@ const AllMeterial = Styled.View`
   `;
 
 const ScView = Styled.ScrollView`
-  flex: 4;
+  flex: 2.5;
 `;
 
-const SelectedMeterialArea = Styled.View`
-  flex: 2;
+const SelectedMeterialArea = Styled.ScrollView`
+  flex: 1.5;
+`;
+
+const AllMeterialForSelected = Styled.View`
+  margin-left:  12px;
+  margin-right: 12px;
+  border-radius: 11px;
+  border-width: 0.8px;
+  `;
+
+const SelectMeterial = Styled.View`
+  align-items: center;
+  `;
+
+const SelectedMeterialView = Styled.View`
+  margin: 10px;
+  margin-top: 20px;
+  
+`;
+
+const SelectedMeterialText = Styled.Text`
+  font-size: 18px;
+  font-weight: bold;
 `;
 
 const C0_MainPage = ({navigation: {navigate}}) => {
@@ -68,13 +91,16 @@ const C0_MainPage = ({navigation: {navigate}}) => {
   const data1 = pureData.slice(0, dataLength);
   const data2 = pureData.slice(dataLength, dataLength * 2);
   const data3 = pureData.slice(dataLength * 2, dataLength * 3);
+  const [items, setItems] = useState([]);
 
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: 'hola',
-    },
-  ]);
+  const addItem = f => {
+    setItems([
+      ...items,
+      {
+        value: f,
+      },
+    ]);
+  };
 
   return (
     <Container>
@@ -96,17 +122,40 @@ const C0_MainPage = ({navigation: {navigate}}) => {
           </SelectMeterial1>
           <SelectMeterial2>
             {data2.map((i, index) => {
-              return <MeterialButton key={index} title={i} />;
+              return (
+                <MeterialButton
+                  key={index}
+                  title={i}
+                  onPress={() => addItem(i)}
+                />
+              );
             })}
           </SelectMeterial2>
           <SelectMeterial3>
             {data3.map((i, index) => {
-              return <MeterialButton key={index} title={i} />;
+              return (
+                <MeterialButton
+                  key={index}
+                  title={i}
+                  onPress={() => addItem(i)}
+                />
+              );
             })}
           </SelectMeterial3>
         </AllMeterial>
       </ScView>
-      <SelectedMeterialArea />
+      <SelectedMeterialView>
+        <SelectedMeterialText>선택된 재료</SelectedMeterialText>
+      </SelectedMeterialView>
+      <SelectedMeterialArea>
+        <AllMeterialForSelected>
+          <SelectMeterial>
+            {items.map(item => {
+              return <ChooseButton title={item.value} />;
+            })}
+          </SelectMeterial>
+        </AllMeterialForSelected>
+      </SelectedMeterialArea>
       <AdmitButton>
         <WeColorButton
           title="다음 단계로"
