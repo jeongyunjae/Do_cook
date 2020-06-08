@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Styled from 'styled-components/native';
 import WeColorButton from '~/Components/button/weColorButton';
 import MeterialButton from '~/Components/button/for_C_Button';
 
 import {StatusBar} from 'react-native';
 import CookData from '~/Components/data/CookData';
-import {Alert} from 'react-native';
+import {Alert, Text} from 'react-native';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
@@ -53,15 +53,28 @@ const AllMeterial = Styled.View`
   `;
 
 const ScView = Styled.ScrollView`
-flex: 4;
+  flex: 4;
+`;
+
+const SelectedMeterialArea = Styled.View`
+  flex: 2;
 `;
 
 const C0_MainPage = ({navigation: {navigate}}) => {
-  const data = CookData;
-  const dataLength = data.length / 3;
-  const data1 = data.slice(0, dataLength);
-  const data2 = data.slice(dataLength, dataLength * 2);
-  const data3 = data.slice(dataLength * 2, dataLength * 3);
+  let data = CookData;
+  let mydata = [].concat.apply([], data.map(cm => cm.coreMeterial));
+  let pureData = Array.from(new Set(mydata));
+  const dataLength = pureData.length / 3;
+  const data1 = pureData.slice(0, dataLength);
+  const data2 = pureData.slice(dataLength, dataLength * 2);
+  const data3 = pureData.slice(dataLength * 2, dataLength * 3);
+
+  const [todos, setTodos] = useState([
+    {
+      id: 1,
+      text: 'hola',
+    },
+  ]);
 
   return (
     <Container>
@@ -78,60 +91,22 @@ const C0_MainPage = ({navigation: {navigate}}) => {
         <AllMeterial>
           <SelectMeterial1>
             {data1.map((i, index) => {
-              return (
-                <MeterialButton
-                  key={index}
-                  title={i.title}
-                  onPress={() => {
-                    Alert.alert(
-                      '재료 선택',
-                      `재료명: ${i.title}`,
-                      [{text: '취소'}, {text: '확인'}],
-                      {cancelable: false},
-                    );
-                  }}
-                />
-              );
+              return <MeterialButton key={index} title={i} />;
             })}
           </SelectMeterial1>
           <SelectMeterial2>
             {data2.map((i, index) => {
-              return (
-                <MeterialButton
-                  key={index}
-                  title={i.title}
-                  onPress={() => {
-                    Alert.alert(
-                      '재료 선택',
-                      `재료명: ${i.title}`,
-                      [{text: '취소'}, {text: '확인'}],
-                      {cancelable: false},
-                    );
-                  }}
-                />
-              );
+              return <MeterialButton key={index} title={i} />;
             })}
           </SelectMeterial2>
           <SelectMeterial3>
             {data3.map((i, index) => {
-              return (
-                <MeterialButton
-                  key={index}
-                  title={i.title}
-                  onPress={() => {
-                    Alert.alert(
-                      '재료 선택',
-                      `재료명: ${i.title}`,
-                      [{text: '취소'}, {text: '확인'}],
-                      {cancelable: false},
-                    );
-                  }}
-                />
-              );
+              return <MeterialButton key={index} title={i} />;
             })}
           </SelectMeterial3>
         </AllMeterial>
       </ScView>
+      <SelectedMeterialArea />
       <AdmitButton>
         <WeColorButton
           title="다음 단계로"
