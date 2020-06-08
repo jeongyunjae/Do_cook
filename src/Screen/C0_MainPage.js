@@ -44,8 +44,8 @@ const AdmitButton = Styled.View`
   `;
 
 const AllMeterial = Styled.View`
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left:  12px;
+  margin-right: 12px;
   flex-direction: row;
   border-radius: 11px;
   border-width: 0.8px;

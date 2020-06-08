@@ -73,9 +73,12 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
     console.log(user.displayName);
   }
   function addRecipe(){
-    ref.set({
-      title:Title,
-    });
+    database().ref('/').set({
+        name: 'JEONG',
+        age: 24,
+        uID: user.uid,
+      })
+      .then(() => console.log('Data set.'));
   }
   useEffect(() => {
     const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
@@ -134,7 +137,7 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
       <Button
         style={{marginBottom: 24}}
         title="추가"
-        onPress={() => { 
+        onPress={() => { addRecipe();
           console.log('레시피명:',Title,'/순서1:',Order_one,'/순서2:',Order_two,'/순서3:',Order_three,'/재료1:',Ingredient_one,'/재료2:',Ingredient_two,'/uID:',user.uid);
         }}
       />
