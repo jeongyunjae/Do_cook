@@ -2,8 +2,7 @@ const CookData = [
   {
     id: 1,
     title: '김치수제비',
-    src:
-      '~/src/Assets/Images/recipePictures/1.png',
+    src: '~/src/Assets/Images/recipePictures/1.png',
     coreMeterial: ['김치', '감자', '밀가루', '계란'],
     quantity: ['김치 100g', '감자 1개', '밀가루 2컵', '계란 1개'],
     recipe:
@@ -12,8 +11,7 @@ const CookData = [
   {
     id: 2,
     title: '찜닭',
-    src:
-      '~/src/Assets/Images/recipePictures/2.png',
+    src: '~/src/Assets/Images/recipePictures/2.png',
     coreMeterial: ['닭고기', '당면', '감자', '양파'],
     quantity: ['닭고기 1팩', '당면 150g', '감자 2개', '양파 1/2개'],
     recipe:
@@ -22,17 +20,16 @@ const CookData = [
   {
     id: 3,
     title: '콘치즈',
-    src:
-      '~/src/Assets/Images/recipePictures/3.png',
+    src: '~/src/Assets/Images/recipePictures/3.png',
     coreMeterial: ['옥수수', '치즈', '버터', '마요네즈'],
     quantity: ['옥수수 1캔', '치즈 4장', '버터 20g', '마요네즈 20g'],
-    recipe: '1. 옥수수캔을 따서 체에 받쳐 물기를 빼준다.\n2. 달궈진 팬에 버터를 녹인다.\n3. 버터가 녹은 위에 옥수수콘을 넣고 마요네즈 2큰술, 설탕 1큰술을 넣고 볶는다.\n4. 볶아진 옥수수 위에 치즈를 뿌린다.\n5. 약불로 치즈가 녹을 때까지 익혀준뒤 파슬리 가루를 살짝 뿌려주면 완성.',
+    recipe:
+      '1. 옥수수캔을 따서 체에 받쳐 물기를 빼준다.\n2. 달궈진 팬에 버터를 녹인다.\n3. 버터가 녹은 위에 옥수수콘을 넣고 마요네즈 2큰술, 설탕 1큰술을 넣고 볶는다.\n4. 볶아진 옥수수 위에 치즈를 뿌린다.\n5. 약불로 치즈가 녹을 때까지 익혀준뒤 파슬리 가루를 살짝 뿌려주면 완성.',
   },
   {
     id: 4,
     title: '홍합미역국',
-    src:
-      '~/src/Assets/Images/recipePictures/4.png',
+    src: '~/src/Assets/Images/recipePictures/4.png',
     coreMeterial: ['미역', '홍합', '참기름'],
     quantity: ['미역 150g', '홍합 10개', '참기름 1큰술'],
     recipe:
@@ -41,8 +38,7 @@ const CookData = [
   {
     id: 5,
     title: '콩나물밥',
-    src:
-      '~/src/Assets/Images/recipePictures/1.png',
+    src: '~/src/Assets/Images/recipePictures/1.png',
     coreMeterial: ['쇠고기', '쌀', '콩나물'],
     quantity: ['쇠고기 100g', '쌀 2컵', '콩나물 300g'],
     recipe:
@@ -51,8 +47,7 @@ const CookData = [
   {
     id: 6,
     title: '김치찌개',
-    src:
-      '~/src/Assets/Images/recipePictures/6.png',
+    src: '~/src/Assets/Images/recipePictures/6.png',
     coreMeterial: ['김치', '돼지고기', '두부'],
     quantity: ['김치 1/4포기', '돼지고기 120g', '두부 1/2개'],
     recipe:
@@ -61,8 +56,7 @@ const CookData = [
   {
     id: 7,
     title: '진미채볶음',
-    src:
-      '~/src/Assets/Images/recipePictures/7.png',
+    src: '~/src/Assets/Images/recipePictures/7.png',
     coreMeterial: ['오징어채', '고추장', '마요네즈'],
     quantity: ['오징어채 100g', '고추장 1큰술', '마요네즈 1큰술'],
     recipe:
@@ -71,8 +65,7 @@ const CookData = [
   {
     id: 8,
     title: '불고기',
-    src:
-      '~/src/Assets/Images/recipePictures/8.png',
+    src: '~/src/Assets/Images/recipePictures/8.png',
     coreMeterial: ['쇠고기', '돼지고기', '간장'],
     quantity: [],
     recipe:
@@ -81,8 +74,7 @@ const CookData = [
   {
     id: 9,
     title: '오므라이스',
-    src:
-      '~/src/Assets/Images/recipePictures/9.png',
+    src: '~/src/Assets/Images/recipePictures/9.png',
     coreMeterial: ['쌀', '계란', '양파', '당근'],
     quantity: ['쌀 2공기', '계란 3개', '양파 1/4개', '당근 1/3개'],
     recipe:
@@ -91,37 +83,46 @@ const CookData = [
   {
     id: 10,
     title: '잔치국수',
-    src:
-      '~/src/Assets/Images/recipePictures/10.png',
+    src: '~/src/Assets/Images/recipePictures/10.png',
     coreMeterial: ['소면', '계란', '국멸치', '애호박', '당근'],
-    quantity: ['소면 300g', '계란 1개', '국멸치 5마리', '애호박 1/4개', '당근 1/4개'],
+    quantity: [
+      '소면 300g',
+      '계란 1개',
+      '국멸치 5마리',
+      '애호박 1/4개',
+      '당근 1/4개',
+    ],
     recipe:
       '1. 찬물에 멸치를 넣고 끓여 멸칫국물을 우려내고 국간장이나 소금으로 간을 해 멸치장국을 만들어준다.\n2. 호박, 당근을 채썰어 소금 간을 해서 볶아주고 계란은 지단을 부쳐 채썬다.\n3. 소면은 물에 삶아 건져서 찬물에 헹군 다음 1인분씩 사리지어 놓는다.\n4.국수대접에 사리지은 소면을 담고 멸치장국을 부어 준비한 고명을 골고루 얹고 양념장을 곁들여 낸다.',
   },
   {
     id: 11,
     title: '크림소스 파스타',
-    src:
-      '~/src/Assets/Images/recipePictures/11.png',
+    src: '~/src/Assets/Images/recipePictures/11.png',
     coreMeterial: ['파스타면', '베이컨', '우유', '생크림', '양파'],
-    quantity: ['파스타면 200g', '베이컨 4장', '우유 1/2컵', '생크림 1과 1/2컵', '양파 1/2개'],
+    quantity: [
+      '파스타면 200g',
+      '베이컨 4장',
+      '우유 1/2컵',
+      '생크림 1과 1/2컵',
+      '양파 1/2개',
+    ],
     recipe:
       '1. 양파는 채썰고, 베이컨은 먹기 좋은 크기로 썰어놓는다.\n2. 냄비에 버터를 두르고, 양파와 다진 마늘을 넣고 볶다가 베이컨을 넣고 함께 볶아준다.\n3. 2의 양파가 투명해질 정도로 볶아지면 우유, 생크림을 넣고 끓이다가 끓어 오르면 불을 약하게 줄이고, 2분 정도 더 끓여 소금, 후춧가루로 간한다.\n4.끓는 물에 소금, 식용유를 약간 넣고 파스타를 넣어 적당히 삶아 물기를 뺀다.\n5. 프라이팬에 버터를 두르고, 삶아놓은 파스타면을 볶다가 끓여 놓은 소스를 버무려 접시에 담아 낸다.',
   },
   {
     id: 12,
     title: '홍합탕',
-    src:
-      '~/src/Assets/Images/recipePictures/12.png',
+    src: '~/src/Assets/Images/recipePictures/12.png',
     coreMeterial: ['홍합', '대파', '홍고추'],
     quantity: ['홍합 400g', '대파 1/2뿌리', '청양고추 1개'],
-    recipe: '1. 홍합은 싱싱한 것으로 준비해 껍질에 붙어있는 지저분한 수염을 떼어내고 연한 소금물에 담가 해감시킨다.\n2. 대파와 청양고추를 어슷썰어 물에 헹구어 씨를 뺀다.\n3. 냄비에 분량의 물과 홍합을 넣고 한소끔 끓으면 다진 마늘, 대파, 청양고추를 넣고 끓이면서 떠오르는 거품을 걷어내고 소금으로 간을 맞춘다.',
+    recipe:
+      '1. 홍합은 싱싱한 것으로 준비해 껍질에 붙어있는 지저분한 수염을 떼어내고 연한 소금물에 담가 해감시킨다.\n2. 대파와 청양고추를 어슷썰어 물에 헹구어 씨를 뺀다.\n3. 냄비에 분량의 물과 홍합을 넣고 한소끔 끓으면 다진 마늘, 대파, 청양고추를 넣고 끓이면서 떠오르는 거품을 걷어내고 소금으로 간을 맞춘다.',
   },
   {
     id: 13,
     title: '골뱅이무침',
-    src:
-      '~/src/Assets/Images/recipePictures/13.png',
+    src: '~/src/Assets/Images/recipePictures/13.png',
     coreMeterial: ['골뱅이', '오이', '소면', '양파', '대파'],
     quantity: ['골뱅이 200g', '오이 50g', '소면 200g', '양파 50g', '대파 30g'],
     recipe:
@@ -130,8 +131,7 @@ const CookData = [
   {
     id: 14,
     title: '감자조림',
-    src:
-      '~/src/Assets/Images/recipePictures/14.png',
+    src: '~/src/Assets/Images/recipePictures/14.png',
     coreMeterial: ['감자', '꽈리고추', '멸치'],
     quantity: ['감자 3개', '꽈리고추 10개', '멸치 100g'],
     recipe:
@@ -140,8 +140,7 @@ const CookData = [
   {
     id: 15,
     title: '냉이된장국',
-    src:
-      '~/src/Assets/Images/recipePictures/15.png',
+    src: '~/src/Assets/Images/recipePictures/15.png',
     coreMeterial: ['냉이', '된장', '조개', '대파'],
     quantity: ['냉이 100g', '된장 3큰술', '조개 1컵', '대파 1뿌리'],
     recipe:
@@ -150,8 +149,7 @@ const CookData = [
   {
     id: 16,
     title: '연어샐러드',
-    src:
-      '~/src/Assets/Images/recipePictures/16.png',
+    src: '~/src/Assets/Images/recipePictures/16.png',
     coreMeterial: ['훈제연어', '앤다이브', '트레비스', '양파'],
     quantity: ['훈제연어 160g', '앤다이브 40g', '트레비스 30g', '양파 30g'],
     recipe:
@@ -160,8 +158,7 @@ const CookData = [
   {
     id: 17,
     title: '갈비찜',
-    src:
-      '~/src/Assets/Images/recipePictures/17.png',
+    src: '~/src/Assets/Images/recipePictures/17.png',
     coreMeterial: ['갈비', '양파', '감자', '당근', '무'],
     quantity: ['갈비 1.8kg', '양파 2개', '감자 2개', '당근 1개', '무 1/4개'],
     recipe:
@@ -170,8 +167,7 @@ const CookData = [
   {
     id: 18,
     title: '쇠고기덮밥',
-    src:
-      '~/src/Assets/Images/recipePictures/18.png',
+    src: '~/src/Assets/Images/recipePictures/18.png',
     coreMeterial: ['쇠고기', '표고버섯', '양파'],
     quantity: ['쇠고기 100g', '표고버섯 1개', '양파 1/2개'],
     recipe:
@@ -180,8 +176,7 @@ const CookData = [
   {
     id: 19,
     title: '빈대떡',
-    src:
-      '~/src/Assets/Images/recipePictures/19.png',
+    src: '~/src/Assets/Images/recipePictures/19.png',
     coreMeterial: ['돼지고기', '숙주', '느타리버섯', '녹두'],
     quantity: ['돼지고기 100g', '숙주 100g', '느타리버섯 200g', '녹두 2컵'],
     recipe:
@@ -190,28 +185,37 @@ const CookData = [
   {
     id: 20,
     title: '해물파스타',
-    src:
-      '~/src/Assets/Images/recipePictures/20.png',
+    src: '~/src/Assets/Images/recipePictures/20.png',
     coreMeterial: ['파스타면', '홍합', '오징어', '새우', '홀토마토'],
-    quantity: ['파스타면 200g', '홍합 100g', '오징어 1/2마리', '새우 3마리', '홀토마토 1/2컵'],
+    quantity: [
+      '파스타면 200g',
+      '홍합 100g',
+      '오징어 1/2마리',
+      '새우 3마리',
+      '홀토마토 1/2컵',
+    ],
     recipe:
       '1. 끓는 물에 소금, 식용유를 넣고 스파게티면을 삶아 체에 밭쳐 물기를 뺀 후 올리브오일에 버무려놓는다. 스파게티를 삶아낸 물 1컵은 따로 둔다.\n2. 오징어는 껍질을 벗겨 링 모양으로 썰고, 새우는 등의 내장을 제거하며 홍합은 깨끗이 씻어 불순물을 떼어 준비해둔다.\n3. 프라이팬에 올리브오일을 두르고 다진 양파와 마늘, 양송이, 샐러리를 볶다가 토마토를 잘게 썰어 같이 볶고, 다진 홀토마토를 넣은 후 끓인다.\n4. 다른 프라이팬에 버터를 녹여 뜨거워지면 밀가루 1큰술을 넣고 타지 않게 볶다가 스파게티 삶은 물 1컵을 붓고 끓인다.\n5. 2에 3를 붓고 끓이다가 소금, 후춧가루로 간하고 불에서 내려 삶은 면을 버무려 낸다.',
   },
   {
     id: 21,
     title: '해물볶음밥',
-    src:
-      '~/src/Assets/Images/recipePictures/21.png',
+    src: '~/src/Assets/Images/recipePictures/21.png',
     coreMeterial: ['새우', '오징어', '굴소스', '파프리카', '바지락'],
-    quantity: ['새우 30g', '오징어 50g', '굴소스 3큰술', '파프리카 1/4개', '바지락 30g'],
+    quantity: [
+      '새우 30g',
+      '오징어 50g',
+      '굴소스 3큰술',
+      '파프리카 1/4개',
+      '바지락 30g',
+    ],
     recipe:
       '1. 새우와 오징어, 바지락은 깨끗이 씻고, 오징어는 새우와 비슷한 크기로 손질한다.\n2. 파프리카와 팽이버섯은 곱게 다져 준비한다.\n3. 기름 두른 프라이팬에 해물과 청주를 넣어 볶아준다.\n4. 새우에 붉은 빛이 돌면 야채 재료를 넣어 소금과 후춧가루로 간하여 볶는다.\n5. 4에 밥을 넣어 고루 섞어준 후 분량의 굴소스를 넣고 볶아준다.',
   },
   {
     id: 22,
     title: '어묵볶음',
-    src:
-      '~/src/Assets/Images/recipePictures/22.png',
+    src: '~/src/Assets/Images/recipePictures/22.png',
     coreMeterial: ['어묵', '양파', '당근'],
     quantity: ['어묵 100g', '양파 1/4개', '당근 1/4개'],
     recipe:
@@ -220,8 +224,7 @@ const CookData = [
   {
     id: 23,
     title: '마파두부덮밥',
-    src:
-      '~/src/Assets/Images/recipePictures/23.png',
+    src: '~/src/Assets/Images/recipePictures/23.png',
     coreMeterial: ['두부', '돼지고기', '고추', '대파'],
     quantity: ['두부 1개', '돼지고기 200g', '고추 2개', '대파 1뿌리'],
     recipe:
@@ -230,8 +233,7 @@ const CookData = [
   {
     id: 24,
     title: '오징어삼겹살볶음',
-    src:
-      '~/src/Assets/Images/recipePictures/24.png',
+    src: '~/src/Assets/Images/recipePictures/24.png',
     coreMeterial: ['오징어', '돼지고기', '양파'],
     quantity: ['오징어 1마리', '돼지고기 200g', '양파 1개'],
     recipe:
@@ -240,18 +242,16 @@ const CookData = [
   {
     id: 25,
     title: '계란찜',
-    src:
-      '~/src/Assets/Images/recipePictures/25.png',
-    coreMeterial: ['계란 2개', '당근 1/4개', '대파 1/3개'],
-    quantity: ['계란', '당근', '대파'],
+    src: '~/src/Assets/Images/recipePictures/25.png',
+    coreMeterial: ['계란', '당근', '대파'],
+    quantity: ['계란 2개', '당근 1/4개', '대파 1/3개'],
     recipe:
       '1. 당근, 대파는 잘게 다져놓는다.\n2. 유리 그릇에 계란, 당근, 다진 파를 넣고 소금, 설탕, 후춧가루로 간하여 분량의 물을 넣고 거품기로 잘 풀어둔다.\n3. 전자레인지에 2를 넣고 뚜껑을 덮어 4분 정도 쪄낸다.',
   },
   {
     id: 26,
     title: '떡볶이',
-    src:
-      '~/src/Assets/Images/recipePictures/26.png',
+    src: '~/src/Assets/Images/recipePictures/26.png',
     coreMeterial: ['떡', '대파', '소시지', '어묵'],
     quantity: ['떡 200g', '대파 1/2뿌리', '소시지 10개', '어묵 3장'],
     recipe:
@@ -260,18 +260,22 @@ const CookData = [
   {
     id: 27,
     title: '김치동그랑땡',
-    src:
-      '~/src/Assets/Images/recipePictures/27.png',
-    coreMeterial: ['김치', '감자','두부', '계란', '밀가루'],
-    quantity: ['김치 1/4포기', '감자 1개','두부 1/4개', '계란 1개', '밀가루 5큰술'],
+    src: '~/src/Assets/Images/recipePictures/27.png',
+    coreMeterial: ['김치', '감자', '두부', '계란', '밀가루'],
+    quantity: [
+      '김치 1/4포기',
+      '감자 1개',
+      '두부 1/4개',
+      '계란 1개',
+      '밀가루 5큰술',
+    ],
     recipe:
       '1. 김치와 채소를 곱게 다진다.\n2. 감자는 삶아서 체에 내리고 두부는 물기를 짠 뒤 으깬다.\n3. 준비된 재료에 밀가루, 계란, 다진마늘, 소금, 후춧가루를 섞는다.\n4. 프라이팬에 식용유를 두르고 반죽을 한 숟가락씩 떠서 노릇하게 지진다.',
   },
   {
     id: 28,
     title: '두부카나페',
-    src:
-      '~/src/Assets/Images/recipePictures/28.png',
+    src: '~/src/Assets/Images/recipePictures/28.png',
     coreMeterial: ['두부', '치즈', '방울토마토'],
     quantity: ['두부 200g', '치즈 2장', '방울토마토 3개'],
     recipe:
@@ -280,20 +284,30 @@ const CookData = [
   {
     id: 29,
     title: '순대볶음',
-    src:
-      '~/src/Assets/Images/recipePictures/29.png',
+    src: '~/src/Assets/Images/recipePictures/29.png',
     coreMeterial: ['순대', '양배추', '깻잎', '쫄면', '양파'],
-    quantity: ['순대 300g', '양배추 1/4개', '깻잎 2장', '쫄면 100g', '양파 1개'],
+    quantity: [
+      '순대 300g',
+      '양배추 1/4개',
+      '깻잎 2장',
+      '쫄면 100g',
+      '양파 1개',
+    ],
     recipe:
       '1. 프라이팬에 기름을 두르고 다진 마늘을 볶다가 먹기좋게 자른 양파, 양배추를 볶는다.\n2. 양배추에 기름이 돌면 분량의 양념과 쫄면 혹은 더운 물에 불린 당면을 넣고 볶는다.\n3. 2에 순대와 깻잎을 넣고 볶아낸다.\n4. 기호에 따라 들깨가루를 1큰술 넣어 먹는다.',
   },
   {
     id: 30,
     title: '카레라이스',
-    src:
-      '~/src/Assets/Images/recipePictures/.30.png',
+    src: '~/src/Assets/Images/recipePictures/.30.png',
     coreMeterial: ['카레', '돼지고기', '감자', '양파', '당근'],
-    quantity: ['카레 70g', '돼지고기 200g', '감자 2개', '양파 1개', '당근 1/2개'],
+    quantity: [
+      '카레 70g',
+      '돼지고기 200g',
+      '감자 2개',
+      '양파 1개',
+      '당근 1/2개',
+    ],
     recipe:
       '1. 고기와 채소는 도톰하게 깍뚝썰기하여 기름에 볶는다.\n2. 카레는 찬물 2컵에 물을 조금씩 넣어가며 풀어놓는다.\n3. 1에 물을 자작하게 붓고 끓이다가 2를 붓고 더 끓인다.\n4. 국물이 되직하게 졸면 우유를 붓고 소금과 후춧가루로 간을 맞춘다.',
   },
