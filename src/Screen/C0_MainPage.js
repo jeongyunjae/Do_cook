@@ -117,7 +117,13 @@ const C0_MainPage = ({navigation: {navigate}}) => {
         <AllMeterial>
           <SelectMeterial1>
             {data1.map((i, index) => {
-              return <MeterialButton key={index} title={i} />;
+              return (
+                <MeterialButton
+                  key={index}
+                  title={i}
+                  onPress={() => addItem(i)}
+                />
+              );
             })}
           </SelectMeterial1>
           <SelectMeterial2>
