@@ -109,7 +109,7 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
       <ButtonContainer>
         <Button
           style={{marginBottom: 24}}
-          title="레시피 보기"
+          title="레시피 보기!"
           onPress={() => {
             getData();
             setTimeout(()=>{
