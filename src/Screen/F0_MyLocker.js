@@ -3,8 +3,10 @@ import {StyleSheet, Text, View, TextInput} from 'react-native';
 import Styled from 'styled-components/native';
 import Input from '~/Components/Input';
 import Button from '~/Components/button/whiteButton';
-import database from '@react-native-firebase/database';
+import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
+import fb from '@react-native-firebase/app';
+
 
 const Container = Styled.View`
   flex: 1;
@@ -52,10 +54,11 @@ const ButtonContainer = Styled.View`
 `;
 
 const F0_MyLocker = ({navigation: {navigate}}) => {
-  const ref = database().refFromURL('https://do-cook-5e908.firebaseio.com/');
+  const ref = firestore().collection("recipe");
+  //const ref = database().refFromURL('https://do-cook-5e908.firebaseio.com/');
 
   const [Title, setTitle] = useState('');
-  const [Order_one, setOrder_one] = useState('');
+  const [Order_one, setOrder_one] = useState(''); 
   const [Order_two, setOrder_two] = useState('');
   const [Order_three, setOrder_three] = useState('');
   const [Ingredient_one, setIngredient_one] = useState('');
@@ -72,14 +75,14 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
     if (user.emailVerified) setver('yes');
     console.log(user.displayName);
   }
-  function addRecipe(){
+  /*function addRecipe(){
     database().ref('/').set({
         name: 'JEONG',
         age: 24,
         uID: user.uid,
       })
       .then(() => console.log('Data set.'));
-  }
+  }*/
   useEffect(() => {
     const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
@@ -137,8 +140,27 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
       <Button
         style={{marginBottom: 24}}
         title="추가"
-        onPress={() => { addRecipe();
-          console.log('레시피명:',Title,'/순서1:',Order_one,'/순서2:',Order_two,'/순서3:',Order_three,'/재료1:',Ingredient_one,'/재료2:',Ingredient_two,'/uID:',user.uid);
+          onPress={() => {
+            console.log(
+              '레시피명:',
+              Title,
+              '/순서1:',
+              Order_one,
+              '/순서2:',
+              Order_two,
+              '/순서3:',
+              Order_three,
+              '/재료1:',
+              Ingredient_one,
+              '/재료2:',
+              Ingredient_two,
+              '/uID:',
+              user.uid,
+            );
+            ref.add({
+              userName: user.displayName,
+              title: Title,
+            }).then(()=>console.log('Add!'));
         }}
       />
     </ButtonContainer>
