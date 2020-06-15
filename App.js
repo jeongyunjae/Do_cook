@@ -18,8 +18,10 @@ import A7_SendEmail from '~/Screen/A7_SendEmail';
 import C0_MainPage from '~/Screen/C0_MainPage';
 import C1_SearchResult from '~/Screen/C1_SearchResult';
 import D0_CookBoast from '~/Screen/D0_CookBoast';
+import D1_ShowCookBoast from '~/Screen/D1_ShowCookBoast';
 import E0_MyCook from '~/Screen/E0_MyCook';
 import F0_MyLocker from '~/Screen/F0_MyLocker';
+import F1_ShowMyLocker from '~/Screen/F1_ShowMyLocker';
 import G0_MyInform from '~/Screen/G0_MyInform';
 
 //CreateStackNavigator
@@ -64,6 +66,7 @@ const C_Navigator = createStackNavigator(
 const D_Navigator = createStackNavigator(
   {
     요리자랑: {screen: D0_CookBoast},
+    D1_ShowCookBoast,
   },
   {
     defaultNavigationOptions: {
@@ -106,6 +109,7 @@ const E_Navigator = createStackNavigator(
 const F_Navigator = createStackNavigator(
   {
     보관함: {screen: F0_MyLocker},
+    F1_ShowMyLocker,
   },
   {
     defaultNavigationOptions: {
