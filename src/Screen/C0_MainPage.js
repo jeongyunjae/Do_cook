@@ -174,6 +174,7 @@ const C0_MainPage = ({navigation: {navigate}}) => {
           title="다음 단계로"
           onPress={() => {
             navigate('C1_SearchResult', items);
+            setItems([]);
           }}
         />
       </AdmitButton>

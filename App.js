@@ -23,6 +23,7 @@ import E0_MyCook from '~/Screen/E0_MyCook';
 import F0_MyLocker from '~/Screen/F0_MyLocker';
 import F1_ShowMyLocker from '~/Screen/F1_ShowMyLocker';
 import G0_MyInform from '~/Screen/G0_MyInform';
+import C2_DetailRecipe from '~/Screen/C2_DetailRecipe';
 
 //CreateStackNavigator
 const A_Navigator = createStackNavigator(
@@ -45,6 +46,7 @@ const C_Navigator = createStackNavigator(
   {
     요리하기: {screen: C0_MainPage},
     C1_SearchResult,
+    C2_DetailRecipe,
   },
   {
     defaultNavigationOptions: {
