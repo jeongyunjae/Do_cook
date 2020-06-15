@@ -6,7 +6,14 @@ import ChooseButton from '~/Components/button/chooseButton';
 
 import {StatusBar} from 'react-native';
 import CookData from '~/Components/data/CookData';
-import {Alert, Text} from 'react-native';
+import {
+  Alert,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
@@ -156,8 +163,8 @@ const C0_MainPage = ({navigation: {navigate}}) => {
       <SelectedMeterialArea>
         <AllMeterialForSelected>
           <SelectMeterial>
-            {items.map(item => {
-              return <ChooseButton title={item.value} />;
+            {items.map((item, i) => {
+              return <ChooseButton key={i} title={item.value} />;
             })}
           </SelectMeterial>
         </AllMeterialForSelected>
@@ -166,7 +173,7 @@ const C0_MainPage = ({navigation: {navigate}}) => {
         <WeColorButton
           title="다음 단계로"
           onPress={() => {
-            navigate('C1_SearchResult');
+            navigate('C1_SearchResult', items);
           }}
         />
       </AdmitButton>

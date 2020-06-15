@@ -2,7 +2,7 @@ const CookData = [
   {
     id: 1,
     title: '김치수제비',
-    src: '~/src/Assets/Images/recipePictures/1.png',
+    src: '~/Assets/Images/recipePictures/1.png',
     coreMeterial: ['김치', '감자', '밀가루', '계란'],
     quantity: ['김치 100g', '감자 1개', '밀가루 2컵', '계란 1개'],
     recipe:
@@ -11,7 +11,7 @@ const CookData = [
   {
     id: 2,
     title: '찜닭',
-    src: '~/src/Assets/Images/recipePictures/2.png',
+    src: '~/Assets/Images/recipePictures/2.png',
     coreMeterial: ['닭고기', '당면', '감자', '양파'],
     quantity: ['닭고기 1팩', '당면 150g', '감자 2개', '양파 1/2개'],
     recipe:
@@ -20,7 +20,7 @@ const CookData = [
   {
     id: 3,
     title: '콘치즈',
-    src: '~/src/Assets/Images/recipePictures/3.png',
+    src: '~/Assets/Images/recipePictures/3.png',
     coreMeterial: ['옥수수', '치즈', '버터', '마요네즈'],
     quantity: ['옥수수 1캔', '치즈 4장', '버터 20g', '마요네즈 20g'],
     recipe:
@@ -29,7 +29,7 @@ const CookData = [
   {
     id: 4,
     title: '홍합미역국',
-    src: '~/src/Assets/Images/recipePictures/4.png',
+    src: '~/Assets/Images/recipePictures/4.png',
     coreMeterial: ['미역', '홍합', '참기름'],
     quantity: ['미역 150g', '홍합 10개', '참기름 1큰술'],
     recipe:
@@ -38,7 +38,7 @@ const CookData = [
   {
     id: 5,
     title: '콩나물밥',
-    src: '~/src/Assets/Images/recipePictures/1.png',
+    src: '~/Assets/Images/recipePictures/1.png',
     coreMeterial: ['쇠고기', '쌀', '콩나물'],
     quantity: ['쇠고기 100g', '쌀 2컵', '콩나물 300g'],
     recipe:
@@ -47,7 +47,7 @@ const CookData = [
   {
     id: 6,
     title: '김치찌개',
-    src: '~/src/Assets/Images/recipePictures/6.png',
+    src: '~/Assets/Images/recipePictures/6.png',
     coreMeterial: ['김치', '돼지고기', '두부'],
     quantity: ['김치 1/4포기', '돼지고기 120g', '두부 1/2개'],
     recipe:
@@ -56,7 +56,7 @@ const CookData = [
   {
     id: 7,
     title: '진미채볶음',
-    src: '~/src/Assets/Images/recipePictures/7.png',
+    src: '~/Assets/Images/recipePictures/7.png',
     coreMeterial: ['오징어채', '고추장', '마요네즈'],
     quantity: ['오징어채 100g', '고추장 1큰술', '마요네즈 1큰술'],
     recipe:
@@ -65,7 +65,7 @@ const CookData = [
   {
     id: 8,
     title: '불고기',
-    src: '~/src/Assets/Images/recipePictures/8.png',
+    src: '~/Assets/Images/recipePictures/8.png',
     coreMeterial: ['쇠고기', '돼지고기', '간장'],
     quantity: [],
     recipe:
@@ -74,7 +74,7 @@ const CookData = [
   {
     id: 9,
     title: '오므라이스',
-    src: '~/src/Assets/Images/recipePictures/9.png',
+    src: '~/Assets/Images/recipePictures/9.png',
     coreMeterial: ['쌀', '계란', '양파', '당근'],
     quantity: ['쌀 2공기', '계란 3개', '양파 1/4개', '당근 1/3개'],
     recipe:
@@ -83,7 +83,7 @@ const CookData = [
   {
     id: 10,
     title: '잔치국수',
-    src: '~/src/Assets/Images/recipePictures/10.png',
+    src: '~/Assets/Images/recipePictures/10.png',
     coreMeterial: ['소면', '계란', '국멸치', '애호박', '당근'],
     quantity: [
       '소면 300g',
@@ -98,7 +98,7 @@ const CookData = [
   {
     id: 11,
     title: '크림소스 파스타',
-    src: '~/src/Assets/Images/recipePictures/11.png',
+    src: '~/Assets/Images/recipePictures/11.png',
     coreMeterial: ['파스타면', '베이컨', '우유', '생크림', '양파'],
     quantity: [
       '파스타면 200g',
@@ -113,7 +113,7 @@ const CookData = [
   {
     id: 12,
     title: '홍합탕',
-    src: '~/src/Assets/Images/recipePictures/12.png',
+    src: '~/Assets/Images/recipePictures/12.png',
     coreMeterial: ['홍합', '대파', '홍고추'],
     quantity: ['홍합 400g', '대파 1/2뿌리', '청양고추 1개'],
     recipe:
@@ -122,7 +122,7 @@ const CookData = [
   {
     id: 13,
     title: '골뱅이무침',
-    src: '~/src/Assets/Images/recipePictures/13.png',
+    src: '~/Assets/Images/recipePictures/13.png',
     coreMeterial: ['골뱅이', '오이', '소면', '양파', '대파'],
     quantity: ['골뱅이 200g', '오이 50g', '소면 200g', '양파 50g', '대파 30g'],
     recipe:
@@ -131,7 +131,7 @@ const CookData = [
   {
     id: 14,
     title: '감자조림',
-    src: '~/src/Assets/Images/recipePictures/14.png',
+    src: '~/Assets/Images/recipePictures/14.png',
     coreMeterial: ['감자', '꽈리고추', '멸치'],
     quantity: ['감자 3개', '꽈리고추 10개', '멸치 100g'],
     recipe:
@@ -140,7 +140,7 @@ const CookData = [
   {
     id: 15,
     title: '냉이된장국',
-    src: '~/src/Assets/Images/recipePictures/15.png',
+    src: '~/Assets/Images/recipePictures/15.png',
     coreMeterial: ['냉이', '된장', '조개', '대파'],
     quantity: ['냉이 100g', '된장 3큰술', '조개 1컵', '대파 1뿌리'],
     recipe:
@@ -149,7 +149,7 @@ const CookData = [
   {
     id: 16,
     title: '연어샐러드',
-    src: '~/src/Assets/Images/recipePictures/16.png',
+    src: '~/Assets/Images/recipePictures/16.png',
     coreMeterial: ['훈제연어', '앤다이브', '트레비스', '양파'],
     quantity: ['훈제연어 160g', '앤다이브 40g', '트레비스 30g', '양파 30g'],
     recipe:
@@ -158,7 +158,7 @@ const CookData = [
   {
     id: 17,
     title: '갈비찜',
-    src: '~/src/Assets/Images/recipePictures/17.png',
+    src: '~/Assets/Images/recipePictures/17.png',
     coreMeterial: ['갈비', '양파', '감자', '당근', '무'],
     quantity: ['갈비 1.8kg', '양파 2개', '감자 2개', '당근 1개', '무 1/4개'],
     recipe:
@@ -167,7 +167,7 @@ const CookData = [
   {
     id: 18,
     title: '쇠고기덮밥',
-    src: '~/src/Assets/Images/recipePictures/18.png',
+    src: '~/Assets/Images/recipePictures/18.png',
     coreMeterial: ['쇠고기', '표고버섯', '양파'],
     quantity: ['쇠고기 100g', '표고버섯 1개', '양파 1/2개'],
     recipe:
@@ -176,7 +176,7 @@ const CookData = [
   {
     id: 19,
     title: '빈대떡',
-    src: '~/src/Assets/Images/recipePictures/19.png',
+    src: '~/Assets/Images/recipePictures/19.png',
     coreMeterial: ['돼지고기', '숙주', '느타리버섯', '녹두'],
     quantity: ['돼지고기 100g', '숙주 100g', '느타리버섯 200g', '녹두 2컵'],
     recipe:
@@ -185,7 +185,7 @@ const CookData = [
   {
     id: 20,
     title: '해물파스타',
-    src: '~/src/Assets/Images/recipePictures/20.png',
+    src: '~/Assets/Images/recipePictures/20.png',
     coreMeterial: ['파스타면', '홍합', '오징어', '새우', '홀토마토'],
     quantity: [
       '파스타면 200g',
@@ -200,7 +200,7 @@ const CookData = [
   {
     id: 21,
     title: '해물볶음밥',
-    src: '~/src/Assets/Images/recipePictures/21.png',
+    src: '~/Assets/Images/recipePictures/21.png',
     coreMeterial: ['새우', '오징어', '굴소스', '파프리카', '바지락'],
     quantity: [
       '새우 30g',
@@ -215,7 +215,7 @@ const CookData = [
   {
     id: 22,
     title: '어묵볶음',
-    src: '~/src/Assets/Images/recipePictures/22.png',
+    src: '~/Assets/Images/recipePictures/22.png',
     coreMeterial: ['어묵', '양파', '당근'],
     quantity: ['어묵 100g', '양파 1/4개', '당근 1/4개'],
     recipe:
@@ -224,7 +224,7 @@ const CookData = [
   {
     id: 23,
     title: '마파두부덮밥',
-    src: '~/src/Assets/Images/recipePictures/23.png',
+    src: '~/Assets/Images/recipePictures/23.png',
     coreMeterial: ['두부', '돼지고기', '고추', '대파'],
     quantity: ['두부 1개', '돼지고기 200g', '고추 2개', '대파 1뿌리'],
     recipe:
@@ -233,7 +233,7 @@ const CookData = [
   {
     id: 24,
     title: '오징어삼겹살볶음',
-    src: '~/src/Assets/Images/recipePictures/24.png',
+    src: '~/Assets/Images/recipePictures/24.png',
     coreMeterial: ['오징어', '돼지고기', '양파'],
     quantity: ['오징어 1마리', '돼지고기 200g', '양파 1개'],
     recipe:
@@ -242,7 +242,7 @@ const CookData = [
   {
     id: 25,
     title: '계란찜',
-    src: '~/src/Assets/Images/recipePictures/25.png',
+    src: '~/Assets/Images/recipePictures/25.png',
     coreMeterial: ['계란', '당근', '대파'],
     quantity: ['계란 2개', '당근 1/4개', '대파 1/3개'],
     recipe:
@@ -251,7 +251,7 @@ const CookData = [
   {
     id: 26,
     title: '떡볶이',
-    src: '~/src/Assets/Images/recipePictures/26.png',
+    src: '~/Assets/Images/recipePictures/26.png',
     coreMeterial: ['떡', '대파', '소시지', '어묵'],
     quantity: ['떡 200g', '대파 1/2뿌리', '소시지 10개', '어묵 3장'],
     recipe:
@@ -260,7 +260,7 @@ const CookData = [
   {
     id: 27,
     title: '김치동그랑땡',
-    src: '~/src/Assets/Images/recipePictures/27.png',
+    src: '~/Assets/Images/recipePictures/27.png',
     coreMeterial: ['김치', '감자', '두부', '계란', '밀가루'],
     quantity: [
       '김치 1/4포기',
@@ -275,7 +275,7 @@ const CookData = [
   {
     id: 28,
     title: '두부카나페',
-    src: '~/src/Assets/Images/recipePictures/28.png',
+    src: '~/Assets/Images/recipePictures/28.png',
     coreMeterial: ['두부', '치즈', '방울토마토'],
     quantity: ['두부 200g', '치즈 2장', '방울토마토 3개'],
     recipe:
@@ -284,7 +284,7 @@ const CookData = [
   {
     id: 29,
     title: '순대볶음',
-    src: '~/src/Assets/Images/recipePictures/29.png',
+    src: '~/Assets/Images/recipePictures/29.png',
     coreMeterial: ['순대', '양배추', '깻잎', '쫄면', '양파'],
     quantity: [
       '순대 300g',
@@ -299,7 +299,7 @@ const CookData = [
   {
     id: 30,
     title: '카레라이스',
-    src: '~/src/Assets/Images/recipePictures/.30.png',
+    src: '~/Assets/Images/recipePictures/.30.png',
     coreMeterial: ['카레', '돼지고기', '감자', '양파', '당근'],
     quantity: [
       '카레 70g',
