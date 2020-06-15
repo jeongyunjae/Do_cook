@@ -57,18 +57,17 @@ const ButtonContainer = Styled.View`
   align-items: center;
 `;
 
-const D0_CookBoast = () => {
+const D0_CookBoast = ({navigation: {navigate}}) => {
 
   let list = [];
 
   function getData(){
     const ref = firestore().collection('recipe');
-    ref
+    ref.orderBy('like','desc')
       .get()
       .then(snapshot =>
         snapshot.forEach(doc => {
           const {title, uid, userName, order, ingredient, like} = doc.data();
-          console.log(doc.data());
           list.push({
             id: doc.id,
             title,
@@ -85,27 +84,19 @@ const D0_CookBoast = () => {
       });
   }
   useEffect(() => {
-    getData();
     setTimeout(()=>{
     console.log(list);},1500);
-  });
+  },[list]);
 
 
   return ( 
   <Container>
-    <ScrollView>{
-          list.map(i=> (
-          <FormContainer><Button style={{marginBottom: 24}}
-            title={i.title}
-            onPress={() => {
-              console.log('Order > ',i.order);
-              console.log('Ingrediet > ',i.ingredient);
-            }}/>
-            <Text>순서 : {i.order+"\n"}</Text>
-            <Text>재료 : {i.ingredient+" "}</Text>
-            <Text>좋아요 : {i.like}</Text>
-            </FormContainer>))
-        }</ScrollView>
+    <Button  title="레시피 보기!"
+          onPress={() => {
+            getData();
+            setTimeout(()=>{
+            navigate('D1_ShowCookBoast', list);
+            },1500);}}/>
   </Container>
   );
 };
