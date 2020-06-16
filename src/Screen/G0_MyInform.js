@@ -9,7 +9,8 @@ const Container = Styled.SafeAreaView`
   background-color: #ffffff;`;
 
 const ButtonContainer = Styled.View`
-  flex: 1;
+  flex: 2;
+  align-items: center;
 `;
 
 const InformView = Styled.View`
@@ -18,10 +19,13 @@ const InformView = Styled.View`
   justify-content: center;
 `;
 
-const EmailAndButton = Styled.View`
-  flex: 1;
+const EmailView = Styled.View`
+  flex: 2;
   align-items: center;
   justify-content: center;
+`;
+const EmailText = Styled.Text`
+  font-size: 20px;
 `;
 
 const Inner = Styled.View`
@@ -71,7 +75,7 @@ const G0_MyInform = ({navigation: {navigate}}) => {
         <View style={{padding: 16}} />
         <View style={{alignItems: 'center'}}>
           <Text style={{fontWeight: 'bold', fontSize: 20, color: 'black'}}>
-            안녕하세요 {user.displayName}님
+            {user.displayName}님 반가워요:)
           </Text>
         </View>
         <View
@@ -94,16 +98,16 @@ const G0_MyInform = ({navigation: {navigate}}) => {
             </Text>
           </View>
         </Inner>
-        <EmailAndButton>
-          <Text>Your email is {user.email}</Text>
-          <Text>email 인증 : {ver}</Text>
-          <ButtonContainer>
-            <WeColorButton
-              title="로그아웃"
-              onPress={() => navigate('A0_StartPage')}
-            />
-          </ButtonContainer>
-        </EmailAndButton>
+        <EmailView>
+          <EmailText>Your email is {user.email}</EmailText>
+          <EmailText>email 인증 : {ver}</EmailText>
+        </EmailView>
+        <ButtonContainer>
+          <WeColorButton
+            title="로그아웃"
+            onPress={() => navigate('A0_StartPage')}
+          />
+        </ButtonContainer>
       </Container>
     );
   }

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, Alert} from 'react-native';
-import Button from '~/Components/button/whiteButton';
+import Button from '~/Components/button/weColorButton';
 import Styled from 'styled-components/native';
 import Input from '~/Components/Input';
 import {firebase} from '@react-native-firebase/auth';
@@ -21,14 +21,13 @@ const Blank = Styled.View`
   flex: 2;  
 `;
 const FormContainer = Styled.View`
-  width: 300px;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  flex: 3;
+  width: 350px;
 `;
 const TitleContainer = Styled.View`
   flex: 1;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
 `;
 

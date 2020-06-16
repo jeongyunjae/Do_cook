@@ -1,20 +1,28 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, TextInput, FlatList, NativeModules} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  FlatList,
+  NativeModules,
+} from 'react-native';
 import Styled from 'styled-components/native';
 import Input from '~/Components/Input';
-import Button from '~/Components/button/whiteButton';
+import Button from '~/Components/button/weColorButton';
 import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
-import { getActiveChildNavigationOptions } from 'react-navigation';
-import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
+import {getActiveChildNavigationOptions} from 'react-navigation';
+import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Container = Styled.View`
   flex: 1;
   padding: 20px;
+  background-color: #ffffff;
 `;
 
 const TitleText = Styled.Text`
-font-size: 34px;
+font-size: 26px;
 font-weight: bold;
 color: #DE6139;
 letter-spacing: 0.5px;
@@ -29,14 +37,15 @@ const FormContainer = Styled.View`
   width: 300px;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-top-width: 0.5px;
-  border-bottom-width: 0.5px;
-  border-color: black;
+  border-bottom-width: 1px;
+  border-color: #707070;
 `;
 const TitleContainer = Styled.View`
   flex: 1;
+  margin-top: 10px;
+  margin-bottom: 25px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const InputTextName = Styled.Text`
@@ -58,26 +67,32 @@ const ButtonContainer = Styled.View`
 `;
 
 const D1_ShowCookBoast = ({navigation}) => {
-    const data = navigation.state.params;
-    console.log(data);
-    return(
-        <Container>
+  const data = navigation.state.params;
+  console.log(data);
+  return (
+    <Container>
+      <TitleContainer>
         <TitleText>요리자랑</TitleText>
-          <ScrollView>{
-          data.map(i=> (
-          <FormContainer><Button style={{marginBottom: 24}}
-            title={i.title}
-            onPress={() => {
-              console.log('Order > ',i.order);
-              console.log('Ingrediet > ',i.ingredient);
-            }}/>
-            <Text>순서 : {i.order+"\n"}</Text>
-            <Text>재료 : {i.ingredient+" "}</Text>
+      </TitleContainer>
+      <ScrollView>
+        {data.map(i => (
+          <FormContainer>
+            <Button
+              style={{marginBottom: 24}}
+              title={i.title}
+              onPress={() => {
+                console.log('Order > ', i.order);
+                console.log('Ingrediet > ', i.ingredient);
+              }}
+            />
+            <Text>순서 : {i.order + '\n'}</Text>
+            <Text>재료 : {i.ingredient + ' '}</Text>
             <Text>좋아요 : {i.like}</Text>
-            </FormContainer>))
-        }</ScrollView>
-</Container>
-    );
-}
+          </FormContainer>
+        ))}
+      </ScrollView>
+    </Container>
+  );
+};
 
 export default D1_ShowCookBoast;

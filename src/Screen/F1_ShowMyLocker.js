@@ -1,20 +1,28 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, TextInput, FlatList, NativeModules} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  FlatList,
+  NativeModules,
+} from 'react-native';
 import Styled from 'styled-components/native';
 import Input from '~/Components/Input';
-import Button from '~/Components/button/whiteButton';
+import Button from '~/Components/button/weColorButton';
 import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
-import { getActiveChildNavigationOptions } from 'react-navigation';
-import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
+import {getActiveChildNavigationOptions} from 'react-navigation';
+import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Container = Styled.View`
   flex: 1;
   padding: 20px;
+  background-color: #ffffff;
 `;
 
 const TitleText = Styled.Text`
-font-size: 34px;
+font-size: 26px;
 font-weight: bold;
 color: #DE6139;
 letter-spacing: 0.5px;
@@ -58,25 +66,29 @@ const ButtonContainer = Styled.View`
 `;
 
 const F1_ShowMyLocker = ({navigation}) => {
-    const data = navigation.state.params;
-    console.log(data);
-    return(
-        <Container>
-        <TitleText>나만의 레시피</TitleText>
-          <ScrollView>{
-          data.map(i=> (
-          <FormContainer><Button style={{marginBottom: 24}}
-            title={i.title}
-            onPress={() => {
-              console.log('Order > ',i.order);
-              console.log('Ingrediet > ',i.ingredient);
-            }}/>
-            <Text>순서 : {i.order+"\n"}</Text>
-            <Text>재료 : {i.ingredient+" "}</Text>
-            </FormContainer>))
-        }</ScrollView>
-</Container>
-    );
-}
+  const data = navigation.state.params;
+  console.log(data);
+  return (
+    <Container>
+      <TitleText>나만의 레시피</TitleText>
+      <ScrollView>
+        {data.map(i => (
+          <FormContainer>
+            <Button
+              style={{marginBottom: 24}}
+              title={i.title}
+              onPress={() => {
+                console.log('Order > ', i.order);
+                console.log('Ingrediet > ', i.ingredient);
+              }}
+            />
+            <Text>순서 : {i.order + '\n'}</Text>
+            <Text>재료 : {i.ingredient + ' '}</Text>
+          </FormContainer>
+        ))}
+      </ScrollView>
+    </Container>
+  );
+};
 
 export default F1_ShowMyLocker;

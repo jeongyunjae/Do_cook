@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View, Text, ImageBackground, Image} from 'react-native';
-import Button from '~/Components/button/whiteButton';
+import Button from '~/Components/button/weColorButton';
 import Styled from 'styled-components/native';
 import {
   GoogleSignin,

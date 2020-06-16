@@ -8,19 +8,20 @@ import {
   NativeModules,
 } from 'react-native';
 import Styled from 'styled-components/native';
-import Input from '~/Components/Input';
-import Button from '~/Components/button/whiteButton';
 import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
 import {getActiveChildNavigationOptions} from 'react-navigation';
 
+import Button from '~/Components/button/weColorButton';
+
 const Container = Styled.View`
   flex: 1;
   padding: 20px;
+  background-color: #ffffff;
 `;
 
 const TitleText = Styled.Text`
-font-size: 34px;
+font-size: 26px;
 font-weight: bold;
 color: #DE6139;
 letter-spacing: 0.5px;
@@ -52,7 +53,7 @@ const FormAndButton = Styled.View`
 
 const ButtonContainer = Styled.View`
   flex: 1;  
-  justify-content: center;
+  margin-top: 300px;
   align-items: center;
 `;
 
@@ -69,11 +70,11 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
     setUser(user);
     //if (initializing) setInitializing(false);
     //console.log(user.displayName);
-    
-    //setDatas(...Datas, {});
-  };
 
-  function getData(){
+    //setDatas(...Datas, {});
+  }
+
+  function getData() {
     const ref = firestore().collection('recipe');
     ref
       .where('uid', '==', user.uid)
@@ -112,16 +113,16 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
           title="레시피 보기!"
           onPress={() => {
             getData();
-            setTimeout(()=>{
-            for (let i = 0; i < list.length; i++) {
-              parameter[i] = list[i];
-              console.log('parameter', i, parameter[i]);
-            }
-            console.log(list.length, '/', parameter.length);
-            navigate('F1_ShowMyLocker', parameter);
-          },1500);
-            parameter=[];
-            list=[];
+            setTimeout(() => {
+              for (let i = 0; i < list.length; i++) {
+                parameter[i] = list[i];
+                console.log('parameter', i, parameter[i]);
+              }
+              console.log(list.length, '/', parameter.length);
+              navigate('F1_ShowMyLocker', parameter);
+            }, 1500);
+            parameter = [];
+            list = [];
           }}
         />
       </ButtonContainer>

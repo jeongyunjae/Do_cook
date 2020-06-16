@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import Styled from 'styled-components/native';
 
-import Button from '~/Components/button/whiteButton';
+import Button from '~/Components/button/weColorButton';
 import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
 import {firebase} from '@react-native-firebase/auth';
 

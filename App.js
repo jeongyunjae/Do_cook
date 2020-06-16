@@ -72,7 +72,7 @@ const D_Navigator = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
-      title: '요리 자랑',
+      title: '요리자랑',
       headerStyle: {
         backgroundColor: '#EC6337',
       },
