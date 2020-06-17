@@ -98,10 +98,6 @@ const G0_MyInform = ({navigation: {navigate}}) => {
             </Text>
           </View>
         </Inner>
-        <EmailView>
-          <EmailText>Your email is {user.email}</EmailText>
-          <EmailText>email 인증 : {ver}</EmailText>
-        </EmailView>
         <ButtonContainer>
           <WeColorButton
             title="로그아웃"

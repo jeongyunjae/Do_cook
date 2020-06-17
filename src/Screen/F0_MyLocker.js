@@ -81,7 +81,7 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
       .get()
       .then(snapshot =>
         snapshot.forEach(doc => {
-          const {title, uid, userName, order, ingredient} = doc.data();
+          const {title, uid, userName, order, ingredient, imageURL} = doc.data();
           list.push({
             id: doc.id,
             title,
@@ -89,6 +89,7 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
             userName,
             order,
             ingredient,
+            imageURL,
           });
         }),
       )
