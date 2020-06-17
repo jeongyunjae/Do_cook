@@ -3,29 +3,26 @@ import Styled from 'styled-components/native';
 import {View, StyleSheet, Text} from 'react-native';
 
 const Button = Styled.TouchableOpacity`
-width: 40%;
-height: 40px;
+height: 38px;
 padding: 8px;
-margin: 5px;
-background: rgba(238, 238, 238, 0.8);
-border-radius: 11px;
-border-width: 0.5px;
-border-color: #000000;
+background: #ffffff;
+border-color: #212121;
+margin: 8px;
 `;
 
 const ButtonText = Styled.Text`
 color: black;
-font-size: 15px;
-font-weight: bold;
+font-size: 20px;
+font-weight: 100;
 text-align: center;
 `;
 
-const MyButton = ({title, onPress, key}) => {
+const goDetailRecipeBtn = ({title, onPress}) => {
   return (
-    <Button activeOpacity={0.8} key={key} onPress={onPress}>
+    <Button onPress={onPress}>
       <ButtonText>{title}</ButtonText>
     </Button>
   );
 };
 
-export default MyButton;
+export default goDetailRecipeBtn;

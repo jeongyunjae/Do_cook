@@ -7,7 +7,7 @@ const Container = Styled.View`
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 11px;
-  background: rgba(196, 196, 196, 0.7);
+  background: rgba(196, 196, 196, 0.65);
 `;
 const InputField = Styled.TextInput`
   flex: 1;

@@ -3,6 +3,7 @@ import Styled from 'styled-components/native';
 import {View, StyleSheet, Text, Image} from 'react-native';
 import CookData from '~/Components/data/CookData';
 import Heyee from '~/Components/token/global';
+import Button from '~/Components/button/goDetailRecipeBtn';
 
 const Container = Styled.View`
 flex: 1;
@@ -29,11 +30,15 @@ margin-left: 10px;
 
 const InnerText = Styled.Text`
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing : 0.3px;
 `;
 
-const showingRecipe = ({title}) => {
+const HoverButton = Styled.View`
+  justify-content: center;
+`;
+
+const showingRecipe = ({title, navigation}) => {
   const myData = CookData;
   let myObj;
   for (let i = 0; i < myData.length; i++) {
@@ -51,6 +56,9 @@ const showingRecipe = ({title}) => {
         <InnerView>
           <InnerText>{myObj.title}</InnerText>
         </InnerView>
+        <HoverButton>
+          <Button title=">" />
+        </HoverButton>
       </View>
     </Container>
   );

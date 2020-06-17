@@ -9,22 +9,16 @@ import {
 } from 'react-native';
 import Styled from 'styled-components/native';
 import Input from '~/Components/Input';
-import Button from '~/Components/button/whiteButton';
+import Button from '~/Components/button/weColorButton';
 import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
 import {getActiveChildNavigationOptions} from 'react-navigation';
-import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
+import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Container = Styled.View`
   flex: 1;
   padding: 20px;
-`;
-
-const TitleText = Styled.Text`
-font-size: 34px;
-font-weight: bold;
-color: #DE6139;
-letter-spacing: 0.5px;
+  background-color: #ffffff;
 `;
 
 const Blank = Styled.View`
@@ -33,10 +27,17 @@ const Blank = Styled.View`
 const FormContainer = Styled.View`
   flex: 1;
 `;
+
+const TitleText = Styled.Text`
+font-size: 26px;
+font-weight: bold;
+color: #DE6139;
+letter-spacing: 0.5px;
+`;
+
 const TitleContainer = Styled.View`
   flex: 1;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 const InputTextName = Styled.Text`
@@ -58,12 +59,12 @@ const ButtonContainer = Styled.View`
 `;
 
 const D0_CookBoast = ({navigation: {navigate}}) => {
-
   let list = [];
 
-  function getData(){
+  function getData() {
     const ref = firestore().collection('recipe');
-    ref.orderBy('like','desc')
+    ref
+      .orderBy('like', 'desc')
       .get()
       .then(snapshot =>
         snapshot.forEach(doc => {
@@ -84,20 +85,28 @@ const D0_CookBoast = ({navigation: {navigate}}) => {
       });
   }
   useEffect(() => {
-    setTimeout(()=>{
-    console.log(list);},1500);
-  },[list]);
+    setTimeout(() => {
+      console.log(list);
+    }, 1500);
+  }, [list]);
 
-
-  return ( 
-  <Container>
-    <Button  title="레시피 보기!"
+  return (
+    <Container>
+      <TitleContainer>
+        <TitleText>요리자랑</TitleText>
+      </TitleContainer>
+      <ButtonContainer>
+        <Button
+          title="모두의 레시피 보기"
           onPress={() => {
             getData();
-            setTimeout(()=>{
-            navigate('D1_ShowCookBoast', list);
-            },1500);}}/>
-  </Container>
+            setTimeout(() => {
+              navigate('D1_ShowCookBoast', list);
+            }, 1500);
+          }}
+        />
+      </ButtonContainer>
+    </Container>
   );
 };
 

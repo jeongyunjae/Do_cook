@@ -22,12 +22,12 @@ const Container = Styled.SafeAreaView`
 
 const SelectMeterialView = Styled.View`
   margin: 17px;
-  
 `;
 
 const SelectMeterialText = Styled.Text`
   font-size: 22px;
   font-weight: bold;
+  color: #ec6337;
 `;
 
 const SelectMeterial1 = Styled.View`
@@ -57,6 +57,7 @@ const AllMeterial = Styled.View`
   flex-direction: row;
   border-radius: 11px;
   border-width: 0.8px;
+  border-color: #ec6337;
   elevation: 1.5;
   `;
 
@@ -73,6 +74,7 @@ const AllMeterialForSelected = Styled.View`
   margin-right: 12px;
   border-radius: 11px;
   border-width: 0.8px;
+  border-color: #ec6337;  
   `;
 
 const SelectMeterial = Styled.View`
@@ -82,12 +84,12 @@ const SelectMeterial = Styled.View`
 const SelectedMeterialView = Styled.View`
   margin: 10px;
   margin-top: 20px;
-  
 `;
 
 const SelectedMeterialText = Styled.Text`
   font-size: 18px;
   font-weight: bold;
+  color: #ec6337;
 `;
 
 const C0_MainPage = ({navigation: {navigate}}) => {
@@ -174,6 +176,7 @@ const C0_MainPage = ({navigation: {navigate}}) => {
           title="다음 단계로"
           onPress={() => {
             navigate('C1_SearchResult', items);
+            setItems([]);
           }}
         />
       </AdmitButton>

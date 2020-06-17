@@ -23,6 +23,7 @@ const SelectMeterialText = Styled.Text`
 const HashtagView = Styled.View`
   flex-direction: row;
   margin-left: 16px;
+  margin-bottom: 10px;
 `;
 
 const HashtagText = Styled.Text`
