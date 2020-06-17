@@ -6,6 +6,7 @@ import {
   TextInput,
   FlatList,
   NativeModules,
+  Image,
 } from 'react-native';
 import Styled from 'styled-components/native';
 import Input from '~/Components/Input';
@@ -80,8 +81,10 @@ const F1_ShowMyLocker = ({navigation}) => {
               onPress={() => {
                 console.log('Order > ', i.order);
                 console.log('Ingrediet > ', i.ingredient);
+                console.log('ImageURL > ', i.imageURL);
               }}
             />
+            <Image source={{uri: i.imageURL}} style={{width:100,height:100}}/>
             <Text>순서 : {i.order + '\n'}</Text>
             <Text>재료 : {i.ingredient + ' '}</Text>
           </FormContainer>

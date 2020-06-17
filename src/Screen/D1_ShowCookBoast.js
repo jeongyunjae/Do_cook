@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
+  Image,
   View,
   TextInput,
   FlatList,
@@ -12,7 +13,7 @@ import Input from '~/Components/Input';
 import Button from '~/Components/button/weColorButton';
 import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
-import {getActiveChildNavigationOptions} from 'react-navigation';
+import {getActiveChildNavigationOptions, getParams} from 'react-navigation';
 import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Container = Styled.View`
@@ -68,12 +69,18 @@ const ButtonContainer = Styled.View`
 
 const D1_ShowCookBoast = ({navigation}) => {
   const data = navigation.state.params;
+
+
+  
+
+  /*for(let i =0; data != null;i++){
+      likeNum[i] = data.map(i => i.like);
+  }*/
+
   console.log(data);
   return (
     <Container>
-      <TitleContainer>
         <TitleText>요리자랑</TitleText>
-      </TitleContainer>
       <ScrollView>
         {data.map(i => (
           <FormContainer>
@@ -85,9 +92,14 @@ const D1_ShowCookBoast = ({navigation}) => {
                 console.log('Ingrediet > ', i.ingredient);
               }}
             />
-            <Text>순서 : {i.order + '\n'}</Text>
+            <Image source={{uri: i.imageURL}} style={{width:100,height:100}}/>
+            <Text>순서 : {i.order + ' '}</Text>
             <Text>재료 : {i.ingredient + ' '}</Text>
             <Text>좋아요 : {i.like}</Text>
+            <Button
+            title={"like"}
+            onPress={()=>{
+            }}></Button>
           </FormContainer>
         ))}
       </ScrollView>

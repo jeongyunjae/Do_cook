@@ -68,7 +68,7 @@ const D0_CookBoast = ({navigation: {navigate}}) => {
       .get()
       .then(snapshot =>
         snapshot.forEach(doc => {
-          const {title, uid, userName, order, ingredient, like} = doc.data();
+          const {title, uid, userName, order, ingredient, like, imageURL} = doc.data();
           list.push({
             id: doc.id,
             title,
@@ -77,6 +77,7 @@ const D0_CookBoast = ({navigation: {navigate}}) => {
             order,
             ingredient,
             like,
+            imageURL,
           });
         }),
       )
@@ -88,7 +89,7 @@ const D0_CookBoast = ({navigation: {navigate}}) => {
     setTimeout(() => {
       console.log(list);
     }, 1500);
-  }, [list]);
+  },);
 
   return (
     <Container>
@@ -103,6 +104,7 @@ const D0_CookBoast = ({navigation: {navigate}}) => {
             setTimeout(() => {
               navigate('D1_ShowCookBoast', list);
             }, 1500);
+            list = [];
           }}
         />
       </ButtonContainer>
