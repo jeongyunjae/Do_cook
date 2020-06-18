@@ -2,8 +2,10 @@ import React from 'react';
 import Styled from 'styled-components/native';
 import {View, StyleSheet, Text, Image} from 'react-native';
 import CookData from '~/Components/data/CookData';
-import Heyee from '~/Components/token/global';
+import MyImageSource from '~/Components/token/global';
 import Button from '~/Components/button/goDetailRecipeBtn';
+import {withNavigation} from 'react-navigation';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const Container = Styled.View`
 flex: 1;
@@ -36,9 +38,22 @@ const InnerText = Styled.Text`
 
 const HoverButton = Styled.View`
   justify-content: center;
+  margin-right: 1px;
 `;
 
-const showingRecipe = ({title, navigation}) => {
+const JustText = Styled.Text`
+  font-size: 14px;
+  font-weight: normal;
+`;
+
+const BoldText = Styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  color: #ec6337;
+
+`;
+
+const showingRecipe = ({title, data, onPress}) => {
   const myData = CookData;
   let myObj;
   for (let i = 0; i < myData.length; i++) {
@@ -47,17 +62,28 @@ const showingRecipe = ({title, navigation}) => {
       break;
     }
   }
+
+  let checkMeterialNum = '';
+
+  let temp = myObj.coreMeterial.map(i => i.includes(data.map(t => t)));
+  if (temp.length == data.length) {
+    checkMeterialNum = 'OK';
+  } else checkMeterialNum = 'No';
+
   return (
     <Container>
       <View style={styles.contain}>
         <InputPicture>
-          <Pictures source={Heyee.ratings[myObj.id]} />
+          <Pictures source={MyImageSource.ratings[myObj.id]} />
         </InputPicture>
         <InnerView>
           <InnerText>{myObj.title}</InnerText>
+          <JustText>
+            재료충족<BoldText>{checkMeterialNum}</BoldText>
+          </JustText>
         </InnerView>
         <HoverButton>
-          <Button title=">" />
+          <Button title=">" onPress={onPress} />
         </HoverButton>
       </View>
     </Container>
@@ -76,8 +102,8 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
-    elevation: 5,
-    borderBottomColor: 'red',
+    elevation: 3,
+    borderBottomColor: 'black',
   },
 });
 

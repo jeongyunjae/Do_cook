@@ -6,14 +6,6 @@ import ChooseButton from '~/Components/button/chooseButton';
 
 import {StatusBar} from 'react-native';
 import CookData from '~/Components/data/CookData';
-import {
-  Alert,
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  Button,
-} from 'react-native';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
@@ -58,7 +50,7 @@ const AllMeterial = Styled.View`
   border-radius: 11px;
   border-width: 0.8px;
   border-color: #ec6337;
-  elevation: 1.5;
+  elevation: 1;
   `;
 
 const ScView = Styled.ScrollView`

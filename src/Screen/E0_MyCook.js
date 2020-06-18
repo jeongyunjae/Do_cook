@@ -1,16 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Platform} from 'react-native';
 import Styled from 'styled-components/native';
-import Input from '~/Components/Input';
-import Button from '~/Components/button/weColorButton';
 import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
-import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import ImagePicker from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
 //import { downloadingURL, imagePickerOptions, createStorageReferenceToFile, uploadFileToFireBase } from '~/utils';
 
+import Input from '~/Components/Input';
+import Button from '~/Components/button/weColorButton';
+import ImgAddButton from '~/Components/button/for_C_Button';
+
 const FireBaseStorage = storage();
+
+const ScrollView = Styled.ScrollView`
+flex: 6;
+`;
 
 const Container = Styled.View`
   flex: 1;
@@ -34,39 +40,34 @@ letter-spacing: 0.5px;
 `;
 
 const FormContainer = Styled.View`
-  justify-content: center;
-  width: 300px;
-  margin-bottom: 10px;
-  border-bottom-width: 0.8px;
-  border-color: black;
+  width: 330px;
+  margin-bottom: 20px;
 `;
 const TitleContainer = Styled.View`
   flex: 1;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 12px;
   align-items: flex-start;
 `;
 
 const InputTextName = Styled.Text`
   color: #EC6337;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 14px;
 `;
 const FormAndButton = Styled.View`
-  padding-bottom: 100px;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
 `;
 
 const ButtonContainer = Styled.View`
   flex: 1;  
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   width: 80%;
   align-items: center;
   justify-content: center;
 `;
 
-const E0_MyCook = (props) => {
+const E0_MyCook = props => {
   const [Title, setTitle] = useState('');
 
   const [Order_one, setOrder_one] = useState('');
@@ -76,51 +77,53 @@ const E0_MyCook = (props) => {
   const [Ingredient_two, setIngredient_two] = useState('');
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
-  const [imageURI,setImageURI]= useState(null);
-  const [imageURL,setImageURL]= useState(null) ;
-
+  const [imageURI, setImageURI] = useState(null);
+  const [imageURL, setImageURL] = useState(null);
 
   const uploadFile = () => {
     ImagePicker.showImagePicker(imagePickerOptions, response => {
       if (response.didCancel) {
         alert('사진 선택을 취소하였습니다.');
-      } else if (response.error) {alert('문제가 발생하였습니다: ',   response.error);
+      } else if (response.error) {
+        alert('문제가 발생하였습니다: ', response.error);
       } else {
-       setImageURI({ uri: response.uri });
-        console.log('My file storage reference is : ', createStorageReferenceToFile(response));
+        setImageURI({uri: response.uri});
+        console.log(
+          'My file storage reference is : ',
+          createStorageReferenceToFile(response),
+        );
         Promise.resolve(uploadFileToFireBase(response));
         console.log(imageURL);
-      }}
-    );
+      }
+    });
   };
 
-  const uploadFileToFireBase = imagePickerResponse =>{
+  const uploadFileToFireBase = imagePickerResponse => {
     const fileSource = getFileLocalPath(imagePickerResponse);
     const storageRef = createStorageReferenceToFile(imagePickerResponse);
-    storageRef.getDownloadURL().then((url)=>{
+    storageRef.getDownloadURL().then(url => {
       setImageURL(url);
-    })
+    });
     return storageRef.putFile(fileSource);
-}
+  };
 
-const createStorageReferenceToFile = response =>{
+  const createStorageReferenceToFile = response => {
     const {fileName} = response;
     return FireBaseStorage.ref(fileName);
-};
+  };
 
-const getFileLocalPath = response =>{
+  const getFileLocalPath = response => {
     const {path, uri} = response;
-    return Platform.OS === 'android' ? path: uri;
-};
+    return Platform.OS === 'android' ? path : uri;
+  };
 
-const imagePickerOptions = {
-    title:'사진 선택',
+  const imagePickerOptions = {
+    title: '사진 선택',
     takePhotoButtonTitle: '카메라',
     chooseFromLibraryButtonTitle: '이미지 선택',
     cancelButtonTitle: '취소',
     noData: true,
   };
-
 
   // Handle user state changes
   function onAuthStateChanged(user) {
@@ -149,9 +152,6 @@ const imagePickerOptions = {
   }, []);
 
   if (initializing) return null;
-
-
-
 
   return (
     <Container>
@@ -203,15 +203,15 @@ const imagePickerOptions = {
             value={Order_three}
           />
         </FormContainer>
-        <FormContainer>
-        <Button title="이미지 추가" onPress={uploadFile}/>
-        {imageURI && <Picture source={imageURI} />}
-             </FormContainer>
+        <FormAndButton>
+          <ImgAddButton title="요리사진 선택" onPress={uploadFile} />
+          {imageURI && <Picture source={imageURI} />}
+        </FormAndButton>
       </ScrollView>
       <ButtonContainer>
         <Button
           style={{marginBottom: 24}}
-          title="추가"
+          title="레시피 추가"
           onPress={() => {
             addData();
             alert(Title + '이 레시피에 추가되었습니다.');
@@ -227,9 +227,9 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
   },
-  imageContainer:{
+  imageContainer: {
     borderWidth: 1,
-    borderColor : 'black',
+    borderColor: 'black',
     backgroundColor: '#eee',
     width: '80%',
     height: 150,

@@ -8,24 +8,13 @@ import {
   NativeModules,
 } from 'react-native';
 import Styled from 'styled-components/native';
-import Input from '~/Components/Input';
 import Button from '~/Components/button/weColorButton';
 import firestore from '@react-native-firebase/firestore';
-import {firebase} from '@react-native-firebase/auth';
-import {getActiveChildNavigationOptions} from 'react-navigation';
-import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Container = Styled.View`
   flex: 1;
   padding: 20px;
   background-color: #ffffff;
-`;
-
-const Blank = Styled.View`
-  flex: 2;  
-`;
-const FormContainer = Styled.View`
-  flex: 1;
 `;
 
 const TitleText = Styled.Text`
@@ -38,18 +27,6 @@ letter-spacing: 0.5px;
 const TitleContainer = Styled.View`
   flex: 1;
   align-items: flex-start;
-`;
-
-const InputTextName = Styled.Text`
-  margin: 2.5px;
-  color: #EC6337;
-  font-weight: normal;
-  font-size: 15px;
-`;
-const FormAndButton = Styled.View`
-  padding-bottom: 100px;
-  justify-content: center;
-  align-items: center;
 `;
 
 const ButtonContainer = Styled.View`
@@ -68,7 +45,15 @@ const D0_CookBoast = ({navigation: {navigate}}) => {
       .get()
       .then(snapshot =>
         snapshot.forEach(doc => {
-          const {title, uid, userName, order, ingredient, like, imageURL} = doc.data();
+          const {
+            title,
+            uid,
+            userName,
+            order,
+            ingredient,
+            like,
+            imageURL,
+          } = doc.data();
           list.push({
             id: doc.id,
             title,
@@ -89,7 +74,7 @@ const D0_CookBoast = ({navigation: {navigate}}) => {
     setTimeout(() => {
       console.log(list);
     }, 1500);
-  },);
+  });
 
   return (
     <Container>

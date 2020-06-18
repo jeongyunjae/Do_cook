@@ -5,6 +5,8 @@ import Styled from 'styled-components/native';
 import CookData from '~/Components/data/CookData';
 import ShowingRecipe from '~/Components/token/showingRecipe';
 
+import Button from '~/Components/button/for_C_Button';
+
 const Container = Styled.SafeAreaView`
   flex: 1;
   background-color: #ffffff;
@@ -37,36 +39,50 @@ const ShowRecipe = Styled.ScrollView`
 `;
 
 const C1_SearchResult = ({navigation}) => {
-  const meterialData = navigation.state.params;
+  let meterialData = navigation.state.params;
   console.log(meterialData);
   let myData = CookData;
   const findData = [];
-  let forPrintData = [];
   meterialData.map(m => {
     findData.push(m.value);
   });
-
   const correctTitles = [];
-
+  let plus = 0;
+  let searchResult = '';
   for (let i = 0; i < myData.length; i++) {
     let temp = findData.filter(it => myData[i].coreMeterial.includes(it));
-    if (temp.length === findData.length) correctTitles.push(myData[i].title);
+    if (temp.length === findData.length) {
+      correctTitles.push(myData[i].title);
+      searchResult = '검색결과';
+    }
   }
-  console.log(correctTitles);
+
+  if (correctTitles.length == 0) searchResult = '검색된 레시피가 없습니다:)';
+
+  meterialData.map(m => {
+    m.id = ++plus;
+  });
 
   return (
     <Container>
       <SelectMeterialView>
-        <SelectMeterialText>검색 결과</SelectMeterialText>
+        <SelectMeterialText>{searchResult}</SelectMeterialText>
       </SelectMeterialView>
       <HashtagView>
-        {meterialData.map((arr, i) => {
-          return <HashtagText>#{arr.value} </HashtagText>;
+        {meterialData.map(arr => {
+          return <HashtagText key={arr.id}>#{arr.value}</HashtagText>;
         })}
       </HashtagView>
       <ShowRecipe>
-        {correctTitles.map(i => {
-          return <ShowingRecipe title={i} />;
+        {correctTitles.map((i, idx) => {
+          return (
+            <ShowingRecipe
+              title={i}
+              data={findData}
+              key={idx}
+              onPress={() => navigation.navigate('C2_ShowDetail', i)}
+            />
+          );
         })}
       </ShowRecipe>
     </Container>

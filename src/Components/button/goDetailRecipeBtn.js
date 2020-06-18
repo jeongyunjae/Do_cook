@@ -12,8 +12,8 @@ margin: 8px;
 
 const ButtonText = Styled.Text`
 color: black;
-font-size: 20px;
-font-weight: 100;
+font-size: 23px;
+font-weight: 900;
 text-align: center;
 `;
 

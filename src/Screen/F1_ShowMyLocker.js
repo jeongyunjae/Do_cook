@@ -1,25 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  FlatList,
-  NativeModules,
-  Image,
-} from 'react-native';
+import {StyleSheet, Text, Image} from 'react-native';
 import Styled from 'styled-components/native';
-import Input from '~/Components/Input';
 import Button from '~/Components/button/weColorButton';
-import firestore from '@react-native-firebase/firestore';
-import {firebase} from '@react-native-firebase/auth';
-import {getActiveChildNavigationOptions} from 'react-navigation';
-import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Container = Styled.View`
   flex: 1;
   padding: 20px;
   background-color: #ffffff;
+`;
+
+const ScrollView = Styled.ScrollView`
+  margin-top: 20px;
 `;
 
 const TitleText = Styled.Text`
@@ -29,41 +20,13 @@ color: #DE6139;
 letter-spacing: 0.5px;
 `;
 
-const Blank = Styled.View`
-  flex: 2;  
-`;
 const FormContainer = Styled.View`
   flex: 1;
   justify-content: center;
-  width: 300px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-top-width: 0.5px;
+  align-items: center;
+  margin-bottom: 10px;
   border-bottom-width: 0.5px;
   border-color: black;
-`;
-const TitleContainer = Styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
-
-const InputTextName = Styled.Text`
-  margin: 2.5px;
-  color: #EC6337;
-  font-weight: normal;
-  font-size: 15px;
-`;
-const FormAndButton = Styled.View`
-  padding-bottom: 100px;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ButtonContainer = Styled.View`
-  flex: 1;  
-  justify-content: center;
-  align-items: center;
 `;
 
 const F1_ShowMyLocker = ({navigation}) => {
@@ -73,8 +36,8 @@ const F1_ShowMyLocker = ({navigation}) => {
     <Container>
       <TitleText>나만의 레시피</TitleText>
       <ScrollView>
-        {data.map(i => (
-          <FormContainer>
+        {data.map((i, idx) => (
+          <FormContainer key={idx}>
             <Button
               style={{marginBottom: 24}}
               title={i.title}
@@ -84,7 +47,10 @@ const F1_ShowMyLocker = ({navigation}) => {
                 console.log('ImageURL > ', i.imageURL);
               }}
             />
-            <Image source={{uri: i.imageURL}} style={{width:100,height:100}}/>
+            <Image
+              source={{uri: i.imageURL}}
+              style={{width: 100, height: 100}}
+            />
             <Text>순서 : {i.order + '\n'}</Text>
             <Text>재료 : {i.ingredient + ' '}</Text>
           </FormContainer>

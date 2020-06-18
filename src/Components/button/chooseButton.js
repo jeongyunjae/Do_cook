@@ -7,13 +7,13 @@ width: 150px;
 height: 38px;
 padding: 8px;
 border-radius: 11px;
-border-color: #212121;
+border-color: #ec6337;
 border-width: 1px;
 margin: 8px;
 `;
 
 const ButtonText = Styled.Text`
-color: black;
+color: #ec6337;
 font-size: 12px;
 font-weight: normal;
 text-align: center;

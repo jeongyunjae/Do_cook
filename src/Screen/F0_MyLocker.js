@@ -1,16 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  FlatList,
-  NativeModules,
-} from 'react-native';
+import {StyleSheet} from 'react-native';
 import Styled from 'styled-components/native';
 import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
-import {getActiveChildNavigationOptions} from 'react-navigation';
 
 import Button from '~/Components/button/weColorButton';
 
@@ -27,33 +19,8 @@ color: #DE6139;
 letter-spacing: 0.5px;
 `;
 
-const Blank = Styled.View`
-  flex: 2;  
-`;
-const FormContainer = Styled.View`
-  flex: 1;
-`;
-const TitleContainer = Styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
-
-const InputTextName = Styled.Text`
-  margin: 2.5px;
-  color: #EC6337;
-  font-weight: normal;
-  font-size: 15px;
-`;
-const FormAndButton = Styled.View`
-  padding-bottom: 100px;
-  justify-content: center;
-  align-items: center;
-`;
-
 const ButtonContainer = Styled.View`
-  flex: 1;  
-  margin-top: 300px;
+  margin-top: 327.5px;
   align-items: center;
 `;
 
@@ -81,7 +48,14 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
       .get()
       .then(snapshot =>
         snapshot.forEach(doc => {
-          const {title, uid, userName, order, ingredient, imageURL} = doc.data();
+          const {
+            title,
+            uid,
+            userName,
+            order,
+            ingredient,
+            imageURL,
+          } = doc.data();
           list.push({
             id: doc.id,
             title,

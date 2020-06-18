@@ -9,7 +9,7 @@ const Container = Styled.SafeAreaView`
   background-color: #ffffff;`;
 
 const ButtonContainer = Styled.View`
-  flex: 2;
+  flex: 0.4;
   align-items: center;
 `;
 
@@ -17,15 +17,6 @@ const InformView = Styled.View`
   flex: 5;
   align-items: center;
   justify-content: center;
-`;
-
-const EmailView = Styled.View`
-  flex: 2;
-  align-items: center;
-  justify-content: center;
-`;
-const EmailText = Styled.Text`
-  font-size: 20px;
 `;
 
 const Inner = Styled.View`

@@ -17,13 +17,14 @@ import A6_GoogleLogin from '~/Screen/A6_GoogleLogin';
 import A7_SendEmail from '~/Screen/A7_SendEmail';
 import C0_MainPage from '~/Screen/C0_MainPage';
 import C1_SearchResult from '~/Screen/C1_SearchResult';
+import C2_ShowDetail from '~/Screen/C2_ShowDetail';
 import D0_CookBoast from '~/Screen/D0_CookBoast';
 import D1_ShowCookBoast from '~/Screen/D1_ShowCookBoast';
 import E0_MyCook from '~/Screen/E0_MyCook';
 import F0_MyLocker from '~/Screen/F0_MyLocker';
 import F1_ShowMyLocker from '~/Screen/F1_ShowMyLocker';
 import G0_MyInform from '~/Screen/G0_MyInform';
-import C2_DetailRecipe from '~/Screen/C2_DetailRecipe';
+import ShowingRecipe from '~/Components/token/showingRecipe';
 
 //CreateStackNavigator
 const A_Navigator = createStackNavigator(
@@ -45,8 +46,9 @@ const A_Navigator = createStackNavigator(
 const C_Navigator = createStackNavigator(
   {
     요리하기: {screen: C0_MainPage},
+    C2_ShowDetail,
     C1_SearchResult,
-    C2_DetailRecipe,
+    ShowingRecipe,
   },
   {
     defaultNavigationOptions: {
