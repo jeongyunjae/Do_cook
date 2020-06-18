@@ -79,14 +79,8 @@ const G0_MyInform = ({navigation: {navigate}}) => {
         />
         <Inner>
           <View>
-            <Text style={{padding: 16, fontSize: 16, color: 'black'}}>
-              정보수정
-            </Text>
           </View>
           <View>
-            <Text style={{padding: 16, fontSize: 16, color: 'black'}}>
-              튜토리얼
-            </Text>
           </View>
         </Inner>
         <ButtonContainer>

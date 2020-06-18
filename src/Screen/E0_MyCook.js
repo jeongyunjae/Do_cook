@@ -132,6 +132,10 @@ const E0_MyCook = props => {
     console.log(user.displayName);
   }
   function addData() {
+    if(Title == ''){alert('레시피명이 비었습니다.');}
+    else if(Order_one == ''||Order_two==''||Order_three==''){alert('순서가 비었습니다.');}
+    else if(Ingredient_one == '' || Ingredient_two=='' ){alert('재료가 비었습니다.');}
+    else{
     const ref = firestore().collection('recipe');
     const titleRef = ref.doc(Title);
     titleRef
@@ -144,7 +148,10 @@ const E0_MyCook = props => {
         imageURL: imageURL,
         like: 0,
       })
-      .then(() => console.log('ADD!'));
+      .then(() => {
+        console.log('ADD!');
+        alert(Title + '이 레시피에 추가되었습니다.');});
+    }
   }
   useEffect(() => {
     const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
@@ -214,7 +221,6 @@ const E0_MyCook = props => {
           title="레시피 추가"
           onPress={() => {
             addData();
-            alert(Title + '이 레시피에 추가되었습니다.');
           }}
         />
       </ButtonContainer>

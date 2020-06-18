@@ -29,12 +29,35 @@ const FormContainer = Styled.View`
 
 const D1_ShowCookBoast = ({navigation}) => {
   const data = navigation.state.params;
-
+  const [LikeNum,setLikeNum]=useState(null);
+  let myData=[];
+  useEffect(()=>{
+      data.map((i,idx)=>{
+        (myData.push({
+          title : i.title,
+          like : i.like,
+        }));
+        
+    })
+  },[]);
   /*for(let i =0; data != null;i++){
-      likeNum[i] = data.map(i => i.like);
+      likeNum = data.map(i => i.like);
   }*/
+  function onClickLike(like){
+    setLikeNum(like);
+    console.log(LikeNum);
+  }
+  const addLikeNum = () =>{
+    setLikeNum([
+      ...LikeNum,
+      {
+        title: LikeNum.title,
+        like: LikeNum.like,
+      }
+    ]);
+  }
 
-  console.log(data);
+  console.log('요리자랑');
   return (
     <Container>
       <TitleText>요리자랑</TitleText>
@@ -54,9 +77,8 @@ const D1_ShowCookBoast = ({navigation}) => {
               style={{width: 100, height: 100}}
             />
             <Text>순서 : {i.order + ' '}</Text>
-            <Text>재료 : {i.ingredient + ' '}</Text>
-            <Text>좋아요 : {i.like}</Text>
-            <Button title={'like'} onPress={() => {}} />
+            <Text>재료 : {i.ingredient + ''}</Text>
+            <Text style={{fontWeight:'bold'}}>{i.userName} 님의 레시피입니다.</Text>
           </FormContainer>
         ))}
       </ScrollView>
