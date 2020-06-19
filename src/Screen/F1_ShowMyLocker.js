@@ -22,11 +22,23 @@ letter-spacing: 0.5px;
 
 const FormContainer = Styled.View`
   flex: 1;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 10px;
   border-bottom-width: 0.5px;
   border-color: black;
+`;
+
+const MenuView = Styled.View`
+margin-top: 5px;
+margin-bottom: 5px;
+`;
+
+const MenuText = Styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+const SubText = Styled.Text`
+  font-size: 16px;
 `;
 
 const F1_ShowMyLocker = ({navigation}) => {
@@ -38,21 +50,15 @@ const F1_ShowMyLocker = ({navigation}) => {
       <ScrollView>
         {data.map((i, idx) => (
           <FormContainer key={idx}>
-            <Button
-              style={{marginBottom: 24}}
-              title={i.title}
-              onPress={() => {
-                console.log('Order > ', i.order);
-                console.log('Ingrediet > ', i.ingredient);
-                console.log('ImageURL > ', i.imageURL);
-              }}
-            />
             <Image
               source={{uri: i.imageURL}}
-              style={{width: 100, height: 100}}
+              style={{width: 400, height: 300}}
             />
-            <Text>순서 : {i.order + '\n'}</Text>
-            <Text>재료 : {i.ingredient + ' '}</Text>
+            <MenuView>
+              <MenuText>{i.title}</MenuText>
+            </MenuView>
+            <SubText>재료 : {i.ingredient + ' '}</SubText>
+            <SubText>순서 : {i.order + '\n'}</SubText>
           </FormContainer>
         ))}
       </ScrollView>
