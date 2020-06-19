@@ -73,8 +73,13 @@ const E0_MyCook = props => {
   const [Order_one, setOrder_one] = useState('');
   const [Order_two, setOrder_two] = useState('');
   const [Order_three, setOrder_three] = useState('');
+  const [Order_four, setOrder_four] = useState('');
+  const [Order_five, setOrder_five] = useState('');
+  const [Order_six, setOrder_six] = useState('');
   const [Ingredient_one, setIngredient_one] = useState('');
   const [Ingredient_two, setIngredient_two] = useState('');
+  const [Ingredient_three, setIngredient_three] = useState('');
+  const [Ingredient_four, setIngredient_four] = useState('');
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
   const [imageURI, setImageURI] = useState(null);
@@ -100,11 +105,11 @@ const E0_MyCook = props => {
   const uploadFileToFireBase = imagePickerResponse => {
     const fileSource = getFileLocalPath(imagePickerResponse);
     const storageRef = createStorageReferenceToFile(imagePickerResponse);
-    return storageRef.putFile(fileSource).then(function(result){
-      storageRef.getDownloadURL().then(function(result){
+    return storageRef.putFile(fileSource).then(function(result) {
+      storageRef.getDownloadURL().then(function(result) {
         setImageURL(result);
         console.log(result);
-      })
+      });
     });
   };
 
@@ -113,7 +118,7 @@ const E0_MyCook = props => {
     storageRef.getDownloadURL().then(url => {
       setImageURL(url);
       console.log('URL: ', url);
-      console.log('imageURL:', imageURL)
+      console.log('imageURL:', imageURL);
     });
   };
 
@@ -146,7 +151,12 @@ const E0_MyCook = props => {
       alert('레시피명이 비었습니다.');
     } else if (Order_one == '' && Order_two == '' && Order_three == '') {
       alert('순서가 비었습니다.');
-    } else if (Ingredient_one == '' && Ingredient_two == '') {
+    } else if (
+      Ingredient_one == '' &&
+      Ingredient_two == '' &&
+      Ingredient_three == '' &&
+      Ingredient_four == ''
+    ) {
       alert('재료가 비었습니다.');
     } else {
       const ref = firestore().collection('recipe');
@@ -156,8 +166,20 @@ const E0_MyCook = props => {
           title: Title,
           uid: user.uid,
           userName: user.displayName,
-          order: [Order_one, Order_two, Order_three],
-          ingredient: [Ingredient_one, Ingredient_two],
+          order: [
+            Order_one,
+            Order_two,
+            Order_three,
+            Order_four,
+            Order_five,
+            Order_six,
+          ],
+          ingredient: [
+            Ingredient_one,
+            Ingredient_two,
+            Ingredient_three,
+            Ingredient_four,
+          ],
           imageURL: imageURL,
           like: 0,
         })
@@ -203,6 +225,22 @@ const E0_MyCook = props => {
             onChangeText={Ingredient_two => setIngredient_two(Ingredient_two)}
             value={Ingredient_two}
           />
+          <InputTextName>재료 3</InputTextName>
+          <Input
+            style={{marginBottom: 5}}
+            onChangeText={Ingredient_three =>
+              setIngredient_three(Ingredient_three)
+            }
+            value={Ingredient_two}
+          />
+          <InputTextName>재료 4</InputTextName>
+          <Input
+            style={{marginBottom: 5}}
+            onChangeText={Ingredient_four =>
+              setIngredient_four(Ingredient_four)
+            }
+            value={Ingredient_two}
+          />
         </FormContainer>
         <FormContainer>
           <InputTextName>요리순서 1</InputTextName>
@@ -222,6 +260,24 @@ const E0_MyCook = props => {
             style={{marginBottom: 5}}
             onChangeText={Order_three => setOrder_three(Order_three)}
             value={Order_three}
+          />
+          <InputTextName>요리순서 4</InputTextName>
+          <Input
+            style={{marginBottom: 5}}
+            onChangeText={Order_four => setOrder_four(Order_four)}
+            value={Order_one}
+          />
+          <InputTextName>요리순서 5</InputTextName>
+          <Input
+            style={{marginBottom: 5}}
+            onChangeText={Order_five => setOrder_five(Order_five)}
+            value={Order_one}
+          />
+          <InputTextName>요리순서 6</InputTextName>
+          <Input
+            style={{marginBottom: 5}}
+            onChangeText={Order_six => setOrder_six(Order_six)}
+            value={Order_one}
           />
         </FormContainer>
         <FormAndButton>
