@@ -93,7 +93,6 @@ const E0_MyCook = props => {
           createStorageReferenceToFile(response),
         );
         Promise.resolve(uploadFileToFireBase(response));
-        console.log(imageURL);
       }
     });
   };
@@ -101,10 +100,21 @@ const E0_MyCook = props => {
   const uploadFileToFireBase = imagePickerResponse => {
     const fileSource = getFileLocalPath(imagePickerResponse);
     const storageRef = createStorageReferenceToFile(imagePickerResponse);
+    return storageRef.putFile(fileSource).then(function(result){
+      storageRef.getDownloadURL().then(function(result){
+        setImageURL(result);
+        console.log(result);
+      })
+    });
+  };
+
+  const getURL = imagePickerResponse => {
+    const storageRef = createStorageReferenceToFile(imagePickerResponse);
     storageRef.getDownloadURL().then(url => {
       setImageURL(url);
+      console.log('URL: ', url);
+      console.log('imageURL:', imageURL)
     });
-    return storageRef.putFile(fileSource);
   };
 
   const createStorageReferenceToFile = response => {
@@ -221,6 +231,7 @@ const E0_MyCook = props => {
           title="레시피 추가"
           onPress={() => {
             addData();
+            console.log(imageURL);
           }}
         />
       </ButtonContainer>
