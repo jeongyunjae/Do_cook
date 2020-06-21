@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, View, Text, ImageBackground, Image} from 'react-native';
-import Button from '~/Components/button/weColorButton';
-import Styled from 'styled-components/native';
 import {
-  GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
-} from '@react-native-community/google-signin';
+  StyleSheet,
+  View,
+  Image,
+  ImageBackground,
+  StatusBar,
+} from 'react-native';
+import Styled from 'styled-components/native';
+import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
 import {firebase} from '@react-native-firebase/auth';
+
+import Button from '~/Components/button/weColorButton';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
@@ -31,10 +34,8 @@ const styles = StyleSheet.create({
   },
 });
 
-const A1_SignUp = ({navigation: {navigate}}) => {
+const A0_StartPage = ({navigation: {navigate}}) => {
   let {userInfo, setuserInfo} = useState(null);
-
-  const {gettingLoginStatus, setgettingLoginStatus} = useState(false);
 
   useEffect(() => {
     GoogleSignin.configure({
@@ -42,35 +43,7 @@ const A1_SignUp = ({navigation: {navigate}}) => {
       webClientId:
         '109877646891-jtgsjr70h56lnhcgki3ampro788pf6nh.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
     });
-    //    _isSignedIn();
   }, []);
-
-  /*const _isSignedIn = async()=>{
-  const isSignedIn = await GoogleSignin.isSignedIn();
-  if(isSignedIn){
-    alert('User is already signed in');
-    _getCurrentUserInfo();
-  } else {
-    alert('Please Login');
-  }
-  setgettingLoginStatus(false);
-};
-
-const _getCurrentUserInfo = async () => {
-  try{
-      const userInfo = await GoogleSignin.signInSilently();
-      console.log('User Info --> ', userInfo);
-      setuserInfo(userInfo);
-  } catch(error){
-      if(error.code === statusCodes.SIGN_IN_REQUIRED) {
-          alert('User has not signed in yet');
-          console.log('User has not signed in yet');
-      } else {
-          alert("Something went wrong. Unable to get user's info");
-          console.log("Something went wrong. Unable to get user's info");
-      }
-  }
-};*/
 
   const _signIn = async () => {
     try {
@@ -99,20 +72,14 @@ const _getCurrentUserInfo = async () => {
     }
   };
 
-  const _signOut = async () => {
-    try {
-      await GoogleSignin.revokeAccess();
-      await GoogleSignin.signOut();
-      setuserInfo(null);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  //if(userInfo !=null){}
-  //else{
   return (
     <Container>
+      <StatusBar
+        barStyle="dark-content"
+        hidden={true}
+        backgroundColor="#00BCD4"
+        translucent={true}
+      />
       <ImageBackground
         source={require('~/Assets/Images/Main-picture.jpg')}
         style={styles.picture}>
@@ -127,17 +94,26 @@ const _getCurrentUserInfo = async () => {
           </Logo>
           <ButtonLocate>
             <Button
-              style={{marginBottom: 24}}
-              title="자체 회원가입"
+              style={{marginBottom: 20}}
+              title="Login for E-mail"
               onPress={() => {
-                navigate('A2_DkSignUp');
+                navigate('A5_DkLogin');
               }}
             />
+
             <Button
-              style={{marginBottom: 24}}
-              title="구글 회원가입"
+              style={{marginBottom: 20}}
+              title="Login for Google"
               onPress={() => {
-                _signIn().then(() => navigate('A4_InputNickname'));
+                _signIn().then(() => navigate('요리하기'));
+              }}
+            />
+
+            <Button
+              style={{marginBottom: 20}}
+              title="회원가입"
+              onPress={() => {
+                navigate('A1_SignUp');
               }}
             />
           </ButtonLocate>
@@ -147,4 +123,4 @@ const _getCurrentUserInfo = async () => {
   );
 };
 
-export default A1_SignUp;
+export default A0_StartPage;

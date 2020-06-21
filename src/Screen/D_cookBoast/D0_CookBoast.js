@@ -8,8 +8,9 @@ import {
   NativeModules,
 } from 'react-native';
 import Styled from 'styled-components/native';
-import Button from '~/Components/button/weColorButton';
 import firestore from '@react-native-firebase/firestore';
+
+import Button from '~/Components/button/weColorButton';
 
 const Container = Styled.View`
   flex: 1;

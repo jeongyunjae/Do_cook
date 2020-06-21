@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 import Styled from 'styled-components/native';
-import MyImageSource from '~/Components/token/global';
 
+import MyImageSource from '~/Components/token/global';
 import CookData from '~/Components/data/CookData';
 
 const Container = Styled.SafeAreaView`

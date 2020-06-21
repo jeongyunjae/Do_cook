@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import Styled from 'styled-components/native';
 import {firebase} from '@react-native-firebase/auth';
+
 import Button from '~/Components/button/weColorButton';
 import Input from '~/Components/Input';
 

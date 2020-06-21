@@ -7,23 +7,23 @@ import {StyleSheet, Image} from 'react-native';
 
 //Screens
 import CheckLogin from '~/Screen/CheckLogin';
-import A0_StartPage from '~/Screen/A0_StartPage';
-import A1_SignUp from '~/Screen/A1_SignUp';
-import A2_DkSignUp from '~/Screen/A2_DkSignUp';
-import A3_GoogleSignUp from '~/Screen/A3_GoogleSignUp';
-import A4_InputNickname from '~/Screen/A4_InputNickname';
-import A5_DkLogin from '~/Screen/A5_DkLogin';
-import A6_GoogleLogin from '~/Screen/A6_GoogleLogin';
-import A7_SendEmail from '~/Screen/A7_SendEmail';
-import C0_MainPage from '~/Screen/C0_MainPage';
-import C1_SearchResult from '~/Screen/C1_SearchResult';
-import C2_ShowDetail from '~/Screen/C2_ShowDetail';
-import D0_CookBoast from '~/Screen/D0_CookBoast';
-import D1_ShowCookBoast from '~/Screen/D1_ShowCookBoast';
-import E0_MyCook from '~/Screen/E0_MyCook';
-import F0_MyLocker from '~/Screen/F0_MyLocker';
-import F1_ShowMyLocker from '~/Screen/F1_ShowMyLocker';
-import G0_MyInform from '~/Screen/G0_MyInform';
+import A0_StartPage from '~/Screen/A_sign/A0_StartPage';
+import A1_SignUp from '~/Screen/A_sign/A1_SignUp';
+import A2_DkSignUp from '~/Screen/A_sign/A2_DkSignUp';
+import A3_GoogleSignUp from '~/Screen/A_sign/A3_GoogleSignUp';
+import A4_InputNickname from '~/Screen/A_sign/A4_InputNickname';
+import A5_DkLogin from '~/Screen/A_sign/A5_DkLogin';
+import A6_GoogleLogin from '~/Screen/A_sign/A6_GoogleLogin';
+import A7_SendEmail from '~/Screen/A_sign/A7_SendEmail';
+import C0_MainPage from '~/Screen/C_cooking/C0_MainPage';
+import C1_SearchResult from '~/Screen/C_cooking/C1_SearchResult';
+import C2_ShowDetail from '~/Screen/C_cooking/C2_ShowDetail';
+import D0_CookBoast from '~/Screen/D_cookBoast/D0_CookBoast';
+import D1_ShowCookBoast from '~/Screen/D_cookBoast/D1_ShowCookBoast';
+import E0_MyCook from '~/Screen/E_customCook/E0_MyCook';
+import F0_MyLocker from '~/Screen/F_myLocker/F0_MyLocker';
+import F1_ShowMyLocker from '~/Screen/F_myLocker/F1_ShowMyLocker';
+import G0_MyInform from '~/Screen/G_myInform/G0_MyInform';
 import ShowingRecipe from '~/Components/token/showingRecipe';
 
 //CreateStackNavigator

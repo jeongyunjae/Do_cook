@@ -1,20 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import {firebase} from '@react-native-firebase/auth';
-import WeColorButton from '~/Components/button/weColorButton';
 import Styled from 'styled-components/native';
+
+import WeColorButton from '~/Components/button/weColorButton';
+import ChooseButton from '~/Components/button/chooseButton';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
-  background-color: #ffffff;`;
-
-const ButtonContainer = Styled.View`
-  flex: 0.4;
-  align-items: center;
+  background-color: #ffffff;
 `;
 
 const InformView = Styled.View`
-  flex: 5;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ButtonContainer = Styled.View`
+  flex: 1;
   align-items: center;
   justify-content: center;
 `;
@@ -48,17 +52,25 @@ const G0_MyInform = ({navigation: {navigate}}) => {
 
   if (ver == 'no') {
     return (
-      <View style={styles.container}>
+      <Container>
         <InformView>
-          <Text>이메일 인증하세요.</Text>
+          <Text style={{fontSize: 22, fontWeight: '700'}}>
+            이메일 인증이 필요합니다.
+          </Text>
         </InformView>
+        <View style={{flex: 1, alignItems: 'center'}}>
+          <ChooseButton
+            title="인증하러 가기!"
+            onPress={() => navigate('A7_SendEmail')}
+          />
+        </View>
         <ButtonContainer>
           <WeColorButton
             title="로그아웃"
             onPress={() => navigate('A0_StartPage')}
           />
         </ButtonContainer>
-      </View>
+      </Container>
     );
   } else {
     return (
@@ -78,10 +90,8 @@ const G0_MyInform = ({navigation: {navigate}}) => {
           }}
         />
         <Inner>
-          <View>
-          </View>
-          <View>
-          </View>
+          <View />
+          <View />
         </Inner>
         <ButtonContainer>
           <WeColorButton

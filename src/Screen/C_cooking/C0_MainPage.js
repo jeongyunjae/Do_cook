@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import Styled from 'styled-components/native';
+
+import {StatusBar} from 'react-native';
+
 import WeColorButton from '~/Components/button/weColorButton';
 import MeterialButton from '~/Components/button/for_C_Button';
 import ChooseButton from '~/Components/button/chooseButton';
-
-import {StatusBar} from 'react-native';
 import CookData from '~/Components/data/CookData';
 
 const Container = Styled.SafeAreaView`

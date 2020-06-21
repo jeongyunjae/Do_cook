@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, Alert} from 'react-native';
-import Button from '~/Components/button/weColorButton';
 import Styled from 'styled-components/native';
-import Input from '~/Components/Input';
 import {firebase} from '@react-native-firebase/auth';
+
+import Button from '~/Components/button/weColorButton';
+import Input from '~/Components/Input';
 
 const Container = Styled.View`
   flex: 1;

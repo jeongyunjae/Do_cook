@@ -2,11 +2,10 @@ import React, {useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import {StyleSheet, View, ImageBackground, Image} from 'react-native';
 import Styled from 'styled-components/native';
+import {firebase} from '@react-native-firebase/auth';
 
 import Button from '~/Components/button/weColorButton';
 import Input from '~/Components/Input';
-
-import {firebase} from '@react-native-firebase/auth';
 
 const Container = Styled.SafeAreaView`
   flex: 1;

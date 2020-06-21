@@ -5,8 +5,6 @@ import Styled from 'styled-components/native';
 import CookData from '~/Components/data/CookData';
 import ShowingRecipe from '~/Components/token/showingRecipe';
 
-import Button from '~/Components/button/for_C_Button';
-
 const Container = Styled.SafeAreaView`
   flex: 1;
   background-color: #ffffff;
@@ -59,18 +57,14 @@ const C1_SearchResult = ({navigation}) => {
 
   if (correctTitles.length == 0) searchResult = '검색된 레시피가 없습니다:)';
 
-  meterialData.map(m => {
-    m.id = ++plus;
-  });
-
   return (
     <Container>
       <SelectMeterialView>
         <SelectMeterialText>{searchResult}</SelectMeterialText>
       </SelectMeterialView>
       <HashtagView>
-        {meterialData.map(arr => {
-          return <HashtagText key={arr.id}>#{arr.value}</HashtagText>;
+        {meterialData.map((arr, idx) => {
+          return <HashtagText key={idx}>#{arr.value}</HashtagText>;
         })}
       </HashtagView>
       <ShowRecipe>

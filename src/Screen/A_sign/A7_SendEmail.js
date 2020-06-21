@@ -3,22 +3,24 @@ import Styled from 'styled-components/native';
 import {firebase} from '@react-native-firebase/auth';
 import React, {useState, useEffect} from 'react';
 import {ActivityIndicator, StyleSheet, Text, View, Button} from 'react-native';
+
 import WeColorButton from '~/Components/button/weColorButton';
 
 const Container = Styled.View`
   flex: 1;
-  background-color: #141414;
-  justify-content: center;
-  align-items: center;
-`;
-const ButtonContainer = Styled.View`
-  flex: 1;
+  background-color: #ffffff;
 `;
 
 const InformView = Styled.View`
-  flex: 3;
+  flex: 2;
   align-items: center;
   justify-content: center;
+`;
+
+const ButtonContainer = Styled.View`
+  flex: 2;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Checklogin = ({navigation: {navigate}}) => {
@@ -44,7 +46,7 @@ const Checklogin = ({navigation: {navigate}}) => {
       .auth()
       .currentUser.sendEmailVerification()
       .then(function() {
-        alert('이메일을 확인하세요.');
+        alert('인증메일을 발송하였습니다.');
         console.log('인증이메일 발송');
       })
       .catch(function(error) {
@@ -64,21 +66,23 @@ const Checklogin = ({navigation: {navigate}}) => {
 
   //사용자 인증이 확인되면 C0요리하기 페이지로, 안되면 로그인 페이지로
   return (
-    <View style={styles.container}>
+    <Container>
       <InformView>
-        <Text>이메일 인증하세요.</Text>
+        <Text style={{fontSize: 22, fontWeight: '700'}}>
+          이메일 인증을 진행합니다.
+        </Text>
       </InformView>
       <ButtonContainer>
         <WeColorButton
-          title="이메일 보내기"
+          title="인증메일 전송"
           onPress={() => handleSendEmail()}
         />
         <WeColorButton
-          title="next"
+          title="다음"
           onPress={() => navigate('A4_InputNickname')}
         />
       </ButtonContainer>
-    </View>
+    </Container>
   );
 };
 

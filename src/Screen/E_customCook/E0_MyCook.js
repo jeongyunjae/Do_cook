@@ -3,10 +3,8 @@ import {StyleSheet, Platform} from 'react-native';
 import Styled from 'styled-components/native';
 import firestore from '@react-native-firebase/firestore';
 import {firebase} from '@react-native-firebase/auth';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import ImagePicker from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
-//import { downloadingURL, imagePickerOptions, createStorageReferenceToFile, uploadFileToFireBase } from '~/utils';
 
 import Input from '~/Components/Input';
 import Button from '~/Components/button/weColorButton';

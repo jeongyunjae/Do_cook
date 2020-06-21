@@ -25,20 +25,13 @@ const ButtonContainer = Styled.View`
 `;
 
 const F0_MyLocker = ({navigation: {navigate}}) => {
-  const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState('');
-
-  const [Datas, setDatas] = useState([]);
 
   let list = [];
   let parameter = [];
   // Handle user state changes
   function onAuthStateChanged(user) {
     setUser(user);
-    //if (initializing) setInitializing(false);
-    //console.log(user.displayName);
-
-    //setDatas(...Datas, {});
   }
 
   function getData() {
@@ -77,7 +70,9 @@ const F0_MyLocker = ({navigation: {navigate}}) => {
     //return subscriber; // unsubscribe on unmount
   });
 
-  // if (initializing) return null;
+  useEffect(() => {
+    return () => setUser(null); // cleanup function을 이용
+  }, []);
 
   return (
     <Container>

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, Image} from 'react-native';
 import Styled from 'styled-components/native';
-import Button from '~/Components/button/weColorButton';
 
 const Container = Styled.View`
   flex: 1;

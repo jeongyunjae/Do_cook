@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Text, Image, View} from 'react-native';
 import Styled from 'styled-components/native';
-import Button from '~/Components/button/weColorButton';
 import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Container = Styled.View`
