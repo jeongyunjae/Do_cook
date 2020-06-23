@@ -3,7 +3,7 @@ import Styled from 'styled-components/native';
 import {View, StyleSheet, Text} from 'react-native';
 
 const Button = Styled.TouchableOpacity`
-width: 112px;
+width: 110px;
 height: 38px;
 padding: 8px;
 background: #ffffff;
@@ -11,6 +11,8 @@ border-radius: 11px;
 border-color: #ec6337;
 border-width: 1px;
 margin: 8px;
+margin-left: 2px;
+margin-right: 2px;
 `;
 
 const ButtonText = Styled.Text`

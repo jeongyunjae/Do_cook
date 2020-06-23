@@ -15,6 +15,7 @@ const Container = Styled.SafeAreaView`
 
 const SelectMeterialView = Styled.View`
   margin: 17px;
+  margin-bottom: 1px;
 `;
 
 const SelectMeterialText = Styled.Text`
@@ -36,6 +37,7 @@ const SelectMeterial2 = Styled.View`
 
 const SelectMeterial3 = Styled.View`
   flex: 1;
+  align-items: center;
   `;
 
 const AdmitButton = Styled.View`
@@ -45,8 +47,7 @@ const AdmitButton = Styled.View`
   `;
 
 const AllMeterial = Styled.View`
-  margin-left:  12px;
-  margin-right: 12px;
+  margin: 16px;
   flex-direction: row;
   border-radius: 11px;
   border-width: 0.8px;
