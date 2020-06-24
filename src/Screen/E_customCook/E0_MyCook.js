@@ -8,7 +8,7 @@ import storage from '@react-native-firebase/storage';
 
 import Input from '~/Components/Input';
 import Button from '~/Components/button/weColorButton';
-import ImgAddButton from '~/Components/button/for_C_Button';
+import SelectImgButton from '~/Components/button/selectImgButton';
 
 const FireBaseStorage = storage();
 
@@ -53,7 +53,7 @@ const InputTextName = Styled.Text`
   font-size: 14px;
 `;
 const FormAndButton = Styled.View`
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 20px;
 `;
 
@@ -279,7 +279,7 @@ const E0_MyCook = props => {
           />
         </FormContainer>
         <FormAndButton>
-          <ImgAddButton title="요리사진 선택" onPress={uploadFile} />
+          <SelectImgButton title="요리사진 선택" onPress={uploadFile} />
           {imageURI && <Picture source={imageURI} />}
         </FormAndButton>
       </ScrollView>

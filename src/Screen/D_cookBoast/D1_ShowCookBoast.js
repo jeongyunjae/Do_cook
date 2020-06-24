@@ -5,8 +5,12 @@ import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 
 const Container = Styled.View`
   flex: 1;
-  padding: 20px;
+  padding: 12px;
   background-color: #ffffff;
+`;
+
+const TitleView = Styled.View`
+margin-bottom: 10px;
 `;
 
 const TitleText = Styled.Text`
@@ -37,7 +41,11 @@ const MenuText = Styled.Text`
 `;
 
 const SubText = Styled.Text`
-  font-size: 16px;
+  font-size: 15px;
+`;
+
+const UserText = Styled.Text`
+  color: #ec6337;
 `;
 
 const D1_ShowCookBoast = ({navigation}) => {
@@ -71,7 +79,9 @@ const D1_ShowCookBoast = ({navigation}) => {
 
   return (
     <Container>
-      <TitleText>요리자랑</TitleText>
+      <TitleView>
+        <TitleText>요리자랑</TitleText>
+      </TitleView>
       <ScrollView>
         {data.map((i, idx) => (
           <FormContainer key={idx}>
@@ -83,11 +93,11 @@ const D1_ShowCookBoast = ({navigation}) => {
               <MenuText>{i.title}</MenuText>
             </MenuView>
             <View style={{marginBottom: 5}}>
-              <SubText>순서 : {i.order + ' '}</SubText>
-              <SubText>재료 : {i.ingredient + ''}</SubText>
+              <SubText>순서: {i.order + ' '}</SubText>
+              <SubText>재료: {i.ingredient + ''}</SubText>
             </View>
             <Text style={{fontWeight: 'bold', fontSize: 15}}>
-              {i.userName}님의 레시피입니다 :)
+              <UserText>{i.userName}</UserText>님의 레시피입니다 :)
             </Text>
           </FormContainer>
         ))}

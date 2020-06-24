@@ -14,14 +14,18 @@ const Container = Styled.SafeAreaView`
 `;
 
 const SelectMeterialView = Styled.View`
-  margin: 17px;
-  margin-bottom: 1px;
+  margin: 12px;
+  margin-bottom: 0px;
 `;
 
 const SelectMeterialText = Styled.Text`
   font-size: 22px;
   font-weight: bold;
   color: #ec6337;
+`;
+
+const ScView = Styled.ScrollView`
+  flex: 2.5;
 `;
 
 const SelectMeterial1 = Styled.View`
@@ -47,17 +51,13 @@ const AdmitButton = Styled.View`
   `;
 
 const AllMeterial = Styled.View`
-  margin: 16px;
+  margin: 10px;
   flex-direction: row;
   border-radius: 11px;
   border-width: 0.8px;
   border-color: #ec6337;
   elevation: 1;
   `;
-
-const ScView = Styled.ScrollView`
-  flex: 2.5;
-`;
 
 const SelectedMeterialArea = Styled.ScrollView`
   flex: 1.5;
@@ -154,7 +154,7 @@ const C0_MainPage = ({navigation: {navigate}}) => {
         </AllMeterial>
       </ScView>
       <SelectedMeterialView>
-        <SelectedMeterialText>선택된 재료</SelectedMeterialText>
+        <SelectedMeterialText>선택한 재료</SelectedMeterialText>
       </SelectedMeterialView>
       <SelectedMeterialArea>
         <AllMeterialForSelected>

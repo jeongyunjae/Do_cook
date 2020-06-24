@@ -14,7 +14,7 @@ import Button from '~/Components/button/weColorButton';
 
 const Container = Styled.View`
   flex: 1;
-  padding: 20px;
+  padding: 12px;
   background-color: #ffffff;
 `;
 
