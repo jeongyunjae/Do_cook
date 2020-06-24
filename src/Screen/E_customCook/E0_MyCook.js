@@ -26,7 +26,7 @@ const Container = Styled.View`
 const Picture = Styled.Image.attrs({
   resizeMode: 'contain',
 })`
-height:300;
+height:250;
 width:100%;
 `;
 
@@ -86,7 +86,6 @@ const E0_MyCook = props => {
   const uploadFile = () => {
     ImagePicker.showImagePicker(imagePickerOptions, response => {
       if (response.didCancel) {
-        alert('사진 선택을 취소하였습니다.');
       } else if (response.error) {
         alert('문제가 발생하였습니다: ', response.error);
       } else {
