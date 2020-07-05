@@ -8,7 +8,7 @@ import {
 } from '@react-native-community/google-signin';
 import {firebase} from '@react-native-firebase/auth';
 
-import Button from '~/Components/button/weColorButton';
+import Button from '~/Components/button/LoginButton';
 
 const Container = Styled.SafeAreaView`
   flex: 1;

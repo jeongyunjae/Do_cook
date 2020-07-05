@@ -26,7 +26,8 @@ const Container = Styled.View`
 const Picture = Styled.Image.attrs({
   resizeMode: 'contain',
 })`
-height:250;
+margin-top: 20px;
+height:250px;
 width:100%;
 `;
 

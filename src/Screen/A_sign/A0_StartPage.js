@@ -10,7 +10,7 @@ import Styled from 'styled-components/native';
 import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
 import {firebase} from '@react-native-firebase/auth';
 
-import Button from '~/Components/button/weColorButton';
+import Button from '~/Components/button/LoginButton';
 
 const Container = Styled.SafeAreaView`
   flex: 1;
@@ -23,7 +23,7 @@ const Logo = Styled.View`
 `;
 
 const ButtonLocate = Styled.View`
-  flex: 6;
+  flex: 8;
   justify-content: center;
   align-items: center;
 `;
@@ -95,7 +95,7 @@ const A0_StartPage = ({navigation: {navigate}}) => {
           <ButtonLocate>
             <Button
               style={{marginBottom: 20}}
-              title="Login for E-mail"
+              title="이메일 로그인"
               onPress={() => {
                 navigate('A5_DkLogin');
               }}
@@ -103,7 +103,7 @@ const A0_StartPage = ({navigation: {navigate}}) => {
 
             <Button
               style={{marginBottom: 20}}
-              title="Login for Google"
+              title="구글 로그인"
               onPress={() => {
                 _signIn().then(() => navigate('요리하기'));
               }}
